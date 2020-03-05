@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="DescriptionGiven a binary search tree and a node in it, find the in-order successor of that node in the BST. The successor of a node p is the node with the smallest key greater than p.val. You will ha">
+<meta name="keywords" content="algorithm,leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Leetcode510]Inorder_Successor_in_BST_II">
+<meta property="og:url" content="http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/index.html">
+<meta property="og:site_name" content="Yu&#39; Blog">
+<meta property="og:description" content="DescriptionGiven a binary search tree and a node in it, find the in-order successor of that node in the BST. The successor of a node p is the node with the smallest key greater than p.val. You will ha">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2019/01/23/285_example_1.PNG">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2019/01/23/285_example_2.PNG">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2019/02/02/285_example_34.PNG">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2019/02/02/285_example_34.PNG">
+<meta property="og:updated_time" content="2020-02-27T02:10:22.871Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Leetcode510]Inorder_Successor_in_BST_II">
+<meta name="twitter:description" content="DescriptionGiven a binary search tree and a node in it, find the in-order successor of that node in the BST. The successor of a node p is the node with the smallest key greater than p.val. You will ha">
+<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2019/01/23/285_example_1.PNG">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>[Leetcode510]Inorder_Successor_in_BST_II</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/12/11/Leetcode315-Count-of-Smaller-Numbers-After-Self/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/12/11/Leetcode658-Find-K-Closest-Elements/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&text=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&title=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&is_video=false&description=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode510]Inorder_Successor_in_BST_II&body=Check out this article: http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&title=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&title=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&title=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&title=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&name=[Leetcode510]Inorder_Successor_in_BST_II&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&t=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        [Leetcode510]Inorder_Successor_in_BST_II
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Yu' Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-12-12T01:23:37.000Z" itemprop="datePublished">2019-12-11</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/leetcode/">leetcode</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a binary search tree and a node in it, find the in-order successor of that node in the BST.</p>
+<p>The successor of a node p is the node with the smallest key greater than p.val.</p>
+<p>You will have direct access to the node but not to the root of the tree. Each node will have a reference to its parent node.</p>
+<p>Example 1:<br><img src="https://assets.leetcode.com/uploads/2019/01/23/285_example_1.PNG" alt><br>Input:<br>root = {“$id”:”1”,”left”:{“$id”:”2”,”left”:null,”parent”:{“$ref”:”1”},”right”:null,”val”:1},”parent”:null,”right”:{“$id”:”3”,”left”:null,”parent”:{“$ref”:”1”},”right”:null,”val”:3},”val”:2}<br>p = 1<br>Output: 2<br>Explanation: 1’s in-order successor node is 2. Note that both p and the return value is of Node type.</p>
+<p>Example 2:<br><img src="https://assets.leetcode.com/uploads/2019/01/23/285_example_2.PNG" alt><br>Input:<br>root = {“$id”:”1”,”left”:{“$id”:”2”,”left”:{“$id”:”3”,”left”:{“$id”:”4”,”left”:null,”parent”:{“$ref”:”3”},”right”:null,”val”:1},”parent”:{“$ref”:”2”},”right”:null,”val”:2},”parent”:{“$ref”:”1”},”right”:{“$id”:”5”,”left”:null,”parent”:{“$ref”:”2”},”right”:null,”val”:4},”val”:3},”parent”:null,”right”:{“$id”:”6”,”left”:null,”parent”:{“$ref”:”1”},”right”:null,”val”:6},”val”:5}<br>p = 6<br>Output: null<br>Explanation: There is no in-order successor of the current node, so the answer is null.</p>
+<p>Example 3:<br><img src="https://assets.leetcode.com/uploads/2019/02/02/285_example_34.PNG" alt><br>Input:<br>root = {“$id”:”1”,”left”:{“$id”:”2”,”left”:{“$id”:”3”,”left”:{“$id”:”4”,”left”:null,”parent”:{“$ref”:”3”},”right”:null,”val”:2},”parent”:{“$ref”:”2”},”right”:{“$id”:”5”,”left”:null,”parent”:{“$ref”:”3”},”right”:null,”val”:4},”val”:3},”parent”:{“$ref”:”1”},”right”:{“$id”:”6”,”left”:null,”parent”:{“$ref”:”2”},”right”:{“$id”:”7”,”left”:{“$id”:”8”,”left”:null,”parent”:{“$ref”:”7”},”right”:null,”val”:9},”parent”:{“$ref”:”6”},”right”:null,”val”:13},”val”:7},”val”:6},”parent”:null,”right”:{“$id”:”9”,”left”:{“$id”:”10”,”left”:null,”parent”:{“$ref”:”9”},”right”:null,”val”:17},”parent”:{“$ref”:”1”},”right”:{“$id”:”11”,”left”:null,”parent”:{“$ref”:”9”},”right”:null,”val”:20},”val”:18},”val”:15}<br>p = 15<br>Output: 17</p>
+<p>Example 4:<br><img src="https://assets.leetcode.com/uploads/2019/02/02/285_example_34.PNG" alt><br>Input:<br>root = {“$id”:”1”,”left”:{“$id”:”2”,”left”:{“$id”:”3”,”left”:{“$id”:”4”,”left”:null,”parent”:{“$ref”:”3”},”right”:null,”val”:2},”parent”:{“$ref”:”2”},”right”:{“$id”:”5”,”left”:null,”parent”:{“$ref”:”3”},”right”:null,”val”:4},”val”:3},”parent”:{“$ref”:”1”},”right”:{“$id”:”6”,”left”:null,”parent”:{“$ref”:”2”},”right”:{“$id”:”7”,”left”:{“$id”:”8”,”left”:null,”parent”:{“$ref”:”7”},”right”:null,”val”:9},”parent”:{“$ref”:”6”},”right”:null,”val”:13},”val”:7},”val”:6},”parent”:null,”right”:{“$id”:”9”,”left”:{“$id”:”10”,”left”:null,”parent”:{“$ref”:”9”},”right”:null,”val”:17},”parent”:{“$ref”:”1”},”right”:{“$id”:”11”,”left”:null,”parent”:{“$ref”:”9”},”right”:null,”val”:20},”val”:18},”val”:15}<br>p = 13<br>Output: 15</p>
+<p>Note:</p>
+<p>If the given node has no in-order successor in the tree, return null.<br>It’s guaranteed that the values of the tree are unique.<br>Remember that we are using the Node type instead of TreeNode type so their string representation are different.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>这题不是中序遍历，因为如example 1，中序以它为根是找不到比它大的数的<br>所以应该这样考虑：如果这个点有右子树，则是右子树的最大值；如果没有右子树，则是父节点的最小值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public Node inorderSuccessor(Node x) &#123;</span><br><span class="line">        if(x.right != null)</span><br><span class="line">            return findMin(x.right);</span><br><span class="line">        int cur = x.val;</span><br><span class="line">        while(x != null &amp;&amp; x.val &lt;= cur)</span><br><span class="line">            x = x.parent;</span><br><span class="line">        return x;</span><br><span class="line">    &#125;</span><br><span class="line">    public Node findMin(Node node) &#123;</span><br><span class="line">        while(node.left != null)</span><br><span class="line">            node = node.left;</span><br><span class="line">        return node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&text=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&title=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&is_video=false&description=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode510]Inorder_Successor_in_BST_II&body=Check out this article: http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&title=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&title=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&title=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&title=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&name=[Leetcode510]Inorder_Successor_in_BST_II&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/12/11/Leetcode510-Inorder-Successor-in-BST-II/&t=[Leetcode510]Inorder_Successor_in_BST_II"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Yu Yuki Liu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-159250400-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>

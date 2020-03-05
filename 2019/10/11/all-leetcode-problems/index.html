@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="统计到11月23号的结果[Leetcode4]Median_of_Two_Sorted_Arrays[Leetcode5]Longest_Palindromic_Substring[Leetcode8]String_to_Integer_atoi[Leetcode10]Regular_Expression_Matching[Leetcode15]Three_Sum[Leetcode17]Lette">
+<meta name="keywords" content="algorithm,leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="all_leetcode_problems">
+<meta property="og:url" content="http://yoursite.com/2019/10/11/all-leetcode-problems/index.html">
+<meta property="og:site_name" content="Yu&#39; Blog">
+<meta property="og:description" content="统计到11月23号的结果[Leetcode4]Median_of_Two_Sorted_Arrays[Leetcode5]Longest_Palindromic_Substring[Leetcode8]String_to_Integer_atoi[Leetcode10]Regular_Expression_Matching[Leetcode15]Three_Sum[Leetcode17]Lette">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-02-27T02:10:22.897Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="all_leetcode_problems">
+<meta name="twitter:description" content="统计到11月23号的结果[Leetcode4]Median_of_Two_Sorted_Arrays[Leetcode5]Longest_Palindromic_Substring[Leetcode8]String_to_Integer_atoi[Leetcode10]Regular_Expression_Matching[Leetcode15]Three_Sum[Leetcode17]Lette">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>all_leetcode_problems</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/10/11/binary-search/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/10/11/Leetcode254-Factor-Combinations/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/11/all-leetcode-problems/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&text=all_leetcode_problems"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&title=all_leetcode_problems"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&is_video=false&description=all_leetcode_problems"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=all_leetcode_problems&body=Check out this article: http://yoursite.com/2019/10/11/all-leetcode-problems/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&title=all_leetcode_problems"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&title=all_leetcode_problems"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&title=all_leetcode_problems"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&title=all_leetcode_problems"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&name=all_leetcode_problems&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/10/11/all-leetcode-problems/&t=all_leetcode_problems"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        all_leetcode_problems
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Yu' Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-10-11T15:47:19.000Z" itemprop="datePublished">2019-10-11</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/leetcode/">leetcode</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>统计到11月23号的结果<br><a href="https://sweetstreet.github.io//2019/11/19/Leetcode4-Median-of-Two-Sorted-Arrays/" target="_blank" rel="noopener">[Leetcode4]Median_of_Two_Sorted_Arrays</a><br><a href="https://sweetstreet.github.io//2019/11/14/Leetcode5-Longest-Palindromic-Substring/" target="_blank" rel="noopener">[Leetcode5]Longest_Palindromic_Substring</a><br><a href="https://sweetstreet.github.io//2019/10/07/Leetcode8-String-to-Integer-atoi/" target="_blank" rel="noopener">[Leetcode8]String_to_Integer_atoi</a><br><a href="https://sweetstreet.github.io//2019/10/30/Leetcode10-Regular-Expression-Matching/" target="_blank" rel="noopener">[Leetcode10]Regular_Expression_Matching</a><br><a href="https://sweetstreet.github.io//2019/11/03/Leetcode15-Three-Sum/" target="_blank" rel="noopener">[Leetcode15]Three_Sum</a><br><a href="https://sweetstreet.github.io//2019/10/30/Leetcode17-Letter-Combinations-of-a-Phone-Number/" target="_blank" rel="noopener">[Leetcode17]Letter_Combinations_of_a_Phone_Number</a><br><a href="https://sweetstreet.github.io//2019/11/12/Leetcode18-4sum/" target="_blank" rel="noopener">[Leetcode18]4sum</a><br><a href="https://sweetstreet.github.io//2019/11/09/Leetcode19-Remove-Nth-Node-From-End-of-List/" target="_blank" rel="noopener">[Leetcode19]Remove_Nth_Node_From_End_of_List</a><br><a href="https://sweetstreet.github.io//2019/11/05/Leetcode22-Generate-Parentheses/" target="_blank" rel="noopener">[Leetcode22]Generate_Parentheses</a><br><a href="https://sweetstreet.github.io//2019/10/09/Leetcode24Swap_Nodes_in_Pairs/" target="_blank" rel="noopener">[Leetcode24]Swap_Nodes_in_Pairs</a><br>[[Leetcode25]Reverse Nodes in k-Group](<a href="https://sweetstreet.github.io//2019/10/09/Leetcode25Reverse" target="_blank" rel="noopener">https://sweetstreet.github.io//2019/10/09/Leetcode25Reverse</a> Nodes in k-Group/)<br><a href="https://sweetstreet.github.io//2019/10/16/Leetcode28-Implement-strStr/" target="_blank" rel="noopener">[Leetcode28]Implement_strStr</a><br><a href="https://sweetstreet.github.io//2019/10/07/Leetcode33-Search-in-Rotated-Sorted-Array/" target="_blank" rel="noopener">[Leetcode33]Search_in_Rotated_Sorted_Array</a><br><a href="https://sweetstreet.github.io//2019/11/09/Leetcode34-Find-First-and-Last-Position-of-Element-in-Sorted-Array/" target="_blank" rel="noopener">[Leetcode34]Find_First_and_Last_Position_of_Element_in_Sorted_Array</a><br><a href="https://sweetstreet.github.io//2019/10/30/Leetcode39-Combination-Sum/" target="_blank" rel="noopener">[Leetcode39]Combination_Sum</a><br><a href="https://sweetstreet.github.io//2019/10/31/Leetcode40-Combination-Sum-II/" target="_blank" rel="noopener">[Leetcode40]Combination_Sum_II</a><br><a href="https://sweetstreet.github.io//2019/10/12/Leetcode41-First-Missing-Positive/" target="_blank" rel="noopener">[Leetcode41]First_Missing_Positive</a><br><a href="https://sweetstreet.github.io//2019/10/13/Leetcode43-Multiply-Strings/" target="_blank" rel="noopener">[Leetcode43]Multiply_Strings</a><br><a href="https://sweetstreet.github.io//2019/10/07/Leetcode49-Group-Anagrams/" target="_blank" rel="noopener">[Leetcode49]Group_Anagrams</a><br><a href="https://sweetstreet.github.io//2019/11/12/Leetcode50-Powx-n/" target="_blank" rel="noopener">[Leetcode50]Pow(x,n)</a><br><a href="https://sweetstreet.github.io//2019/10/30/Leetcode51-N-Queens/" target="_blank" rel="noopener">[Leetcode51]N-Queens</a><br><a href="https://sweetstreet.github.io//2019/10/30/Leetcode52-N-QueensII/" target="_blank" rel="noopener">[Leetcode52]N-QueensII</a><br><a href="https://sweetstreet.github.io//2019/11/05/Leetcode56-Merge-Intervals/" target="_blank" rel="noopener">[Leetcode56]Merge_Intervals</a><br><a href="https://sweetstreet.github.io//2019/11/05/Leetcode57-Insert-Interval/" target="_blank" rel="noopener">[Leetcode57]Insert_Interval</a><br><a href="https://sweetstreet.github.io//2019/11/03/Leetcode63-Unique-Paths-II/" target="_blank" rel="noopener">[Leetcode63]Unique_Paths_II</a><br><a href="https://sweetstreet.github.io//2019/11/03/Leetcode64-Minimum-Path-Sum/" target="_blank" rel="noopener">[Leetcode64]Minimum_Path_Sum</a><br><a href="https://sweetstreet.github.io//2019/10/06/Leetcode74-Search-a-2D-Matrix/" target="_blank" rel="noopener">[Leetcode74]Search_a_2D_Matrix</a><br><a href="https://sweetstreet.github.io//2019/11/05/Leetcode75-Sort-Colors/" target="_blank" rel="noopener">[Leetcode75]Sort_Colors</a><br><a href="https://sweetstreet.github.io//2019/10/16/Leetcode76-Minimum-Window-Substring/" target="_blank" rel="noopener">[Leetcode76]Minimum_Window_Substring</a><br><a href="https://sweetstreet.github.io//2019/10/17/Leetcode79-Word-Search/" target="_blank" rel="noopener">[Leetcode79]Word_Search</a><br><a href="https://sweetstreet.github.io//2019/11/18/Leetcode81-Search-in-Rotated-Sorted-Array-II/" target="_blank" rel="noopener">[Leetcode81]Search_in_Rotated_Sorted_Array_II</a><br><a href="https://sweetstreet.github.io//2019/10/09/Leetcode92-Reverse-Linked-List-II/" target="_blank" rel="noopener">[Leetcode92]Reverse_Linked_List_II</a><br><a href="https://sweetstreet.github.io//2019/10/19/Leetcode94-Binary-Tree-Inorder-Traversal/" target="_blank" rel="noopener">[Leetcode94]Binary_Tree_Inorder_Traversal</a><br><a href="https://sweetstreet.github.io//2019/11/14/Leetcode96-Unique-Binary-Search-Trees/" target="_blank" rel="noopener">[Leetcode96]Unique_Binary_Search_Trees</a><br><a href="https://sweetstreet.github.io//2019/11/11/Leetcode101-Symmetric-Tree/" target="_blank" rel="noopener">[Leetcode101]Symmetric_Tree</a><br><a href="https://sweetstreet.github.io//2019/11/09/Leetcode103-Binary-Tree-Zigzag-Level-Order-Traversal/" target="_blank" rel="noopener">[Leetcode103]Binary_Tree_Zigzag_Level_Order_Traversal</a><br><a href="https://sweetstreet.github.io//2019/11/19/Leetcode109-Convert-Sorted-List-to-Binary-Search-Tree/" target="_blank" rel="noopener">[Leetcode109]Convert_Sorted_List_to_Binary_Search_Tree</a><br><a href="https://sweetstreet.github.io//2019/11/12/Leetcode116-Populating-Next-Right-Pointers-in-Each-Node/" target="_blank" rel="noopener">[Leetcode116]Populating_Next_Right_Pointers_in_Each_Node</a><br><a href="https://sweetstreet.github.io//2019/11/09/Leetcode120-Triangle/" target="_blank" rel="noopener">[Leetcode120]Triangle</a><br><a href="https://sweetstreet.github.io//2019/11/04/Leetcode128-Longest-Consecutive-Sequence/" target="_blank" rel="noopener">[Leetcode128]Longest_Consecutive_Sequence</a><br><a href="https://sweetstreet.github.io//2019/11/11/Leetcode129-Sum-Root-to-Leaf-Numbers/" target="_blank" rel="noopener">[Leetcode129]Sum_Root_to_Leaf_Numbers</a><br><a href="https://sweetstreet.github.io//2019/11/02/Leetcode130-Surrounded-Regions/" target="_blank" rel="noopener">[Leetcode130]Surrounded_Regions</a><br><a href="https://sweetstreet.github.io//2019/11/07/Leetcode139-Word-Break/" target="_blank" rel="noopener">[Leetcode139]Word_Break</a><br><a href="https://sweetstreet.github.io//2019/11/10/Leetcode140-Word-Break-II/" target="_blank" rel="noopener">[Leetcode140]Word_Break_II</a><br><a href="https://sweetstreet.github.io//2019/11/04/Leetcode142-Linked-List-Cycle-II/" target="_blank" rel="noopener">[Leetcode142]Linked_List_Cycle_II</a><br><a href="https://sweetstreet.github.io//2019/11/04/Leetcode146-LRU-Cache/" target="_blank" rel="noopener">[Leetcode146]LRU_Cache</a><br><a href="https://sweetstreet.github.io//2019/11/11/Leetcode152-Maximum-Product-Subarray/" target="_blank" rel="noopener">[Leetcode152]Maximum_Product_Subarray</a><br><a href="https://sweetstreet.github.io//2019/10/05/LeetCode160-Intersection-of-Two-Linked-Lists/" target="_blank" rel="noopener">[LeetCode160]Intersection_of_Two_Linked_Lists</a><br><a href="https://sweetstreet.github.io//2019/10/18/Leetcode168-Excel-Sheet-Column-Title/" target="_blank" rel="noopener">[Leetcode168]Excel_Sheet_Column_Title</a><br><a href="https://sweetstreet.github.io//2019/10/18/Leetcode171-Excel-Sheet-Column-Number/" target="_blank" rel="noopener">[Leetcode171]Excel_Sheet_Column_Number</a><br><a href="https://sweetstreet.github.io//2019/11/05/Leetcode179-Largest-Number/" target="_blank" rel="noopener">[Leetcode179]Largest_Number</a><br><a href="https://sweetstreet.github.io//2019/11/12/Leetcode200-Number-of-Islands/" target="_blank" rel="noopener">[Leetcode200]Number_of_Islands</a><br><a href="https://sweetstreet.github.io//2019/10/09/Leetcode206Reverse_Linked_List/" target="_blank" rel="noopener">[Leetcode206]Reverse Linked List</a><br><a href="https://sweetstreet.github.io//2019/10/18/Leetcode212-Word-Search-II/" target="_blank" rel="noopener">[Leetcode212]Word_Search_II</a><br><a href="https://sweetstreet.github.io//2019/11/17/Leetcode213-House-Robber-II/" target="_blank" rel="noopener">[Leetcode213]House_Robber_II</a><br><a href="https://sweetstreet.github.io//2019/10/31/Leetcode216-Combination-Sum-III/" target="_blank" rel="noopener">[Leetcode216]Combination_Sum_III</a><br><a href="https://sweetstreet.github.io//2019/10/26/Leetcode221-Maximal-Square/" target="_blank" rel="noopener">[Leetcode221]Maximal_Square</a><br><a href="https://sweetstreet.github.io//2019/10/15/Leetcode222-Count-Complete-Tree-Nodes/" target="_blank" rel="noopener">[Leetcode222]Count_Complete_Tree_Nodes</a><br><a href="https://sweetstreet.github.io//2019/10/08/Leetcode224-Basic-Calculator/" target="_blank" rel="noopener">[Leetcode224]Basic_Calculator</a><br><a href="https://sweetstreet.github.io//2019/10/08/Leetcode227-Basic-Calculator-II/" target="_blank" rel="noopener">[Leetcode227]Basic_Calculator_II</a><br><a href="https://sweetstreet.github.io//2019/11/05/Leetcode230-Kth-Smallest-Element-in-a-BST/" target="_blank" rel="noopener">[Leetcode230]Kth_Smallest_Element_in_a_BST</a><br><a href="https://sweetstreet.github.io//2019/10/12/Leetcode235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree/" target="_blank" rel="noopener">[Leetcode235]Lowest_Common_Ancestor_of_a_Binary_Search_Tree</a><br><a href="https://sweetstreet.github.io//2019/10/12/Leetcode236-Lowest-Common-Ancestor-of-a-Binary-Tree/" target="_blank" rel="noopener">[Leetcode236]Lowest_Common_Ancestor_of_a_Binary_Tree</a><br><a href="https://sweetstreet.github.io//2019/11/18/Leetcode239-Sliding-Window-Maximum/" target="_blank" rel="noopener">[Leetcode239]Sliding_Window_Maximum</a><br><a href="https://sweetstreet.github.io//2019/10/06/Leetcode240-Search-a-2D-Matrix-II/" target="_blank" rel="noopener">[Leetcode240]Search_a_2D_Matrix_II</a><br><a href="https://sweetstreet.github.io//2019/11/12/Leetcode252-Meeting-Rooms/" target="_blank" rel="noopener">[Leetcode252]Meeting_Rooms</a><br><a href="https://sweetstreet.github.io//2019/11/12/Leetcode253-Meeting-Rooms-II/" target="_blank" rel="noopener">[Leetcode253]Meeting_Rooms_II</a><br><a href="https://sweetstreet.github.io//2019/10/11/Leetcode254-Factor-Combinations/" target="_blank" rel="noopener">[Leetcode254]Factor_Combinations</a><br><a href="https://sweetstreet.github.io//2019/10/12/Leetcode269-Alien-Dictionary/" target="_blank" rel="noopener">[Leetcode269]Alien_Dictionary</a><br><a href="https://sweetstreet.github.io//2019/11/05/Leetcode287-Find-the-Duplicate-Number/" target="_blank" rel="noopener">[Leetcode287]Find_the_Duplicate_Number</a><br><a href="https://sweetstreet.github.io//2019/10/15/Leetcode289-Game-of-Life/" target="_blank" rel="noopener">[Leetcode289]Game_of_Life</a><br><a href="https://sweetstreet.github.io//2019/11/15/Leetcode292-Nim-Game/" target="_blank" rel="noopener">[Leetcode292]Nim_Game</a><br><a href="https://sweetstreet.github.io//2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/" target="_blank" rel="noopener">[Leetcode297]Serialize_and_Deserialize_Binary_Tree</a><br><a href="https://sweetstreet.github.io//2019/11/09/Leetcode300-Longest-Increasing-Subsequence/" target="_blank" rel="noopener">[Leetcode300]Longest_Increasing_Subsequence</a><br><a href="https://sweetstreet.github.io//2019/11/08/Leetcode304-Range-Sum-Query-2D-Immutable/" target="_blank" rel="noopener">[Leetcode304]Range_Sum_Query_2D_Immutable</a><br><a href="https://sweetstreet.github.io//2019/11/09/Leetcode305-Number-of-Islands-II/" target="_blank" rel="noopener">[Leetcode305]Number_of_Islands_II</a><br><a href="https://sweetstreet.github.io//2019/11/08/Leetcode308-Range-Sum-Query-2D-Mutable/" target="_blank" rel="noopener">[Leetcode308]Range_Sum_Query_2D_Mutable</a><br><a href="https://sweetstreet.github.io//2019/11/15/Leetcode311-Sparse-Matrix-Multiplication/" target="_blank" rel="noopener">[Leetcode311]Sparse_Matrix_Multiplication</a><br><a href="https://sweetstreet.github.io//2019/10/20/Leetcode314-Binary-Tree-Vertical-Order-Traversal/" target="_blank" rel="noopener">[Leetcode314]Binary_Tree_Vertical_Order_Traversal</a><br><a href="https://sweetstreet.github.io//2019/10/18/Leetcode329-Longest-Increasing-Path-in-a-Matrix/" target="_blank" rel="noopener">[Leetcode329]Longest_Increasing_Path_in_a_Matrix</a><br><a href="https://sweetstreet.github.io//2019/11/08/Leetcode334-Increasing-Triplet-Subsequence/" target="_blank" rel="noopener">[Leetcode334]Increasing_Triplet_Subsequence</a><br><a href="https://sweetstreet.github.io//2019/11/17/Leetcode336-Palindrome-Pairs/" target="_blank" rel="noopener">[Leetcode336]Palindrome_Pairs</a><br><a href="https://sweetstreet.github.io//2019/10/16/Leetcode337-House-Robber-III/" target="_blank" rel="noopener">[Leetcode337]House_Robber_III</a><br><a href="https://sweetstreet.github.io//2019/11/05/Leetcode346-Moving-Average-from-Data-Stream/" target="_blank" rel="noopener">[Leetcode346]Moving_Average_from_Data_Stream</a><br><a href="https://sweetstreet.github.io//2019/10/19/Leetcode348-Design-Tic-Tac-Toe/" target="_blank" rel="noopener">[Leetcode348]Design_Tic_Tac_Toe</a><br><a href="https://sweetstreet.github.io//2019/10/06/Leetcode349-Intersection-of-Two-Arrays/" target="_blank" rel="noopener">[Leetcode349]Intersection_of_Two_Arrays</a><br><a href="https://sweetstreet.github.io//2019/10/21/Leetcode351-Android-Unlock-Patterns/" target="_blank" rel="noopener">[Leetcode351]Android_Unlock_Patterns</a><br><a href="https://sweetstreet.github.io//2019/10/10/Leetcode359-Logger-Rate-Limiter/" target="_blank" rel="noopener">[Leetcode359]Logger_Rate_Limiter</a><br><a href="https://sweetstreet.github.io//2019/11/09/Leetcode378-Kth-Smallest-Element-in-a-Sorted-Matrix/" target="_blank" rel="noopener">[Leetcode378]Kth_Smallest_Element_in_a_Sorted_Matrix</a><br><a href="https://sweetstreet.github.io//2019/10/08/Leetcode388-Longest-Absolute-File-Path/" target="_blank" rel="noopener">[Leetcode388]Longest_Absolute_File_Path</a><br><a href="https://sweetstreet.github.io//2019/11/06/Leetcode394-Decode-String/" target="_blank" rel="noopener">[Leetcode394]Decode_String</a><br><a href="https://sweetstreet.github.io//2019/10/08/Leetcode399-Evaluate-Division/" target="_blank" rel="noopener">[Leetcode399]Evaluate_Division</a><br><a href="https://sweetstreet.github.io//2019/10/05/Leetcode406-Queue-Reconstruction-by-Height/" target="_blank" rel="noopener">[Leetcode406]Queue-Reconstruction_by_Height</a><br><a href="https://sweetstreet.github.io//2019/11/17/Leetcode407-Trapping-Rain-Water-II/" target="_blank" rel="noopener">[Leetcode407]Trapping_Rain_Water_II</a><br><a href="https://sweetstreet.github.io//2019/11/01/Leetcode410-Split-Array-Largest-Sum/" target="_blank" rel="noopener">[Leetcode410]Split_Array_Largest_Sum</a><br><a href="https://sweetstreet.github.io//2019/11/09/Leetcode416-Partition-Equal-Subset-Sum/" target="_blank" rel="noopener">[Leetcode416]Partition_Equal_Subset_Sum</a><br><a href="https://sweetstreet.github.io//2019/10/15/Leetcode425-Word-Squares/" target="_blank" rel="noopener">[Leetcode425]Word_Squares</a><br><a href="https://sweetstreet.github.io//2019/10/19/Leetcode426-Convert-Binary-Search-Tree-to-Sorted-Doubly-Linked-List/" target="_blank" rel="noopener">[Leetcode426]Convert_Binary_Search_Tree_to_Sorted_Doubly_Linked_List</a><br><a href="https://sweetstreet.github.io//2019/10/14/Leetcode430-Flatten-a-Multilevel-Doubly-Linked-List/" target="_blank" rel="noopener">[Leetcode430]Flatten_a_Multilevel_Doubly_Linked_List</a><br><a href="https://sweetstreet.github.io//2019/10/08/Leetcode447-Number-of-Boomerangs/" target="_blank" rel="noopener">[Leetcode447]Number_of_Boomerangs</a><br><a href="https://sweetstreet.github.io//2019/11/05/Leetcode448-Find-All-Numbers-Disappeared-in-an-Array/" target="_blank" rel="noopener">[Leetcode448]Find_All_Numbers_Disappeared_in_an_Array</a><br><a href="https://sweetstreet.github.io//2019/11/17/Leetcode456-132-Pattern/" target="_blank" rel="noopener">[Leetcode456]132_Pattern</a><br><a href="https://sweetstreet.github.io//2019/11/10/Leetcode457-Circular-Array-Loop/" target="_blank" rel="noopener">[Leetcode457]Circular_Array_Loop</a><br><a href="https://sweetstreet.github.io//2019/11/06/Leetcode490-The-Maze/" target="_blank" rel="noopener">[Leetcode490]The_Maze</a><br><a href="https://sweetstreet.github.io//2019/10/19/Leetcode498-Diagonal-Traverse/" target="_blank" rel="noopener">[Leetcode498]Diagonal_Traverse</a><br><a href="https://sweetstreet.github.io//2019/11/11/Leetcode518-Coin-Change-2/" target="_blank" rel="noopener">[Leetcode518]Coin_Change_2</a><br><a href="https://sweetstreet.github.io//2019/10/25/Leetcode525-Contiguous-Array/" target="_blank" rel="noopener">[Leetcode525]Contiguous_Array</a><br><a href="https://sweetstreet.github.io//2019/10/25/Leetcode541-Reverse-String-II/" target="_blank" rel="noopener">[Leetcode541]Reverse_String_II</a><br><a href="https://sweetstreet.github.io//2019/10/17/Leetcode542-01-Matrix/" target="_blank" rel="noopener">[Leetcode542]01_Matrix</a><br><a href="https://sweetstreet.github.io//2019/10/23/Leetcode543-Diameter-of-Binary-Tree/" target="_blank" rel="noopener">[Leetcode543]Diameter_of_Binary_Tree</a><br><a href="https://sweetstreet.github.io//2019/10/05/Leetcode560-Subarray-Sum-Equals-K/" target="_blank" rel="noopener">[Leetcode560]Subarray_Sum_Equals_K</a><br><a href="https://sweetstreet.github.io//2019/10/12/Leetcode562-Longest-Line-of-Consecutive-One-in-Matrix/" target="_blank" rel="noopener">[Leetcode562]Longest_Line_of_Consecutive_One_in_Matrix</a><br><a href="https://sweetstreet.github.io//2019/10/08/Leetcode627-Swap-Salary/" target="_blank" rel="noopener">[Leetcode627]Swap_Salary</a><br><a href="https://sweetstreet.github.io//2019/10/17/Leetcode642-Design-Search-Autocomplete-System/" target="_blank" rel="noopener">[Leetcode642]Design_Search_Autocomplete_System</a><br><a href="https://sweetstreet.github.io//2019/11/16/Leetcode659-Split-Array-into-Consecutive-Subsequences/" target="_blank" rel="noopener">[Leetcode659]Split_Array_into_Consecutive_Subsequences</a><br><a href="https://sweetstreet.github.io//2019/10/29/Leetcode673-Number-of-Longest-Increasing-Subsequence/" target="_blank" rel="noopener">[Leetcode673]Number_of_Longest_Increasing_Subsequence</a><br><a href="https://sweetstreet.github.io//2019/10/14/Leetcode678-Valid-Parenthesis-String/" target="_blank" rel="noopener">[Leetcode678]Valid_Parenthesis_String</a><br><a href="https://sweetstreet.github.io//2019/10/13/Leetcode679-24-Game/" target="_blank" rel="noopener">[Leetcode679]24_Game</a><br><a href="https://sweetstreet.github.io//2019/10/05/Leetcode684-Redundant-Connection/" target="_blank" rel="noopener">[Leetcode684]Redundant_Connection</a><br><a href="https://sweetstreet.github.io//2019/11/04/Leetcode708-Insert-into-a-Cyclic-Sorted-List/" target="_blank" rel="noopener">[Leetcode708]Insert_into_a_Cyclic_Sorted_List</a><br><a href="https://sweetstreet.github.io//2019/11/18/Leetcode713-Subarray-Product-Less-Than-K/" target="_blank" rel="noopener">[Leetcode713]Subarray_Product_Less_Than_K</a><br><a href="https://sweetstreet.github.io//2019/10/06/Leetcode715-Range-Module/" target="_blank" rel="noopener">[Leetcode715]Range_Module</a><br><a href="https://sweetstreet.github.io//2019/11/16/Leetcode729-My-Calendar-I/" target="_blank" rel="noopener">[Leetcode729]My_Calendar_I</a><br><a href="https://sweetstreet.github.io//2019/11/16/Leetcode731-My-Calendar-II/" target="_blank" rel="noopener">[Leetcode731]My_Calendar_II</a><br><a href="https://sweetstreet.github.io//2019/10/26/LeetCode742-Closest-Leaf-in-a-Binary-Tree/" target="_blank" rel="noopener">[LeetCode742]Closest_Leaf_in_a_Binary_Tree</a><br><a href="https://sweetstreet.github.io//2019/10/23/Leetcode753-Cracking-the-Safe/" target="_blank" rel="noopener">[Leetcode753]Cracking_the_Safe</a><br><a href="https://sweetstreet.github.io//2019/10/14/Leetcode758-Bold-Words-in-String/" target="_blank" rel="noopener">[Leetcode758]Bold_Words_in_String</a><br><a href="https://sweetstreet.github.io//2019/11/03/Leetcode763-Partition-Labels/" target="_blank" rel="noopener">[Leetcode763]Partition_Labels</a><br><a href="https://sweetstreet.github.io//2019/10/16/Leetcode767-Reorganize-String/" target="_blank" rel="noopener">[Leetcode767]Reorganize_String</a><br><a href="https://sweetstreet.github.io//2019/10/05/Leetcode787-Cheapest-Flights-Within-K-Stops/" target="_blank" rel="noopener">[Leetcode787]Cheapest_Flights_Within_K_Stops</a><br><a href="https://sweetstreet.github.io//2019/10/19/Leetcode794-Valid-Tic-Tac-Toe-State/" target="_blank" rel="noopener">[Leetcode794]Valid_Tic_Tac_Toe_State</a><br><a href="https://sweetstreet.github.io//2019/10/25/Leetcode795-Number-of-Subarrays-with-Bounded-Maximum/" target="_blank" rel="noopener">[Leetcode795]Number_of_Subarrays_with_Bounded_Maximum</a><br><a href="https://sweetstreet.github.io//2019/11/09/Leetcode801-Minimum-Swaps-To-Make-Sequences-Increasing/" target="_blank" rel="noopener">[Leetcode801]Minimum_Swaps_To_Make_Sequences_Increasing</a><br><a href="https://sweetstreet.github.io//2019/11/06/Leetcode809-Expressive-Words/" target="_blank" rel="noopener">[Leetcode809]Expressive_Words</a><br><a href="https://sweetstreet.github.io//2019/10/13/Leetcode823-Binary-Trees-With-Factors/" target="_blank" rel="noopener">[Leetcode823]Binary_Trees_With_Factors</a><br><a href="https://sweetstreet.github.io//2019/10/06/Leetcode825-Friends-Of-Appropriate-Ages/" target="_blank" rel="noopener">[Leetcode825]Friends_Of_Appropriate_Ages</a><br><a href="https://sweetstreet.github.io//2019/10/10/Leetcode837-New-21-Game/" target="_blank" rel="noopener">[Leetcode837]New_21_Game</a><br><a href="https://sweetstreet.github.io//2019/10/18/Leetcode845-Longest-Mountain-in-Array/" target="_blank" rel="noopener">[Leetcode845]Longest_Mountain_in_Array</a><br><a href="https://sweetstreet.github.io//2019/10/06/Leetcode865-Smallest-Subtree-with-all-the-Deepest-Nodes/" target="_blank" rel="noopener">[Leetcode865]Smallest_Subtree_with_all_the_Deepest_Nodes</a><br><a href="https://sweetstreet.github.io//2019/11/09/Leetcode875-Koko-Eating-Bananas/" target="_blank" rel="noopener">[Leetcode875]Koko_Eating_Bananas</a><br><a href="https://sweetstreet.github.io//2019/11/08/Leetcode889-Construct-Binary-Tree-from-Preorder-and-Postorder-Traversal/" target="_blank" rel="noopener">[Leetcode889]Construct_Binary_Tree_from_Preorder_and_Postorder_Traversal</a><br><a href="https://sweetstreet.github.io//2019/10/05/Leetcode890-Find-and-Replace-Pattern/" target="_blank" rel="noopener">[Leetcode890]Find_and_Replace_Pattern</a><br><a href="https://sweetstreet.github.io//2019/11/04/Leetcode912-Sort-an-Array/" target="_blank" rel="noopener">[Leetcode912]Sort_an_Array</a><br><a href="https://sweetstreet.github.io//2019/10/17/Leetcode921-Minimum-Add-to-Make-Parentheses-Valid/" target="_blank" rel="noopener">[Leetcode921]Minimum_Add_to_Make_Parentheses_Valid</a><br><a href="https://sweetstreet.github.io//2019/11/02/Leetcode932-Beautiful-Array/" target="_blank" rel="noopener">[Leetcode932]Beautiful_Array</a><br><a href="https://sweetstreet.github.io//2019/10/25/Leetcode944-Delete-Columns-to-Make-Sorted/" target="_blank" rel="noopener">[Leetcode944]Delete_Columns_to_Make_Sorted</a><br><a href="https://sweetstreet.github.io//2019/11/07/Leetcode947-Most-Stones-Removed-with-Same-Row-or-Column/" target="_blank" rel="noopener">[Leetcode947]Most_Stones_Removed_with_Same_Row_or_Column</a><br><a href="https://sweetstreet.github.io//2019/10/07/Leetcode950-Reveal-Cards-In-Increasing-Order/" target="_blank" rel="noopener">[Leetcode950]Reveal_Cards_In_Increasing_Order</a><br><a href="https://sweetstreet.github.io//2019/10/07/Leetcode951-Flip-Equivalent-Binary-Trees/" target="_blank" rel="noopener">[Leetcode951]Flip_Equivalent_Binary_Trees</a><br><a href="https://sweetstreet.github.io//2019/10/25/Leetcode955-Delete-Columns-to-Make-Sorted-II/" target="_blank" rel="noopener">[Leetcode955]Delete_Columns_to_Make_Sorted_II</a><br><a href="https://sweetstreet.github.io//2019/10/25/Leetcode960-Delete-Columns-to-Make-Sorted-III/" target="_blank" rel="noopener">[Leetcode960]Delete_Columns_to_Make_Sorted_III</a><br><a href="https://sweetstreet.github.io//2019/11/06/Leetcode981-Time-Based-Key-Value-Store/" target="_blank" rel="noopener">[Leetcode981]Time_Based_Key-Value_Store</a><br><a href="https://sweetstreet.github.io//2019/11/03/Leetcode992-Subarrays-with-K-Different-Integers/" target="_blank" rel="noopener">[Leetcode992]Subarrays_with_K_Different_Integers</a><br><a href="https://sweetstreet.github.io//2019/10/16/Leetcode993-Cousins-in-Binary-Tree/" target="_blank" rel="noopener">[Leetcode993]Cousins_in_Binary_Tree</a><br><a href="https://sweetstreet.github.io//2019/11/16/Leetcode996-Number-of-Squareful-Arrays/" target="_blank" rel="noopener">[Leetcode996]Number_of_Squareful_Arrays</a><br><a href="https://sweetstreet.github.io//2019/11/04/Leetcode1007-Minimum-Domino-Rotations-For-Equal-Row/" target="_blank" rel="noopener">[Leetcode1007]Minimum_Domino_Rotations_For_Equal_Row</a><br><a href="https://sweetstreet.github.io//2019/11/08/Leetcode1008-Construct-Binary-Search-Tree-from-Preorder-Traversal/" target="_blank" rel="noopener">[Leetcode1008]Construct_Binary_Search_Tree_from_Preorder_Traversal</a><br><a href="https://sweetstreet.github.io//2019/11/02/Leetcode1027-Longest-Arithmetic-Sequence/" target="_blank" rel="noopener">[Leetcode1027]Longest_Arithmetic_Sequence</a><br><a href="https://sweetstreet.github.io//2019/10/10/Leetcode1057-Campus-Bikes/" target="_blank" rel="noopener">[Leetcode1057]Campus_Bikes</a><br><a href="https://sweetstreet.github.io//2019/11/15/Leetcode1062-Longest-Repeating-Substring/" target="_blank" rel="noopener">[Leetcode1062]Longest_Repeating_Substring</a><br><a href="https://sweetstreet.github.io//2019/10/10/Leetcode1066-Campus-Bikes-II/" target="_blank" rel="noopener">[Leetcode1066]Campus_Bikes_II</a><br><a href="https://sweetstreet.github.io//2019/10/10/Leetcode1087-Brace-Expansion/" target="_blank" rel="noopener">[Leetcode1087]Brace_Expansion</a><br><a href="https://sweetstreet.github.io//2019/11/09/Leetcode1088-Confusing-Number-II/" target="_blank" rel="noopener">[Leetcode1088]Confusing_Number_II</a><br><a href="https://sweetstreet.github.io//2019/10/20/Leetcode1095-Find-in-Mountain-Array/" target="_blank" rel="noopener">[Leetcode1095]Find_in_Mountain_Array</a><br><a href="https://sweetstreet.github.io//2019/10/10/Leetcode1096-Brace-Expansion-II/" target="_blank" rel="noopener">[Leetcode1096]Brace_Expansion_II</a><br><a href="https://sweetstreet.github.io//2019/11/03/Leetcode1102-Path-With-Maximum-Minimum-Value/" target="_blank" rel="noopener">[Leetcode1102]Path_With_Maximum_Minimum_Value</a><br><a href="https://sweetstreet.github.io//2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/" target="_blank" rel="noopener">[Leetcode1110]Delete_Nodes_And_Return_Forest</a><br><a href="https://sweetstreet.github.io//2019/11/16/Leetcode1121-Divide-Array-Into-Increasing-Sequences/" target="_blank" rel="noopener">[Leetcode1121]Divide_Array_Into_Increasing_Sequences</a><br><a href="https://sweetstreet.github.io//2019/10/06/Leetcode1123-Lowest-Common-Ancestor-of-Deepest-Leaves/" target="_blank" rel="noopener">[Leetcode1123]Lowest_Common_Ancestor_of_Deepest_Leaves</a><br><a href="https://sweetstreet.github.io//2019/11/03/Leetcode1135-Connecting-Cities-With-Minimum-Cost/" target="_blank" rel="noopener">[Leetcode1135]Connecting_Cities_With_Minimum_Cost</a><br><a href="https://sweetstreet.github.io//2019/10/28/Leetcode1143-Longest-Common-Subsequence/" target="_blank" rel="noopener">[Leetcode1143]Longest_Common_Subsequence</a><br><a href="https://sweetstreet.github.io//2019/11/06/Leetcode1175-Prime-Arrangements/" target="_blank" rel="noopener">[Leetcode1175]Prime_Arrangements</a><br><a href="https://sweetstreet.github.io//2019/11/14/Leetcode1253-Reconstruct-a-2-Row-Binary-Matrix/" target="_blank" rel="noopener">[Leetcode1253]Reconstruct_a_2-Row_Binary_Matrix</a><br><a href="https://sweetstreet.github.io//2019/11/14/Leetcode1254-Number-of-Closed-Islands/" target="_blank" rel="noopener">[Leetcode1254]Number_of_Closed_Islands</a><br><a href="https://sweetstreet.github.io//2019/11/14/Leetcode1255-Maximum-Score-Words-Formed-by-Letters/" target="_blank" rel="noopener">[Leetcode1255]Maximum_Score_Words_Formed_by_Letters</a></p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/11/all-leetcode-problems/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&text=all_leetcode_problems"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&title=all_leetcode_problems"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&is_video=false&description=all_leetcode_problems"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=all_leetcode_problems&body=Check out this article: http://yoursite.com/2019/10/11/all-leetcode-problems/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&title=all_leetcode_problems"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&title=all_leetcode_problems"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&title=all_leetcode_problems"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&title=all_leetcode_problems"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/11/all-leetcode-problems/&name=all_leetcode_problems&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/10/11/all-leetcode-problems/&t=all_leetcode_problems"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Yu Yuki Liu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-159250400-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="DescriptionDesign a search autocomplete system for a search engine. Users may input a sentence (at least one word and end with a special character ‘#’). For each character they type except ‘#’, you ne">
+<meta name="keywords" content="algorithm,leetcode,Trie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Leetcode642]Design_Search_Autocomplete_System">
+<meta property="og:url" content="http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/index.html">
+<meta property="og:site_name" content="Yu&#39; Blog">
+<meta property="og:description" content="DescriptionDesign a search autocomplete system for a search engine. Users may input a sentence (at least one word and end with a special character ‘#’). For each character they type except ‘#’, you ne">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-02-27T02:10:22.876Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Leetcode642]Design_Search_Autocomplete_System">
+<meta name="twitter:description" content="DescriptionDesign a search autocomplete system for a search engine. Users may input a sentence (at least one word and end with a special character ‘#’). For each character they type except ‘#’, you ne">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>[Leetcode642]Design_Search_Autocomplete_System</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/10/17/Leetcode921-Minimum-Add-to-Make-Parentheses-Valid/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/10/17/Leetcode79-Word-Search/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&text=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&title=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&is_video=false&description=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode642]Design_Search_Autocomplete_System&body=Check out this article: http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&title=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&title=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&title=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&title=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&name=[Leetcode642]Design_Search_Autocomplete_System&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&t=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        [Leetcode642]Design_Search_Autocomplete_System
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Yu' Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-10-17T16:35:44.000Z" itemprop="datePublished">2019-10-17</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Trie/">Trie</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/leetcode/">leetcode</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Design a search autocomplete system for a search engine. Users may input a sentence (at least one word and end with a special character ‘#’). For each character they type except ‘#’, you need to return the top 3 historical hot sentences that have prefix the same as the part of sentence already typed. Here are the specific rules:</p>
+<p>The hot degree for a sentence is defined as the number of times a user typed the exactly same sentence before.<br>The returned top 3 hot sentences should be sorted by hot degree (The first is the hottest one). If several sentences have the same degree of hot, you need to use ASCII-code order (smaller one appears first).<br>If less than 3 hot sentences exist, then just return as many as you can.<br>When the input is a special character, it means the sentence ends, and in this case, you need to return an empty list.<br>Your job is to implement the following functions:</p>
+<p>The constructor function:</p>
+<p>AutocompleteSystem(String[] sentences, int[] times): This is the constructor. The input is historical data. Sentences is a string array consists of previously typed sentences. Times is the corresponding times a sentence has been typed. Your system should record these historical data.</p>
+<p>Now, the user wants to input a new sentence. The following function will provide the next character the user types:</p>
+<p>List<string> input(char c): The input c is the next character typed by the user. The character will only be lower-case letters (‘a’ to ‘z’), blank space (‘ ‘) or a special character (‘#’). Also, the previously typed sentence should be recorded in your system. The output will be the top 3 historical hot sentences that have prefix the same as the part of sentence already typed.</string></p>
+<p>Example:<br>Operation: AutocompleteSystem([“i love you”, “island”,”ironman”, “i love leetcode”], [5,3,2,2])<br>The system have already tracked down the following sentences and their corresponding times:<br>“i love you” : 5 times<br>“island” : 3 times<br>“ironman” : 2 times<br>“i love leetcode” : 2 times<br>Now, the user begins another search:</p>
+<p>Operation: input(‘i’)<br>Output: [“i love you”, “island”,”i love leetcode”]<br>Explanation:<br>There are four sentences that have prefix “i”. Among them, “ironman” and “i love leetcode” have same hot degree. Since ‘ ‘ has ASCII code 32 and ‘r’ has ASCII code 114, “i love leetcode” should be in front of “ironman”. Also we only need to output top 3 hot sentences, so “ironman” will be ignored.</p>
+<p>Operation: input(‘ ‘)<br>Output: [“i love you”,”i love leetcode”]<br>Explanation:<br>There are only two sentences that have prefix “i “.</p>
+<p>Operation: input(‘a’)<br>Output: []<br>Explanation:<br>There are no sentences that have prefix “i a”.</p>
+<p>Operation: input(‘#’)<br>Output: []<br>Explanation:<br>The user finished the input, the sentence “i a” should be saved as a historical sentence in system. And the following input will be counted as a new search.</p>
+<p>Note:</p>
+<p>The input sentence will always start with a letter and end with ‘#’, and only one blank space will exist between two words.<br>The number of complete sentences that to be searched won’t exceed 100. The length of each sentence including those in the historical data won’t exceed 100.<br>Please use double-quote instead of single-quote when you write test cases even for a character input.<br>Please remember to RESET your class variables declared in class AutocompleteSystem, as static/class variables are persisted across multiple test cases. Please see here for more details.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">class AutocompleteSystem &#123;</span><br><span class="line">    class TrieNode implements Comparable&lt;TrieNode&gt;&#123;</span><br><span class="line">        TrieNode[] children;</span><br><span class="line">        String s;</span><br><span class="line">        int times;</span><br><span class="line">        List&lt;TrieNode&gt; hot;</span><br><span class="line">        </span><br><span class="line">        public TrieNode()&#123;</span><br><span class="line">            this.children = new TrieNode[128];</span><br><span class="line">            hot = new ArrayList&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        public int compareTo(TrieNode o)&#123;</span><br><span class="line">            if(this.times == o.times)</span><br><span class="line">                return this.s.compareTo(o.s);</span><br><span class="line">            return o.times - this.times;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        public void update(TrieNode node)&#123;</span><br><span class="line">            if(!this.hot.contains(node))&#123;</span><br><span class="line">                this.hot.add(node);    </span><br><span class="line">            &#125;</span><br><span class="line">            Collections.sort(hot);</span><br><span class="line">            if(hot.size()&gt;3)&#123;</span><br><span class="line">                hot.remove(hot.size()-1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    TrieNode root;</span><br><span class="line">    TrieNode cur;</span><br><span class="line">    StringBuilder sb;</span><br><span class="line">    public AutocompleteSystem(String[] sentences, int[] times) &#123;</span><br><span class="line">        root = new TrieNode();</span><br><span class="line">        cur = root;</span><br><span class="line">        sb = new StringBuilder();</span><br><span class="line">        </span><br><span class="line">        for(int i = 0; i&lt;sentences.length; i++)&#123;</span><br><span class="line">            add(sentences[i], times[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void add(String sentence, int t)&#123;</span><br><span class="line">        TrieNode tmp = root;</span><br><span class="line">        List&lt;TrieNode&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">        for(char c : sentence.toCharArray())&#123;</span><br><span class="line">            if(tmp.children[c] == null)&#123;</span><br><span class="line">                tmp.children[c] = new TrieNode();</span><br><span class="line">            &#125;</span><br><span class="line">            tmp = tmp.children[c];</span><br><span class="line">            list.add(tmp);</span><br><span class="line">        &#125;</span><br><span class="line">        tmp.s = sentence;</span><br><span class="line">        tmp.times += t;</span><br><span class="line">        </span><br><span class="line">        for(TrieNode node:list)&#123;</span><br><span class="line">            node.update(tmp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public List&lt;String&gt; input(char c) &#123;</span><br><span class="line">        List&lt;String&gt; res = new ArrayList&lt;&gt;();</span><br><span class="line">        if(c == &apos;#&apos;)&#123;</span><br><span class="line">            add(sb.toString(),1);</span><br><span class="line">            sb = new StringBuilder();</span><br><span class="line">            cur = root;</span><br><span class="line">            return res;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        sb.append(c);</span><br><span class="line">        if(cur!=null)&#123;</span><br><span class="line">            cur = cur.children[c];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        if(cur == null)&#123;</span><br><span class="line">            return res;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        for(TrieNode hotnode : cur.hot)&#123;</span><br><span class="line">            res.add(hotnode.s);    </span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Your AutocompleteSystem object will be instantiated and called as such:</span><br><span class="line"> * AutocompleteSystem obj = new AutocompleteSystem(sentences, times);</span><br><span class="line"> * List&lt;String&gt; param_1 = obj.input(c);</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&text=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&title=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&is_video=false&description=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode642]Design_Search_Autocomplete_System&body=Check out this article: http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&title=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&title=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&title=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&title=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&name=[Leetcode642]Design_Search_Autocomplete_System&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/10/17/Leetcode642-Design-Search-Autocomplete-System/&t=[Leetcode642]Design_Search_Autocomplete_System"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Yu Yuki Liu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-159250400-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>

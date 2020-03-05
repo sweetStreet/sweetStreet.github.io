@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="DescriptionSerialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection">
+<meta name="keywords" content="algorithm,leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Leetcode297]Serialize_and_Deserialize_Binary_Tree">
+<meta property="og:url" content="http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/index.html">
+<meta property="og:site_name" content="Yu&#39; Blog">
+<meta property="og:description" content="DescriptionSerialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-02-27T02:10:22.855Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Leetcode297]Serialize_and_Deserialize_Binary_Tree">
+<meta name="twitter:description" content="DescriptionSerialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>[Leetcode297]Serialize_and_Deserialize_Binary_Tree</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/11/16/KMP/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/11/16/Leetcode659-Split-Array-into-Consecutive-Subsequences/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&text=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&title=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&is_video=false&description=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode297]Serialize_and_Deserialize_Binary_Tree&body=Check out this article: http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&title=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&title=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&title=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&title=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&name=[Leetcode297]Serialize_and_Deserialize_Binary_Tree&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&t=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-1-BFS"><span class="toc-number">2.1.</span> <span class="toc-text">solution 1 BFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-2-DFS"><span class="toc-number">2.2.</span> <span class="toc-text">solution 2 DFS</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        [Leetcode297]Serialize_and_Deserialize_Binary_Tree
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Yu' Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-11-16T22:14:07.000Z" itemprop="datePublished">2019-11-16</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/leetcode/">leetcode</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.</p>
+<p>Design an algorithm to serialize and deserialize a binary tree. There is no restriction on how your serialization/deserialization algorithm should work. You just need to ensure that a binary tree can be serialized to a string and this string can be deserialized to the original tree structure.</p>
+<p>Example: </p>
+<pre>
+You may serialize the following tree:
+
+    1
+   / \
+  2   3
+     / \
+    4   5
+
+as "[1,2,3,null,null,4,5]"
+Clarification: The above format is the same as how LeetCode serializes a binary tree. You do not necessarily need to follow this format, so please be creative and come up with different approaches yourself.
+</pre>
+<p>Note: Do not use class member/global/static variables to store states. Your serialize and deserialize algorithms should be stateless.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>这是一道设计题，要想好怎样存一些节点，并且把他们变成string后加入什么样的分隔符，对于存在null的情况又应该怎么处理</p>
+<h3 id="solution-1-BFS"><a href="#solution-1-BFS" class="headerlink" title="solution 1 BFS"></a>solution 1 BFS</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line">public class Codec &#123;</span><br><span class="line">    ArrayList&lt;TreeNode&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    // Encodes a tree to a single string.</span><br><span class="line">    public String serialize(TreeNode root) &#123;</span><br><span class="line">        StringBuilder sb = new StringBuilder();</span><br><span class="line">        //layer</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = new LinkedList&lt;&gt;();</span><br><span class="line">        if(root!=null)</span><br><span class="line">            queue.add(root);</span><br><span class="line">        while(!queue.isEmpty())&#123;</span><br><span class="line"></span><br><span class="line">            TreeNode node = queue.poll();</span><br><span class="line">            if(node != null)&#123;</span><br><span class="line">                sb.append(node.val+&quot;,&quot;);</span><br><span class="line">                queue.add(node.left);</span><br><span class="line">                queue.add(node.right);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                sb.append(&quot;#,&quot;);</span><br><span class="line">            &#125;    </span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        return sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Decodes your encoded data to tree.</span><br><span class="line">    public TreeNode deserialize(String data) &#123;</span><br><span class="line">        //todo: ignore element &quot;&quot;</span><br><span class="line">        String[] list = data.split(&quot;,&quot;); </span><br><span class="line">        Queue&lt;TreeNode&gt; queue=  new LinkedList&lt;&gt;();</span><br><span class="line">        TreeNode root;</span><br><span class="line">        if(!list[0].equals(&quot;&quot;))&#123;</span><br><span class="line">            root = new TreeNode(Integer.parseInt(list[0]));</span><br><span class="line">            queue.add(root);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        int index = 1;</span><br><span class="line">        while(!queue.isEmpty() &amp;&amp; index&lt;list.length-1)&#123;</span><br><span class="line">            TreeNode node = queue.poll();</span><br><span class="line">            if(list[index].equals(&quot;&quot;))&#123;</span><br><span class="line">                index++;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            if(list[index].equals(&quot;#&quot;))&#123;</span><br><span class="line">                node.left = null;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                TreeNode leftnode = new TreeNode(Integer.parseInt(list[index]));</span><br><span class="line">                node.left = leftnode;</span><br><span class="line">                queue.add(leftnode);</span><br><span class="line">            &#125;</span><br><span class="line">            index++;</span><br><span class="line">            </span><br><span class="line">            if(list[index].equals(&quot;#&quot;))&#123;</span><br><span class="line">                node.right = null;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                TreeNode rightnode = new TreeNode(Integer.parseInt(list[index]));</span><br><span class="line">                node.right = rightnode;</span><br><span class="line">                queue.add(rightnode);</span><br><span class="line">            &#125;</span><br><span class="line">            index++;</span><br><span class="line">        &#125;</span><br><span class="line">        return root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Your Codec object will be instantiated and called as such:</span><br><span class="line">// Codec codec = new Codec();</span><br><span class="line">// codec.deserialize(codec.serialize(root));</span><br></pre></td></tr></table></figure>
+
+<h3 id="solution-2-DFS"><a href="#solution-2-DFS" class="headerlink" title="solution 2 DFS"></a>solution 2 DFS</h3><p>preorder的顺序放进去的，感受一下怎么用queue。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line">public class Codec &#123;</span><br><span class="line"></span><br><span class="line">    // Encodes a tree to a single string.</span><br><span class="line">    public String serialize(TreeNode root) &#123;</span><br><span class="line">        if(root == null)&#123;</span><br><span class="line">            return &quot;#&quot;;   </span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            //inorder</span><br><span class="line">            String left = serialize(root.left);</span><br><span class="line">            String right = serialize(root.right);</span><br><span class="line">            return root.val+&quot;,&quot;+left+&quot;,&quot;+right;</span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Decodes your encoded data to tree.</span><br><span class="line">    public TreeNode deserialize(String data) &#123;</span><br><span class="line">        </span><br><span class="line">        String[] list = data.split(&quot;,&quot;);   </span><br><span class="line">        Queue&lt;String&gt; dataarray = new LinkedList&lt;&gt;();</span><br><span class="line">        for(int i = 0; i&lt;list.length; i++)&#123;</span><br><span class="line">            if(!list[i].equals(&quot;&quot;))&#123;</span><br><span class="line">                dataarray.add(list[i]); </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return helper(dataarray);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public TreeNode helper(Queue&lt;String&gt; data)&#123;</span><br><span class="line">        String s = data.poll();</span><br><span class="line">        if(s.equals(&quot;#&quot;))&#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            TreeNode node = new TreeNode(Integer.parseInt(s));</span><br><span class="line">            node.left = helper(data);</span><br><span class="line">            node.right = helper(data);</span><br><span class="line">            return node;</span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-1-BFS"><span class="toc-number">2.1.</span> <span class="toc-text">solution 1 BFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution-2-DFS"><span class="toc-number">2.2.</span> <span class="toc-text">solution 2 DFS</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&text=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&title=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&is_video=false&description=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode297]Serialize_and_Deserialize_Binary_Tree&body=Check out this article: http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&title=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&title=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&title=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&title=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&name=[Leetcode297]Serialize_and_Deserialize_Binary_Tree&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/11/16/Leetcode297-Serialize-and-Deserialize-Binary-Tree/&t=[Leetcode297]Serialize_and_Deserialize_Binary_Tree"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Yu Yuki Liu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-159250400-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>

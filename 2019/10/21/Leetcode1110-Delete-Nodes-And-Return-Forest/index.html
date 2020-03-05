@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="solution:删除节点，底层节点被删除是不会影响上层节点，所以用post order 123456789101112131415161718192021222324252627282930313233343536373839404142434445/** * Definition for a binary tree node. * public class TreeNode &amp;#123; *">
+<meta name="keywords" content="algorithm,leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Leetcode1110]Delete_Nodes_And_Return_Forest">
+<meta property="og:url" content="http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/index.html">
+<meta property="og:site_name" content="Yu&#39; Blog">
+<meta property="og:description" content="solution:删除节点，底层节点被删除是不会影响上层节点，所以用post order 123456789101112131415161718192021222324252627282930313233343536373839404142434445/** * Definition for a binary tree node. * public class TreeNode &amp;#123; *">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-02-27T02:10:22.833Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Leetcode1110]Delete_Nodes_And_Return_Forest">
+<meta name="twitter:description" content="solution:删除节点，底层节点被删除是不会影响上层节点，所以用post order 123456789101112131415161718192021222324252627282930313233343536373839404142434445/** * Definition for a binary tree node. * public class TreeNode &amp;#123; *">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>[Leetcode1110]Delete_Nodes_And_Return_Forest</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/10/23/Leetcode753-Cracking-the-Safe/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/10/21/Leetcode351-Android-Unlock-Patterns/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&text=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&title=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&is_video=false&description=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode1110]Delete_Nodes_And_Return_Forest&body=Check out this article: http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&title=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&title=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&title=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&title=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&name=[Leetcode1110]Delete_Nodes_And_Return_Forest&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&t=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        [Leetcode1110]Delete_Nodes_And_Return_Forest
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Yu' Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-10-22T04:12:20.000Z" itemprop="datePublished">2019-10-21</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/leetcode/">leetcode</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>solution:<br>删除节点，底层节点被删除是不会影响上层节点，所以用post order</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">    List&lt;TreeNode&gt; res = new ArrayList&lt;TreeNode&gt;();</span><br><span class="line">    public List&lt;TreeNode&gt; delNodes(TreeNode root, int[] to_delete) &#123;</span><br><span class="line">        List&lt;Integer&gt; deletelist = new ArrayList&lt;Integer&gt;();</span><br><span class="line">        for(int i =0; i&lt;to_delete.length; i++)&#123;</span><br><span class="line">            deletelist.add(to_delete[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        if(!deletelist.contains(root.val))&#123;</span><br><span class="line">            res.add(root);       </span><br><span class="line">        &#125;</span><br><span class="line">        helper(root, deletelist);</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public TreeNode helper(TreeNode cur, List&lt;Integer&gt; deletelist)&#123;</span><br><span class="line">        if(cur == null) return null;</span><br><span class="line">        </span><br><span class="line">        TreeNode left = helper(cur.left, deletelist);</span><br><span class="line">        TreeNode right = helper(cur.right, deletelist);</span><br><span class="line">        </span><br><span class="line">        cur.left = left;</span><br><span class="line">        cur.right = right;</span><br><span class="line"></span><br><span class="line">        if(deletelist.contains(cur.val))&#123;</span><br><span class="line">            if(left != null)&#123;           </span><br><span class="line">                res.add(left);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            if(right != null)&#123;</span><br><span class="line">                res.add(right);</span><br><span class="line">            &#125;</span><br><span class="line">            cur = null;</span><br><span class="line">        &#125;</span><br><span class="line">        return cur;</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&text=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&title=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&is_video=false&description=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode1110]Delete_Nodes_And_Return_Forest&body=Check out this article: http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&title=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&title=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&title=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&title=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&name=[Leetcode1110]Delete_Nodes_And_Return_Forest&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/10/21/Leetcode1110-Delete-Nodes-And-Return-Forest/&t=[Leetcode1110]Delete_Nodes_And_Return_Forest"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Yu Yuki Liu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-159250400-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="DescriptionGiven a list of directory info including directory path, and all the files with contents in this directory, you need to find out all the groups of duplicate files in the file system in term">
+<meta name="keywords" content="algorithm,leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Leetcode609]Find_Duplicate_File_in_System">
+<meta property="og:url" content="http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/index.html">
+<meta property="og:site_name" content="Yu&#39; Blog">
+<meta property="og:description" content="DescriptionGiven a list of directory info including directory path, and all the files with contents in this directory, you need to find out all the groups of duplicate files in the file system in term">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-02-27T02:10:22.874Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Leetcode609]Find_Duplicate_File_in_System">
+<meta name="twitter:description" content="DescriptionGiven a list of directory info including directory path, and all the files with contents in this directory, you need to find out all the groups of duplicate files in the file system in term">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>[Leetcode609]Find_Duplicate_File_in_System</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/12/06/Leetcode497-Random-Point-in-Non-overlapping-Rectangles/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/12/04/Leetcode324-Wiggle-Sort-II/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&text=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&title=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&is_video=false&description=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode609]Find_Duplicate_File_in_System&body=Check out this article: http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&title=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&title=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&title=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&title=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&name=[Leetcode609]Find_Duplicate_File_in_System&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&t=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        [Leetcode609]Find_Duplicate_File_in_System
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Yu' Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-12-06T14:53:00.000Z" itemprop="datePublished">2019-12-06</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/leetcode/">leetcode</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a list of directory info including directory path, and all the files with contents in this directory, you need to find out all the groups of duplicate files in the file system in terms of their paths.</p>
+<p>A group of duplicate files consists of at least two files that have exactly the same content.</p>
+<p>A single directory info string in the input list has the following format:</p>
+<p>“root/d1/d2/…/dm f1.txt(f1_content) f2.txt(f2_content) … fn.txt(fn_content)”</p>
+<p>It means there are n files (f1.txt, f2.txt … fn.txt with content f1_content, f2_content … fn_content, respectively) in directory root/d1/d2/…/dm. Note that n &gt;= 1 and m &gt;= 0. If m = 0, it means the directory is just the root directory.</p>
+<p>The output is a list of group of duplicate file paths. For each group, it contains all the file paths of the files that have the same content. A file path is a string that has the following format:</p>
+<p>“directory_path/file_name.txt”</p>
+<p>Example 1:</p>
+<p>Input:<br>[“root/a 1.txt(abcd) 2.txt(efgh)”, “root/c 3.txt(abcd)”, “root/c/d 4.txt(efgh)”, “root 4.txt(efgh)”]<br>Output:<br>[[“root/a/2.txt”,”root/c/d/4.txt”,”root/4.txt”],[“root/a/1.txt”,”root/c/3.txt”]]</p>
+<p>Note:</p>
+<p>No order is required for the final output.<br>You may assume the directory name, file name and file content only has letters and digits, and the length of file content is in the range of [1,50].<br>The number of files given is in the range of [1,20000].<br>You may assume no files or directories share the same name in the same directory.<br>You may assume each given directory info represents a unique directory. Directory path and file info are separated by a single blank space.</p>
+<p>Follow-up beyond contest:<br>Imagine you are given a real file system, how will you search files? DFS or BFS?<br>If the file content is very large (GB level), how will you modify your solution?<br>If you can only read the file by 1kb each time, how will you modify your solution?<br>What is the time complexity of your modified solution? What is the most time-consuming part and memory consuming part of it? How to optimize?<br>How to make sure the duplicated files you find are not false positive?</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>这道题的解题部分不难，用hashmap存储这种对应关系就OK<br>关于follow up<br>采用BFS遍历，因为BFS遍历的时候同一目录的文件会被相邻访问，省去了不断切换目录的时间。然后基本的思路不变，但是因为面对GB级别的文件，因此不能再使用整个文件内容作为哈希的key了。我认为应该使用文件大小+抽关键值MD5作为查重的手段。文件大小就是简单地记录文件所占空间。抽关键值MD5是指，对于一个很大的文件，我从文件头等间隔到文件尾抽取10个1KB大小的序列值，然后对这10KB的数据计算MD5，如果文件大小一样且MD5一样，我们就认为他是同一个文件。这样做系统的瓶颈不是在计算时间而是在文件的IO上，因此需要提高文件的IO速度才能比较大的优化系统速度。而且这样做不能保证完全正确，因为MD5的值可能会有冲突，因此在加一层文件大小的判断把冲突的几率降到比较低。</p>
+<p>1）如果是一个真实的文件系统，那么其实DFS和BFS搜索都是可以的。不同点在于用DFS搜索时，如果文件深度太深，那么可能会需要占用较大的内存栈空间；用BFS时，如果每个文件夹下面的文件夹数量太多，则队列可能会比较长，因此也会占用较大的内存空间。</p>
+<p>2）如果文件内容过大，那么显然就不能将文件内容直接作为哈希表的key了。我觉得有几种可能的改进方法：a）用MD5算法（或者其它类似的算法）生成文件内容对应的key，然后用这个key作为哈希表的key；2）采用多次哈希的方法，例如第一次用fn_content的长度来作为key，第二次处理的时候，在长度相同的文件列表中，再用MD5算法判断文件内容是不是相同。这样做的好处在于第一次哈希的时候，就排除了大量内容大小不同的文件，从而使得需要用MD5算法的文件数目大大减少，从而提高效率。</p>
+<p>3）那就每读进来1kb的数据，做一次MD5吧，最后把所有的MD5结果生成一个向量，或者再次MD5，用最终结果来作为哈希表的key。</p>
+<p>4）如果认为平均每个文件夹下面有常数个文件（夹），那么修改后的算法的时间复杂度就是O(file_counts * avg_file_length)，其中file_counts表示文件系统中所有的文件个数；avg_file_length表示平均文件长度。最耗时的有可能是两部分：a）遍历文件的部分（如果文件数量特别大）；b）读取每个文件内容的部分（如果每个文件特别大）。要优化，那么除了采用3）中的方法之外，还可以采用并行化方法来处理。例如遍历文件的时候，采用多线程或者map reduce的思路进行并行，最后再合成所有的结果。读取每个文件内容的时候，也可以采用多线程（需要硬盘支持了，有这样的硬盘吗？）。</p>
+<p>5）再牛逼的哈希算法也不能保证完全消除冲突，那么为了make sure，就只好最后对结果采用最笨的方法进行double check了。。。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;List&lt;String&gt;&gt; findDuplicate(String[] paths) &#123;</span><br><span class="line">        HashMap&lt;String, List&lt;String&gt;&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">        List&lt;List&lt;String&gt;&gt; result = new ArrayList&lt;&gt;();</span><br><span class="line">        for(String path : paths)&#123;</span><br><span class="line">            String[] array = path.split(&quot; &quot;);</span><br><span class="line">            //directory</span><br><span class="line">            if(array.length&gt;1)&#123;              </span><br><span class="line">                for(int i = 1; i&lt;array.length; i++)&#123;</span><br><span class="line">                    String content = array[i].substring(array[i].indexOf(&apos;(&apos;), array[i].length()-1);</span><br><span class="line">                    List&lt;String&gt; list  = map.getOrDefault(content, new ArrayList&lt;&gt;());</span><br><span class="line">                    list.add(array[0]+&quot;/&quot;+array[i].substring(0, array[i].indexOf(&apos;(&apos;))); </span><br><span class="line">                    map.put(content, list);</span><br><span class="line">                &#125;  </span><br><span class="line">                //file</span><br><span class="line">            &#125;else if(array.length == 1)&#123;</span><br><span class="line">                String content = array[0].substring(array[0].indexOf(&apos;(&apos;), array[0].length()-1);</span><br><span class="line">                List&lt;String&gt; list  = map.getOrDefault(content, new ArrayList&lt;&gt;());</span><br><span class="line">                list.add(array[0].substring(0, array[0].indexOf(&apos;(&apos;))); </span><br><span class="line">                map.put(content, list);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;   </span><br><span class="line">        for(String key:map.keySet())&#123;</span><br><span class="line">            if(map.get(key).size()&gt;1)</span><br><span class="line">                result.add(map.get(key));    </span><br><span class="line">        &#125;</span><br><span class="line">            </span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&text=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&title=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&is_video=false&description=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode609]Find_Duplicate_File_in_System&body=Check out this article: http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&title=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&title=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&title=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&title=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&name=[Leetcode609]Find_Duplicate_File_in_System&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/12/06/Leetcode609-Find-Duplicate-File-in-System/&t=[Leetcode609]Find_Duplicate_File_in_System"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Yu Yuki Liu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-159250400-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
