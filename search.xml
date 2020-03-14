@@ -4,6 +4,133 @@
   
     
     <entry>
+      <title>g</title>
+      <link href="/2020/03/13/g/"/>
+      <url>/2020/03/13/g/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode2]Add_Two_Numbers</title>
+      <link href="/2020/03/12/Leetcode2-Add-Two-Numbers/"/>
+      <url>/2020/03/12/Leetcode2-Add-Two-Numbers/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p><p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p><p>Example:</p><p>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>Output: 7 -&gt; 0 -&gt; 8<br>Explanation: 342 + 465 = 807.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">def addTwoNumbers(self, l1: ListNode, l2: ListNode) -&gt; ListNode:</span><br><span class="line">    head &#x3D; ListNode(0)</span><br><span class="line">    cur &#x3D; head</span><br><span class="line">    carry &#x3D; 0</span><br><span class="line">    while l1 or l2:</span><br><span class="line">        val1 &#x3D; l1.val if l1 else 0</span><br><span class="line">        val2 &#x3D; l2.val if l2 else 0</span><br><span class="line">        carry, out &#x3D; divmod(val1+val2+carry, 10)</span><br><span class="line">        cur.next &#x3D; ListNode(out)</span><br><span class="line">        cur &#x3D; cur.next</span><br><span class="line">        l1 &#x3D; l1.next if l1 else None</span><br><span class="line">        l2 &#x3D; l2.next if l2 else None</span><br><span class="line">        </span><br><span class="line">    if carry &gt; 0:</span><br><span class="line">        cur.next &#x3D; ListNode(carry)</span><br><span class="line">        </span><br><span class="line">    return head.next;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode1]Two_Sum</title>
+      <link href="/2020/03/12/Leetcode1-Two-Sum/"/>
+      <url>/2020/03/12/Leetcode1-Two-Sum/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p><p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p><p>Example:</p><p>Given nums = [2, 7, 11, 15], target = 9,</p><p>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>用hashmap存数值和index的对应</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def twoSum(self, nums: List[int], target: int) -&gt; List[int]:</span><br><span class="line">        h &#x3D; &#123;&#125;</span><br><span class="line">        for i,num in enumerate(nums):</span><br><span class="line">            n &#x3D; target -num</span><br><span class="line">            if n not in h:</span><br><span class="line">                h[num] &#x3D;i</span><br><span class="line">            else:</span><br><span class="line">                return [h[n],i]</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode1373]Maximum_Sum_BST_in_Binary_Tree</title>
+      <link href="/2020/03/12/Leetcode1373-Maximum-Sum-BST-in-Binary-Tree/"/>
+      <url>/2020/03/12/Leetcode1373-Maximum-Sum-BST-in-Binary-Tree/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a binary tree root, the task is to return the maximum sum of all keys of any sub-tree which is also a Binary Search Tree (BST).</p><p>Assume a BST is defined as follows:</p><p>The left subtree of a node contains only nodes with keys less than the node’s key.<br>The right subtree of a node contains only nodes with keys greater than the node’s key.<br>Both the left and right subtrees must also be binary search trees.</p><p>Example 1:<br><img src="https://assets.leetcode.com/uploads/2020/01/30/sample_1_1709.png" alt=""><br>Input: root = [1,4,3,2,4,2,5,null,null,null,null,null,null,4,6]<br>Output: 20<br>Explanation: Maximum sum in a valid Binary search tree is obtained in root node with key equal to 3.</p><p>Example 2:<br><img src="https://assets.leetcode.com/uploads/2020/01/30/sample_2_1709.png" alt=""><br>Input: root = [4,3,null,1,2]<br>Output: 2<br>Explanation: Maximum sum in a valid Binary search tree is obtained in a single root node with key equal to 2.</p><p>Example 3:<br>Input: root = [-4,-2,-5]<br>Output: 0<br>Explanation: All values are negatives. Return an empty BST.</p><p>Example 4:<br>Input: root = [2,1,3]<br>Output: 6</p><p>Example 5:<br>Input: root = [5,4,8,3,null,6,3]<br>Output: 7</p><p>Constraints:</p><p>Each tree has at most 40000 nodes..<br>Each node’s value is between [-4 * 10^4 , 4 * 10^4].</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>构建一个data structure (isBST, max, min, sum)<br>dfs</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"># Definition for a binary tree node.</span><br><span class="line"># class TreeNode:</span><br><span class="line">#     def __init__(self, x):</span><br><span class="line">#         self.val &#x3D; x</span><br><span class="line">#         self.left &#x3D; None</span><br><span class="line">#         self.right &#x3D; None</span><br><span class="line"></span><br><span class="line">class Solution:</span><br><span class="line">    def maxSumBST(self, root: TreeNode) -&gt; int:</span><br><span class="line">        self.res &#x3D; 0</span><br><span class="line"></span><br><span class="line">        def dfs(cur):</span><br><span class="line">            if not cur:</span><br><span class="line">                return [True, 0, 0, 0]</span><br><span class="line">            left &#x3D; dfs(cur.left)</span><br><span class="line">            right &#x3D; dfs(cur.right)</span><br><span class="line">            if left[0] and right[0] and (not cur.left or cur.val&gt;left[1]) and (not cur.right or cur.val&lt;right[2]):</span><br><span class="line">                if cur.right:</span><br><span class="line">                    tmp_max &#x3D; right[1]</span><br><span class="line">                else:</span><br><span class="line">                    tmp_max &#x3D; cur.val</span><br><span class="line">                if cur.left:</span><br><span class="line">                    tmp_min &#x3D; left[2]</span><br><span class="line">                else:</span><br><span class="line">                    tmp_min &#x3D; cur.val</span><br><span class="line">                </span><br><span class="line">                tmp_sum &#x3D; left[3] + right[3] + cur.val</span><br><span class="line">                self.res &#x3D; max(tmp_sum, self.res)</span><br><span class="line">                return [True, tmp_max, tmp_min, tmp_sum]</span><br><span class="line">            else:</span><br><span class="line">                return [False, 0, 0, 0]</span><br><span class="line">            </span><br><span class="line">        dfs(root)</span><br><span class="line">        return self.res</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode1376]Time_Needed_to_Inform_All_Employees</title>
+      <link href="/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/"/>
+      <url>/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>A company has n employees with a unique ID for each employee from 0 to n - 1. The head of the company has is the one with headID.</p><p>Each employee has one direct manager given in the manager array where manager[i] is the direct manager of the i-th employee, manager[headID] = -1. Also it’s guaranteed that the subordination relationships have a tree structure.</p><p>The head of the company wants to inform all the employees of the company of an urgent piece of news. He will inform his direct subordinates and they will inform their subordinates and so on until all employees know about the urgent news.</p><p>The i-th employee needs informTime[i] minutes to inform all of his direct subordinates (i.e After informTime[i] minutes, all his direct subordinates can start spreading the news).</p><p>Return the number of minutes needed to inform all the employees about the urgent news.</p><p>Example 1:<br>Input: n = 1, headID = 0, manager = [-1], informTime = [0]<br>Output: 0<br>Explanation: The head of the company is the only employee in the company.</p><p>Example 2:<br><img src="https://assets.leetcode.com/uploads/2020/02/27/graph.png" alt=""><br>Input: n = 6, headID = 2, manager = [2,2,-1,2,2,2], informTime = [0,0,1,0,0,0]<br>Output: 1<br>Explanation: The head of the company with id = 2 is the direct manager of all the employees in the company and needs 1 minute to inform them all.<br>The tree structure of the employees in the company is shown.</p><p>Example 3:<br><img src="https://assets.leetcode.com/uploads/2020/02/28/1730_example_3_5.PNG" alt=""><br>Input: n = 7, headID = 6, manager = [1,2,3,4,5,6,-1], informTime = [0,6,5,4,3,2,1]<br>Output: 21<br>Explanation: The head has id = 6. He will inform employee with id = 5 in 1 minute.<br>The employee with id = 5 will inform the employee with id = 4 in 2 minutes.<br>The employee with id = 4 will inform the employee with id = 3 in 3 minutes.<br>The employee with id = 3 will inform the employee with id = 2 in 4 minutes.<br>The employee with id = 2 will inform the employee with id = 1 in 5 minutes.<br>The employee with id = 1 will inform the employee with id = 0 in 6 minutes.<br>Needed time = 1 + 2 + 3 + 4 + 5 + 6 = 21.</p><p>Example 4:<br>Input: n = 15, headID = 0, manager = [-1,0,0,1,1,2,2,3,3,4,4,5,5,6,6], informTime = [1,1,1,1,1,1,1,0,0,0,0,0,0,0,0]<br>Output: 3<br>Explanation: The first minute the head will inform employees 1 and 2.<br>The second minute they will inform employees 3, 4, 5 and 6.<br>The third minute they will inform the rest of employees.</p><p>Example 5:<br>Input: n = 4, headID = 2, manager = [3,3,-1,2], informTime = [0,0,162,914]<br>Output: 1076</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Answer is the max time a leaf node needs to be informed.<br><img src="https://pic.leetcode-cn.com/5ed3aac62be83952392b9dfaa231dccf220d7d56a683d1a11551d4d0582a59e1-%E5%9B%BE%E7%89%87.png" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def numOfMinutes(self, n: int, headID: int, manager: List[int], informTime: List[int]) -&gt; int:</span><br><span class="line">        toRootMin &#x3D; [0 for _ in range(n)]</span><br><span class="line">        def dfs(x):</span><br><span class="line">            if x &#x3D;&#x3D; headID:</span><br><span class="line">                return 0</span><br><span class="line">            if toRootMin[x] !&#x3D; 0:</span><br><span class="line">                return toRootMin[x]</span><br><span class="line">            fa &#x3D; manager[x]</span><br><span class="line">            if toRootMin[fa] !&#x3D; 0:</span><br><span class="line">                toRootMin[x] &#x3D; toRootMin[fa] + informTime[fa]</span><br><span class="line">            else:</span><br><span class="line">                toRootMin[x] &#x3D; dfs(fa)+informTime[fa]</span><br><span class="line">            return toRootMin[x]</span><br><span class="line">            </span><br><span class="line">        maxTime &#x3D; 0</span><br><span class="line">        for i in range(n):</span><br><span class="line">            # only consider leaf node</span><br><span class="line">            if informTime[i] &#x3D;&#x3D; 0:</span><br><span class="line">                tmp &#x3D; dfs(i)</span><br><span class="line">                if maxTime &lt; tmp:</span><br><span class="line">                    maxTime &#x3D; tmp</span><br><span class="line">        return maxTime</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode1377]Frog_Position_After_T_Seconds</title>
+      <link href="/2020/03/09/Leetcode1377-Frog-Position-After-T-Seconds/"/>
+      <url>/2020/03/09/Leetcode1377-Frog-Position-After-T-Seconds/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an undirected tree consisting of n vertices numbered from 1 to n. A frog starts jumping from the vertex 1. In one second, the frog jumps from its current vertex to another unvisited vertex if they are directly connected. The frog can not jump back to a visited vertex. In case the frog can jump to several vertices it jumps randomly to one of them with the same probability, otherwise, when the frog can not jump to any unvisited vertex it jumps forever on the same vertex. </p><p>The edges of the undirected tree are given in the array edges, where edges[i] = [fromi, toi] means that exists an edge connecting directly the vertices fromi and toi.</p><p>Return the probability that after t seconds the frog is on the vertex target.</p><p><img src="https://assets.leetcode.com/uploads/2020/02/20/frog_2.png" alt=""><br>Input: n = 7, edges = [[1,2],[1,3],[1,7],[2,4],[2,6],[3,5]], t = 2, target = 4<br>Output: 0.16666666666666666<br>Explanation: The figure above shows the given graph. The frog starts at vertex 1, jumping with 1/3 probability to the vertex 2 after second 1 and then jumping with 1/2 probability to vertex 4 after second 2. Thus the probability for the frog is on the vertex 4 after 2 seconds is 1/3 * 1/2 = 1/6 = 0.16666666666666666. </p><p><img src="https://assets.leetcode.com/uploads/2020/02/20/frog_3.png" alt=""><br>Input: n = 7, edges = [[1,2],[1,3],[1,7],[2,4],[2,6],[3,5]], t = 1, target = 7<br>Output: 0.3333333333333333<br>Explanation: The figure above shows the given graph. The frog starts at vertex 1, jumping with 1/3 = 0.3333333333333333 probability to the vertex 7 after second 1. </p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">from collections import defaultdict</span><br><span class="line"></span><br><span class="line">class Solution:</span><br><span class="line">    def helper(self, node, k, target, A, visited):</span><br><span class="line">        visited.add(node)</span><br><span class="line">        m &#x3D; sum(i not in visited for i in A[node])</span><br><span class="line">        if k * m &#x3D;&#x3D; 0:</span><br><span class="line">            return node &#x3D;&#x3D; target</span><br><span class="line">        else:</span><br><span class="line">            return sum(self.helper(i, k-1, target, A, visited) for i in A[node] if i not in visited)&#x2F;m</span><br><span class="line"></span><br><span class="line">    def frogPosition(self, n: int, edges: List[List[int]], t: int, target: int) -&gt; float:</span><br><span class="line">        A &#x3D; defaultdict(list)</span><br><span class="line">        for i, j in edges:</span><br><span class="line">            A[i].append(j)</span><br><span class="line">            A[j].append(i)</span><br><span class="line">        visited &#x3D; set()</span><br><span class="line">        return self.helper(1, t, target, A, visited)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode388]Longest_Absolute_File_Path</title>
+      <link href="/2020/03/09/Leetcode388-Longest-Absolute-File-Path/"/>
+      <url>/2020/03/09/Leetcode388-Longest-Absolute-File-Path/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Suppose we abstract our file system by a string in the following manner:</p><p>The string “dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext” represents:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dir</span><br><span class="line">    subdir1</span><br><span class="line">    subdir2</span><br><span class="line">        file.ext</span><br></pre></td></tr></table></figure><p>The directory dir contains an empty sub-directory subdir1 and a sub-directory subdir2 containing a file file.ext.</p><p>The string “dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext” represents:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dir</span><br><span class="line">    subdir1</span><br><span class="line">        file1.ext</span><br><span class="line">        subsubdir1</span><br><span class="line">    subdir2</span><br><span class="line">        subsubdir2</span><br><span class="line">            file2.ext</span><br></pre></td></tr></table></figure><p>The directory dir contains two sub-directories subdir1 and subdir2. subdir1 contains a file file1.ext and an empty second-level sub-directory subsubdir1. subdir2 contains a second-level sub-directory subsubdir2 containing a file file2.ext.</p><p>We are interested in finding the longest (number of characters) absolute path to a file within our file system. For example, in the second example above, the longest absolute path is “dir/subdir2/subsubdir2/file2.ext”, and its length is 32 (not including the double quotes).</p><p>Given a string representing the file system in the above format, return the length of the longest absolute path to file in the abstracted file system. If there is no file in the system, return 0.</p><p>Note:<br>The name of a file contains at least a . and an extension.<br>The name of a directory or sub-directory will not contain a ..<br>Time complexity required: O(n) where n is the size of the input string.</p><p>Notice that a/aa/aaa/file1.txt is not the longest file path, if there is another path aaaaaaaaaaaaaaaaaaaaa/sth.png.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>用hashmap来建立深度和当前深度的绝对路径长度之间的映射。<br>遍历整个字符串，遇到\n或者\t就停下来；如果遇到的是\n，我们把这段文件名取出来；如果包含’.’，说明是文件，与最大长度比较；如果不包含’.’，说明是文件夹，深度level自增1，建立当前深度和总长度之间的映射，然后将深度level重置为0。之前如果遇到的是\t，那么深度level加1，通过累加\t的个数，可以得知当前文件或文件夹的深度，然后做对应的处理。<br>这题用stack也可以但是stack的时间复杂度比hashmap大。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def lengthLongestPath(self, input: str) -&gt; int:</span><br><span class="line">        maxlen &#x3D; 0</span><br><span class="line">        depthdict &#x3D; &#123;0:0&#125;</span><br><span class="line">        for line in input.splitlines():</span><br><span class="line">            name &#x3D; line.lstrip(&#39;\t&#39;)</span><br><span class="line">            depth &#x3D; len(line) - len(name)</span><br><span class="line">            if &#39;.&#39; in name:</span><br><span class="line">                maxlen &#x3D; max(maxlen, depthdict[depth] + len(name))</span><br><span class="line">            else:</span><br><span class="line">                depthdict[depth+1] &#x3D; depthdict[depth] + len(name) + 1</span><br><span class="line">        return maxlen</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>[Leetcode1007]Minimum_Domino_Rotations_For_Equal_Row</title>
       <link href="/2020/03/04/Leetcode1007-Minimum-Domino-Rotations-For-Equal-Row/"/>
       <url>/2020/03/04/Leetcode1007-Minimum-Domino-Rotations-For-Equal-Row/</url>

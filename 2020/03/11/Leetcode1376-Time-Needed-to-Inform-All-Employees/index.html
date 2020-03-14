@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="DescriptionA company has n employees with a unique ID for each employee from 0 to n - 1. The head of the company has is the one with headID. Each employee has one direct manager given in the manager a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Leetcode1376]Time_Needed_to_Inform_All_Employees">
+<meta property="og:url" content="http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/index.html">
+<meta property="og:site_name" content="Yu&#39;s Blog">
+<meta property="og:description" content="DescriptionA company has n employees with a unique ID for each employee from 0 to n - 1. The head of the company has is the one with headID. Each employee has one direct manager given in the manager a">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/02/27/graph.png">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/02/28/1730_example_3_5.PNG">
+<meta property="og:image" content="https://pic.leetcode-cn.com/5ed3aac62be83952392b9dfaa231dccf220d7d56a683d1a11551d4d0582a59e1-%E5%9B%BE%E7%89%87.png">
+<meta property="article:published_time" content="2020-03-11T22:54:05.000Z">
+<meta property="article:modified_time" content="2020-03-12T06:22:55.092Z">
+<meta property="article:author" content="Yu Liu">
+<meta property="article:tag" content="leetcode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2020/02/27/graph.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/images.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/images.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/images.png">
+          
+        
+    
+    <!-- title -->
+    <title>[Leetcode1376]Time_Needed_to_Inform_All_Employees</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/null">Projects</a></li>
+         
+          <li><a href="/search">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/03/12/Leetcode1373-Maximum-Sum-BST-in-Binary-Tree/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020/03/09/Leetcode1377-Frog-Position-After-T-Seconds/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&text=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&title=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&is_video=false&description=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode1376]Time_Needed_to_Inform_All_Employees&body=Check out this article: http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&title=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&title=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&title=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&title=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&name=[Leetcode1376]Time_Needed_to_Inform_All_Employees&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&t=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        [Leetcode1376]Time_Needed_to_Inform_All_Employees
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Yu's Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-03-11T22:54:05.000Z" itemprop="datePublished">2020-03-11</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/leetcode/" rel="tag">leetcode</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>A company has n employees with a unique ID for each employee from 0 to n - 1. The head of the company has is the one with headID.</p>
+<p>Each employee has one direct manager given in the manager array where manager[i] is the direct manager of the i-th employee, manager[headID] = -1. Also it’s guaranteed that the subordination relationships have a tree structure.</p>
+<p>The head of the company wants to inform all the employees of the company of an urgent piece of news. He will inform his direct subordinates and they will inform their subordinates and so on until all employees know about the urgent news.</p>
+<p>The i-th employee needs informTime[i] minutes to inform all of his direct subordinates (i.e After informTime[i] minutes, all his direct subordinates can start spreading the news).</p>
+<p>Return the number of minutes needed to inform all the employees about the urgent news.</p>
+<p>Example 1:<br>Input: n = 1, headID = 0, manager = [-1], informTime = [0]<br>Output: 0<br>Explanation: The head of the company is the only employee in the company.</p>
+<p>Example 2:<br><img src="https://assets.leetcode.com/uploads/2020/02/27/graph.png" alt=""><br>Input: n = 6, headID = 2, manager = [2,2,-1,2,2,2], informTime = [0,0,1,0,0,0]<br>Output: 1<br>Explanation: The head of the company with id = 2 is the direct manager of all the employees in the company and needs 1 minute to inform them all.<br>The tree structure of the employees in the company is shown.</p>
+<p>Example 3:<br><img src="https://assets.leetcode.com/uploads/2020/02/28/1730_example_3_5.PNG" alt=""><br>Input: n = 7, headID = 6, manager = [1,2,3,4,5,6,-1], informTime = [0,6,5,4,3,2,1]<br>Output: 21<br>Explanation: The head has id = 6. He will inform employee with id = 5 in 1 minute.<br>The employee with id = 5 will inform the employee with id = 4 in 2 minutes.<br>The employee with id = 4 will inform the employee with id = 3 in 3 minutes.<br>The employee with id = 3 will inform the employee with id = 2 in 4 minutes.<br>The employee with id = 2 will inform the employee with id = 1 in 5 minutes.<br>The employee with id = 1 will inform the employee with id = 0 in 6 minutes.<br>Needed time = 1 + 2 + 3 + 4 + 5 + 6 = 21.</p>
+<p>Example 4:<br>Input: n = 15, headID = 0, manager = [-1,0,0,1,1,2,2,3,3,4,4,5,5,6,6], informTime = [1,1,1,1,1,1,1,0,0,0,0,0,0,0,0]<br>Output: 3<br>Explanation: The first minute the head will inform employees 1 and 2.<br>The second minute they will inform employees 3, 4, 5 and 6.<br>The third minute they will inform the rest of employees.</p>
+<p>Example 5:<br>Input: n = 4, headID = 2, manager = [3,3,-1,2], informTime = [0,0,162,914]<br>Output: 1076</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Answer is the max time a leaf node needs to be informed.<br><img src="https://pic.leetcode-cn.com/5ed3aac62be83952392b9dfaa231dccf220d7d56a683d1a11551d4d0582a59e1-%E5%9B%BE%E7%89%87.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def numOfMinutes(self, n: int, headID: int, manager: List[int], informTime: List[int]) -&gt; int:</span><br><span class="line">        toRootMin &#x3D; [0 for _ in range(n)]</span><br><span class="line">        def dfs(x):</span><br><span class="line">            if x &#x3D;&#x3D; headID:</span><br><span class="line">                return 0</span><br><span class="line">            if toRootMin[x] !&#x3D; 0:</span><br><span class="line">                return toRootMin[x]</span><br><span class="line">            fa &#x3D; manager[x]</span><br><span class="line">            if toRootMin[fa] !&#x3D; 0:</span><br><span class="line">                toRootMin[x] &#x3D; toRootMin[fa] + informTime[fa]</span><br><span class="line">            else:</span><br><span class="line">                toRootMin[x] &#x3D; dfs(fa)+informTime[fa]</span><br><span class="line">            return toRootMin[x]</span><br><span class="line">            </span><br><span class="line">        maxTime &#x3D; 0</span><br><span class="line">        for i in range(n):</span><br><span class="line">            # only consider leaf node</span><br><span class="line">            if informTime[i] &#x3D;&#x3D; 0:</span><br><span class="line">                tmp &#x3D; dfs(i)</span><br><span class="line">                if maxTime &lt; tmp:</span><br><span class="line">                    maxTime &#x3D; tmp</span><br><span class="line">        return maxTime</span><br></pre></td></tr></table></figure>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/null">Projects</a></li>
+         
+          <li><a href="/search">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&text=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&title=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&is_video=false&description=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode1376]Time_Needed_to_Inform_All_Employees&body=Check out this article: http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&title=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&title=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&title=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&title=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&name=[Leetcode1376]Time_Needed_to_Inform_All_Employees&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2020/03/11/Leetcode1376-Time-Needed-to-Inform-All-Employees/&t=[Leetcode1376]Time_Needed_to_Inform_All_Employees" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Yu Liu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/null">Projects</a></li>
+         
+          <li><a href="/search">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
