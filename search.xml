@@ -4,13 +4,192 @@
   
     
     <entry>
-      <title>g</title>
-      <link href="/2020/03/13/g/"/>
-      <url>/2020/03/13/g/</url>
+      <title>[Leetcode220]Contains_Duplicate_III</title>
+      <link href="/2020/03/28/Leetcode220-Contains-Duplicate-III/"/>
+      <url>/2020/03/28/Leetcode220-Contains-Duplicate-III/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of integers, find out whether there are two distinct indices i and j in the array such that the absolute difference between nums[i] and nums[j] is at most t and the absolute difference between i and j is at most k.</p><p>Example 1:</p><p>Input: nums = [1,2,3,1], k = 3, t = 0<br>Output: true<br>Example 2:</p><p>Input: nums = [1,0,1,1], k = 1, t = 2<br>Output: true<br>Example 3:</p><p>Input: nums = [1,5,9,1,5,9], k = 2, t = 3<br>Output: false</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode193]Valid_Phone_Numbers</title>
+      <link href="/2020/03/28/Leetcode193-Valid-Phone-Numbers/"/>
+      <url>/2020/03/28/Leetcode193-Valid-Phone-Numbers/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a text file file.txt that contains list of phone numbers (one per line), write a one liner bash script to print all valid phone numbers.</p><p>You may assume that a valid phone number must appear in one of the following two formats: (xxx) xxx-xxxx or xxx-xxx-xxxx. (x means a digit)</p><p>You may also assume each line in the text file must not contain leading or trailing white spaces.</p><p>Example:</p><p>Assume that file.txt has the following content:</p><p>987-123-4567<br>123 456 7890<br>(123) 456-7890<br>Your script should output the following valid phone numbers:</p><p>987-123-4567<br>(123) 456-7890</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat file.txt | grep -E &#39;^(\([0-9]&#123;3&#125;\)\ |[0-9]&#123;3&#125;-)[0-9]&#123;3&#125;-[0-9]&#123;4&#125;$&#39;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+            <tag> bash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode665]Non-decreasing_Array</title>
+      <link href="/2020/03/28/Leetcode665-Non-decreasing-Array/"/>
+      <url>/2020/03/28/Leetcode665-Non-decreasing-Array/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array nums with n integers, your task is to check if it could become non-decreasing by modifying at most 1 element.</p><p>We define an array is non-decreasing if nums[i] &lt;= nums[i + 1] holds for every i (0-based) such that (0 &lt;= i &lt;= n - 2).</p><p>Example 1:</p><p>Input: nums = [4,2,3]<br>Output: true<br>Explanation: You could modify the first 4 to 1 to get a non-decreasing array.<br>Example 2:</p><p>Input: nums = [4,2,1]<br>Output: false<br>Explanation: You can’t get a non-decreasing array by modify at most one element.</p><p>Constraints:</p><p>1 &lt;= n &lt;= 10 ^ 4</p><ul><li>10 ^ 5 &lt;= nums[i] &lt;= 10 ^ 5</li></ul><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>If \text{p = 0}p = 0, then we could make the array good by setting \text{A[p] = A[p+1]}A[p] = A[p+1].<br>If \text{p = len(A) - 2}p = len(A) - 2, then we could make the array good by setting \text{A[p+1] = A[p]}A[p+1] = A[p].<br>Otherwise, \text{A[p-1], A[p], A[p+1], A[p+2]}A[p-1], A[p], A[p+1], A[p+2] all exist, and:<br>We could change \text{A[p]}A[p] to be between \text{A[p-1]}A[p-1] and \text{A[p+1]}A[p+1] if possible, or;<br>We could change \text{A[p+1]}A[p+1] to be between \text{A[p]}A[p] and \text{A[p+2]}A[p+2] if possible.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def checkPossibility(self, nums: List[int]) -&gt; bool:</span><br><span class="line">        if len(nums) &lt;&#x3D; 2:</span><br><span class="line">            return True</span><br><span class="line">        </span><br><span class="line">        index &#x3D; -1</span><br><span class="line">        </span><br><span class="line">        for i in range(0, len(nums)-1): </span><br><span class="line">            if nums[i] &gt; nums[i+1]:</span><br><span class="line">                if index&gt;&#x3D;0:</span><br><span class="line">                    return False</span><br><span class="line">                index &#x3D; i             </span><br><span class="line">    </span><br><span class="line">        return index &lt; 0 or index &#x3D;&#x3D; 0 or index &#x3D;&#x3D; len(nums)-2 or nums[index-1] &lt;&#x3D; nums[index+1] or nums[index] &lt;&#x3D; nums[index+2]</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode151]Reverse_Words_in_a_String</title>
+      <link href="/2020/03/28/Leetcode151-Reverse-Words-in-a-String/"/>
+      <url>/2020/03/28/Leetcode151-Reverse-Words-in-a-String/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an input string, reverse the string word by word.</p><p>Example 1:</p><p>Input: “the sky is blue”<br>Output: “blue is sky the”<br>Example 2:</p><p>Input: “  hello world!  “<br>Output: “world! hello”<br>Explanation: Your reversed string should not contain leading or trailing spaces.<br>Example 3:</p><p>Input: “a good   example”<br>Output: “example good a”<br>Explanation: You need to reduce multiple spaces between two words to a single space in the reversed string.</p><p>Note:</p><p>A word is defined as a sequence of non-space characters.<br>Input string may contain leading or trailing spaces. However, your reversed string should not contain leading or trailing spaces.<br>You need to reduce multiple spaces between two words to a single space in the reversed string.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>python<br>.join<br>[for **]</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def reverseWords(self, s: str) -&gt; str:</span><br><span class="line">        tokens &#x3D; s.split(&#39; &#39;)        </span><br><span class="line">        return &#39; &#39;.join([token for token in reversed(tokens) if token])</span><br></pre></td></tr></table></figure><p>对C语言程序员要求空间复杂度为O(1)，所以我们只能对原字符串s之间做修改，而不能声明新的字符串。那么我们如何翻转字符串中的单词呢，我们的做法是，先整个字符串整体翻转一次，然后再分别翻转每一个单词（或者先分别翻转每一个单词，然后再整个字符串整体翻转一次），此时就能得到我们需要的结果了<br>python里面不可以因为str类型不可以直接赋值修改</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    void reverseWords(string &amp;s) &#123;</span><br><span class="line">        int storeIndex &#x3D; 0, n &#x3D; s.size();</span><br><span class="line">        reverse(s.begin(), s.end());</span><br><span class="line">        for (int i &#x3D; 0; i &lt; n; ++i) &#123;</span><br><span class="line">            if (s[i] !&#x3D; &#39; &#39;) &#123;</span><br><span class="line">                if (storeIndex !&#x3D; 0) s[storeIndex++] &#x3D; &#39; &#39;;</span><br><span class="line">                int j &#x3D; i;</span><br><span class="line">                while (j &lt; n &amp;&amp; s[j] !&#x3D; &#39; &#39;) s[storeIndex++] &#x3D; s[j++];</span><br><span class="line">                reverse(s.begin() + storeIndex - (j - i), s.begin() + storeIndex);</span><br><span class="line">                i &#x3D; j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        s.resize(storeIndex);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode29]Divide_Two_Integers</title>
+      <link href="/2020/03/28/Leetcode29-Divide-Two-Integers/"/>
+      <url>/2020/03/28/Leetcode29-Divide-Two-Integers/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two integers dividend and divisor, divide two integers without using multiplication, division and mod operator.</p><p>Return the quotient after dividing dividend by divisor.</p><p>The integer division should truncate toward zero, which means losing its fractional part. For example, truncate(8.345) = 8 and truncate(-2.7335) = -2.</p><p>Example 1:</p><p>Input: dividend = 10, divisor = 3<br>Output: 3<br>Explanation: 10/3 = truncate(3.33333..) = 3.<br>Example 2:</p><p>Input: dividend = 7, divisor = -3<br>Output: -2<br>Explanation: 7/-3 = truncate(-2.33333..) = -2.<br>Note:</p><p>Both dividend and divisor will be 32-bit signed integers.<br>The divisor will never be 0.<br>Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 231 − 1 when the division result overflows.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>bit maniputation<br>python中没有三元表达式，但是可以用 a = b if ** else c代替<br>&lt;&lt;= 左移并赋值</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def divide(self, dividend: int, divisor: int) -&gt; int:</span><br><span class="line">        if dividend &#x3D;&#x3D; -2**31 and divisor &#x3D;&#x3D; -1:</span><br><span class="line">            return 2**31-1</span><br><span class="line">        m &#x3D; abs(dividend)</span><br><span class="line">        n &#x3D; abs(divisor)</span><br><span class="line">        sign &#x3D; -1 if ((dividend&lt;0) ^ (divisor&lt;0)) else 1</span><br><span class="line">        if n &#x3D;&#x3D; 1:</span><br><span class="line">            return m if sign &#x3D;&#x3D; 1 else -m</span><br><span class="line">        res &#x3D; 0</span><br><span class="line">        while m &gt;&#x3D; n:</span><br><span class="line">            t &#x3D; n</span><br><span class="line">            p &#x3D; 1</span><br><span class="line">            while m &gt;&#x3D; (t &lt;&lt; 1):</span><br><span class="line">                t &lt;&lt;&#x3D; 1</span><br><span class="line">                p &lt;&lt;&#x3D; 1</span><br><span class="line">            res +&#x3D; p</span><br><span class="line">            m -&#x3D; t</span><br><span class="line">        return res if sign&#x3D;&#x3D;1 else -res</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode8]String_to_Integer_atoi</title>
+      <link href="/2020/03/27/Leetcode8-String-to-Integer-atoi/"/>
+      <url>/2020/03/27/Leetcode8-String-to-Integer-atoi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Implement atoi which converts a string to an integer.</p><p>The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.</p><p>The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.</p><p>If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.</p><p>If no valid conversion could be performed, a zero value is returned.</p><p>Note:</p><p>Only the space character ‘ ‘ is considered as whitespace character.<br>Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. If the numerical value is out of the range of representable values, INT_MAX (231 − 1) or INT_MIN (−231) is returned.</p><p>Example 1:<br>Input: “42”<br>Output: 42</p><p>Example 2:<br>Input: “   -42”<br>Output: -42<br>Explanation: The first non-whitespace character is ‘-‘, which is the minus sign.<br>             Then take as many numerical digits as possible, which gets 42.</p><p>Example 3:<br>Input: “4193 with words”<br>Output: 4193<br>Explanation: Conversion stops at digit ‘3’ as the next character is not a numerical digit.</p><p>Example 4:<br>Input: “words and 987”<br>Output: 0<br>Explanation: The first non-whitespace character is ‘w’, which is not a numerical<br>             digit or a +/- sign. Therefore no valid conversion could be performed.</p><p>Example 5:<br>Input: “-91283472332”<br>Output: -2147483648<br>Explanation: The number “-91283472332” is out of the range of a 32-bit signed integer.<br>             Thefore INT_MIN (−231) is returned.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>先当成字符串合并会比较快</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def myAtoi(self, s: str) -&gt; int:</span><br><span class="line">              </span><br><span class="line">        string &#x3D; s.lstrip(&#39; &#39;)</span><br><span class="line">        answer &#x3D; str()</span><br><span class="line">        if len(string) &#x3D;&#x3D; 0:</span><br><span class="line">            return 0</span><br><span class="line">        </span><br><span class="line">        if string[0] &#x3D;&#x3D; &#39;-&#39; or string[0] &#x3D;&#x3D; &#39;+&#39;:</span><br><span class="line">            answer &#x3D; string[0]</span><br><span class="line">            string &#x3D; string[1:]</span><br><span class="line">        </span><br><span class="line">        for i in string:</span><br><span class="line">            if i.isdigit():</span><br><span class="line">                answer +&#x3D; i</span><br><span class="line">            else:</span><br><span class="line">                break</span><br><span class="line">        </span><br><span class="line">        try:</span><br><span class="line">            return max(-2**31, min(int(answer), 2**31-1))</span><br><span class="line">        except:</span><br><span class="line">            return 0</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode1379]Find_a_Corresponding_Node_of_a_Binary_Tree_in_a_Clone_of_That_Tree</title>
+      <link href="/2020/03/27/Leetcode1379-Find-a-Corresponding-Node-of-a-Binary-Tree-in-a-Clone-of-That-Tree/"/>
+      <url>/2020/03/27/Leetcode1379-Find-a-Corresponding-Node-of-a-Binary-Tree-in-a-Clone-of-That-Tree/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two binary trees original and cloned and given a reference to a node target in the original tree.</p><p>The cloned tree is a copy of the original tree.</p><p>Return a reference to the same node in the cloned tree.</p><p>Note that you are not allowed to change any of the two trees or the target node and the answer must be a reference to a node in the cloned tree.</p><p>Follow up: Solve the problem if repeated values on the tree are allowed.</p><p><img src="https://assets.leetcode.com/uploads/2020/02/21/e1.png" alt=""><br>Input: tree = [7,4,3,null,null,6,19], target = 3<br>Output: 3<br>Explanation: In all examples the original and cloned trees are shown. The target node is a green node from the original tree. The answer is the yellow node from the cloned tree.</p><p><img src="https://assets.leetcode.com/uploads/2020/02/21/e2.png" alt=""><br>Input: tree = [7], target =  7<br>Output: 7</p><p><img src="https://assets.leetcode.com/uploads/2020/02/21/e3.png" alt=""><br>Input: tree = [8,null,6,null,5,null,4,null,3,null,2,null,1], target = 4<br>Output: 4</p><p><img src="https://assets.leetcode.com/uploads/2020/02/21/e4.png" alt=""><br>Input: tree = [1,2,3,4,5,6,7,8,9,10], target = 5<br>Output: 5</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>BFS</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># Definition for a binary tree node.</span><br><span class="line"># class TreeNode:</span><br><span class="line">#     def __init__(self, x):</span><br><span class="line">#         self.val &#x3D; x</span><br><span class="line">#         self.left &#x3D; None</span><br><span class="line">#         self.right &#x3D; None</span><br><span class="line"></span><br><span class="line">class Solution:</span><br><span class="line">    def getTargetCopy(self, original: TreeNode, cloned: TreeNode, target: TreeNode) -&gt; TreeNode:</span><br><span class="line">        if not original:</span><br><span class="line">            return None</span><br><span class="line">        queue &#x3D; [cloned]</span><br><span class="line">        while queue:</span><br><span class="line">            cur &#x3D; queue.pop(0)</span><br><span class="line">            if cur.val &#x3D;&#x3D; target.val:</span><br><span class="line">                return cur</span><br><span class="line">            if cur.left:</span><br><span class="line">                queue.append(cur.left)</span><br><span class="line">            if cur.right:</span><br><span class="line">                queue.append(cur.right)</span><br><span class="line">            </span><br><span class="line">        return None</span><br></pre></td></tr></table></figure><p>to solve the follow up</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># Definition for a binary tree node.</span><br><span class="line"># class TreeNode:</span><br><span class="line">#     def __init__(self, x):</span><br><span class="line">#         self.val &#x3D; x</span><br><span class="line">#         self.left &#x3D; None</span><br><span class="line">#         self.right &#x3D; None</span><br><span class="line"></span><br><span class="line">class Solution:</span><br><span class="line">    def getTargetCopy(self, original: TreeNode, cloned: TreeNode, target: TreeNode) -&gt; TreeNode:</span><br><span class="line">        if original &#x3D;&#x3D; target:</span><br><span class="line">            return cloned</span><br><span class="line">        if original.left:</span><br><span class="line">            left &#x3D; self.getTargetCopy(original.left, cloned.left, target)</span><br><span class="line">            if left:</span><br><span class="line">                return left</span><br><span class="line">        if original.right:</span><br><span class="line">            right &#x3D; self.getTargetCopy(original.right, cloned.right, target)</span><br><span class="line">            if right:</span><br><span class="line">                return right</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Emacs</title>
+      <link href="/2020/03/22/Emacs/"/>
+      <url>/2020/03/22/Emacs/</url>
+      
+        <content type="html"><![CDATA[<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h2 id="cursor"><a href="#cursor" class="headerlink" title="cursor"></a>cursor</h2><p>C-v    Move forward one screenful<br>M-v    Move backward one screenful<br>C-l    Clear screen and redisplay all the text,<br>    moving the text around the cursor<br>    to the center of the screen.</p><p>(That’s CONTROL-L, not CONTROL-1.)<br>          Previous line, C-p<br>              :<br>              :<br>Backward, C-b …. Current cursor position …. Forward, C-f<br>              :<br>              :<br>            Next line, C-n</p><p>C-f    Move forward a character<br>C-b    Move backward a character</p><p>M-f    Move forward a word<br>M-b    Move backward a word</p><p>C-n    Move to next line<br>C-p    Move to previous line</p><p>C-a    Move to beginning of line<br>C-e    Move to end of line</p><p>M-a    Move back to beginning of sentence<br>M-e    Move forward to end of sentence</p><p>Try M-&lt; now, to move to the beginning of the tutorial.<br>Then use C-v repeatedly to move back here.</p><p>Try M-&gt; now, to move to the end of the tutorial.<br>Then use M-v repeatedly to move back here.</p><p>C-u 8 C-v: scrolls by 8 line</p><p>use C-g to stop a command</p><h2 id="window"><a href="#window" class="headerlink" title="window"></a>window</h2><p>C-x 0   Close current window<br>C-x 1    One window Close other windows<br>C-x 2   split-window-vertically<br>C-x 3   split-window-horizontally</p><p>M-x shell   show terminal<br>C-x o    change to another window</p><h2 id="inserting-and-deleting"><a href="#inserting-and-deleting" class="headerlink" title="inserting and deleting"></a>inserting and deleting</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> emacs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode7]Reverse_Integer</title>
+      <link href="/2020/03/15/Leetcode7-Reverse-Integer/"/>
+      <url>/2020/03/15/Leetcode7-Reverse-Integer/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a 32-bit signed integer, reverse digits of an integer.</p><p>Example 1:<br>Input: 123<br>Output: 321</p><p>Example 2:<br>Input: -123<br>Output: -321</p><p>Example 3:<br>Input: 120<br>Output: 21</p><p>Note:<br>Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode206]Reverse_Linked_List</title>
+      <link href="/2020/03/15/Leetcode206-Reverse-Linked-List/"/>
+      <url>/2020/03/15/Leetcode206-Reverse-Linked-List/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Reverse a singly linked list.</p><p>Example:</p><p>Input: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL<br>Output: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL<br>Follow up:</p><p>A linked list can be reversed either iteratively or recursively. Could you implement both?</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="iterative"><a href="#iterative" class="headerlink" title="iterative"></a>iterative</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># Definition for singly-linked list.</span><br><span class="line"># class ListNode:</span><br><span class="line">#     def __init__(self, x):</span><br><span class="line">#         self.val &#x3D; x</span><br><span class="line">#         self.next &#x3D; None</span><br><span class="line"></span><br><span class="line">class Solution:</span><br><span class="line">    def reverseList(self, head: ListNode) -&gt; ListNode:</span><br><span class="line">        pre &#x3D; None</span><br><span class="line">        cur &#x3D; head</span><br><span class="line">        while cur:</span><br><span class="line">            nex &#x3D; cur.next</span><br><span class="line">            cur.next &#x3D; pre</span><br><span class="line">            pre &#x3D; cur</span><br><span class="line">            cur &#x3D; nex</span><br><span class="line">        return pre</span><br></pre></td></tr></table></figure><h3 id="recursive"><a href="#recursive" class="headerlink" title="recursive"></a>recursive</h3><p>The recursive version is slightly trickier and the key is to work backwards. Assume that the rest of the list had already been reversed, now how do I reverse the front part? Let’s assume the list is: n1 → … → nk-1 → nk → nk+1 → … → nm → Ø</p><p>Assume from node nk+1 to nm had been reversed and you are at node nk.</p><p>n1 → … → nk-1 → nk → nk+1 ← … ← nm</p><p>We want nk+1’s next node to point to nk.</p><p>So,</p><p>nk.next.next = nk;</p><p>Be very careful that n1’s next must point to Ø. If you forget about this, your linked list has a cycle in it. This bug could be caught if you test your code with a linked list of size 2.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># Definition for singly-linked list.</span><br><span class="line"># class ListNode:</span><br><span class="line">#     def __init__(self, x):</span><br><span class="line">#         self.val &#x3D; x</span><br><span class="line">#         self.next &#x3D; None</span><br><span class="line"></span><br><span class="line">class Solution:</span><br><span class="line">    def reverseList(self, head: ListNode) -&gt; ListNode:</span><br><span class="line">        if head &#x3D;&#x3D; None or head.next &#x3D;&#x3D; None:</span><br><span class="line">            return head</span><br><span class="line">        newhead &#x3D; self.reverseList(head.next)</span><br><span class="line">        head.next.next &#x3D; head</span><br><span class="line">        head.next &#x3D; None</span><br><span class="line">        return newhead</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
       
     </entry>
     
