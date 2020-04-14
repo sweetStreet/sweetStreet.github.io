@@ -4,11 +4,191 @@
   
     
     <entry>
+      <title>[Leetcode81]Search_in_Rotated_Sorted_Array_II</title>
+      <link href="/2020/04/13/Leetcode81-Search-in-Rotated-Sorted-Array-II/"/>
+      <url>/2020/04/13/Leetcode81-Search-in-Rotated-Sorted-Array-II/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode523]Continuous_Subarray_Sum</title>
+      <link href="/2020/04/13/Leetcode523-Continuous-Subarray-Sum/"/>
+      <url>/2020/04/13/Leetcode523-Continuous-Subarray-Sum/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a list of non-negative numbers and a target integer k, write a function to check if the array has a continuous subarray of size at least 2 that sums up to a multiple of k, that is, sums up to n*k where n is also an integer.</p><p>Example 1:<br>Input: [23, 2, 4, 6, 7],  k=6<br>Output: True<br>Explanation: Because [2, 4] is a continuous subarray of size 2 and sums up to 6.</p><p>Example 2:<br>Input: [23, 2, 6, 4, 7],  k=6<br>Output: True<br>Explanation: Because [23, 2, 6, 4, 7] is an continuous subarray of size 5 and sums up to 42.</p><p>Note:</p><p>The length of the array won’t exceed 10,000.<br>You may assume the sum of all the numbers is in the range of a signed 32-bit integer.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def checkSubarraySum(self, nums: List[int], k: int) -&gt; bool:</span><br><span class="line">        if k&lt;0:</span><br><span class="line">            k &#x3D; -k</span><br><span class="line">        prefixsum &#x3D; 0</span><br><span class="line">        hashmap &#x3D; &#123;0:-1&#125;</span><br><span class="line">        for index,num in enumerate(nums):</span><br><span class="line">            prefixsum +&#x3D; num</span><br><span class="line">            if k &#x3D;&#x3D; 0:</span><br><span class="line">                mod &#x3D; prefixsum</span><br><span class="line">            else:</span><br><span class="line">                mod &#x3D; prefixsum % k</span><br><span class="line">            if mod in hashmap:</span><br><span class="line">                if hashmap[mod]+1&lt;index:</span><br><span class="line">                    return True</span><br><span class="line">            else:</span><br><span class="line">                hashmap[mod] &#x3D; index</span><br><span class="line">        return False</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode525]Contiguous_Array</title>
+      <link href="/2020/04/13/Leetcode525-Contiguous-Array/"/>
+      <url>/2020/04/13/Leetcode525-Contiguous-Array/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a binary array, find the maximum length of a contiguous subarray with equal number of 0 and 1.</p><p>Example 1:<br>Input: [0,1]<br>Output: 2<br>Explanation: [0, 1] is the longest contiguous subarray with equal number of 0 and 1.<br>Example 2:<br>Input: [0,1,0]<br>Output: 2<br>Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal number of 0 and 1.<br>Note: The length of the given binary array will not exceed 50,000.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>hashmap</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def findMaxLength(self, nums: List[int]) -&gt; int:</span><br><span class="line">        count &#x3D; 0</span><br><span class="line">        res &#x3D; 0</span><br><span class="line">        hashmap &#x3D; &#123;0:-1&#125;</span><br><span class="line">        for index,num in enumerate(nums):</span><br><span class="line">            if num &#x3D;&#x3D; 0:</span><br><span class="line">                count &#x3D; count - 1</span><br><span class="line">            else:</span><br><span class="line">                count &#x3D; count + 1</span><br><span class="line">            if count in hashmap.keys():</span><br><span class="line">                res &#x3D; max(res, index - hashmap[count])</span><br><span class="line">            else:</span><br><span class="line">                hashmap[count] &#x3D; index</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode410]Split_Array_Largest_Sum</title>
+      <link href="/2020/04/13/Leetcode410-Split-Array-Largest-Sum/"/>
+      <url>/2020/04/13/Leetcode410-Split-Array-Largest-Sum/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array which consists of non-negative integers and an integer m, you can split the array into m non-empty continuous subarrays. Write an algorithm to minimize the largest sum among these m subarrays.</p><p>Note:<br>If n is the length of array, assume the following constraints are satisfied:</p><p>1 ≤ n ≤ 1000<br>1 ≤ m ≤ min(50, n)<br>Examples:</p><p>Input:<br>nums = [7,2,5,10,8]<br>m = 2</p><p>Output:<br>18</p><p>Explanation:<br>There are four ways to split nums into two subarrays.<br>The best way is to split it into [7,2,5] and [10,8],<br>where the largest sum among the two subarrays is only 18.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def splitArray(self, nums: List[int], m: int) -&gt; int:</span><br><span class="line">        left &#x3D; max(nums)</span><br><span class="line">        right &#x3D; sum(nums)    </span><br><span class="line">        while left &lt; right:</span><br><span class="line">            mid &#x3D; left + (right - left) &#x2F;&#x2F; 2</span><br><span class="line">            groups &#x3D; self.countGroup(nums, mid)</span><br><span class="line">            if groups &gt; m:</span><br><span class="line">                left &#x3D; mid + 1</span><br><span class="line">            else:</span><br><span class="line">                right &#x3D; mid</span><br><span class="line">        return left</span><br><span class="line">    </span><br><span class="line">    def countGroup(self, nums, subsum):</span><br><span class="line">        count &#x3D; 0</span><br><span class="line">        currentsum &#x3D; 0</span><br><span class="line">        for num in nums:</span><br><span class="line">            currentsum +&#x3D; num</span><br><span class="line">            if currentsum &gt; subsum:</span><br><span class="line">                count +&#x3D; 1</span><br><span class="line">                currentsum &#x3D; num</span><br><span class="line">        return count+1</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode209]Minimum_Size_Subarray_Sum</title>
+      <link href="/2020/04/13/Leetcode209-Minimum-Size-Subarray-Sum/"/>
+      <url>/2020/04/13/Leetcode209-Minimum-Size-Subarray-Sum/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of n positive integers and a positive integer s, find the minimal length of a contiguous subarray of which the sum ≥ s. If there isn’t one, return 0 instead.</p><p>Example: </p><p>Input: s = 7, nums = [2,3,1,2,4,3]<br>Output: 2<br>Explanation: the subarray [4,3] has the minimal length under the problem constraint.<br>Follow up:<br>If you have figured out the O(n) solution, try coding another solution of which the time complexity is O(n log n). </p><h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h2><p>prefixsum + two pointer<br>time complexity O(n)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def minSubArrayLen(self, s: int, nums: List[int]) -&gt; int:</span><br><span class="line">        res &#x3D; len(nums)+1</span><br><span class="line">        prefixsum &#x3D; [0]</span><br><span class="line">        for num in nums:</span><br><span class="line">            prefixsum.append(prefixsum[-1] + num)</span><br><span class="line">        i &#x3D; 0</span><br><span class="line">        for j in range(1,len(prefixsum)):</span><br><span class="line">            while prefixsum[j] - prefixsum[i] &gt;&#x3D; s and i&lt;j:                </span><br><span class="line">                res &#x3D; min(res, j-i)</span><br><span class="line">                i +&#x3D; 1    </span><br><span class="line">        return res if res &lt; len(nums)+1 else 0</span><br></pre></td></tr></table></figure><h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h2><p>binary search，对数组长度进行二分<br>time complexity O(nlogn)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def validate(self, s, prefixsum, length):</span><br><span class="line">        i &#x3D; 0</span><br><span class="line">        for j in range(length, len(prefixsum)):</span><br><span class="line">            if prefixsum[j]-prefixsum[i]&gt;&#x3D;s:</span><br><span class="line">                return True</span><br><span class="line">            i+&#x3D;1</span><br><span class="line">        return False</span><br><span class="line">            </span><br><span class="line">        </span><br><span class="line">    def minSubArrayLen(self, s: int, nums: List[int]) -&gt; int:</span><br><span class="line">        prefixsum &#x3D; [0]</span><br><span class="line">        for num in nums:</span><br><span class="line">            prefixsum.append(prefixsum[-1] + num)</span><br><span class="line">        if prefixsum[-1] &lt; s: return 0</span><br><span class="line">        left &#x3D; 1</span><br><span class="line">        right &#x3D; len(nums)</span><br><span class="line">        while left &lt; right:</span><br><span class="line">            mid &#x3D; left + (right - left)&#x2F;&#x2F;2</span><br><span class="line">            if self.validate(s, prefixsum, mid):</span><br><span class="line">                right &#x3D; mid</span><br><span class="line">            else:</span><br><span class="line">                left &#x3D; mid + 1</span><br><span class="line">        return left</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode761]Special_Binary_String</title>
+      <link href="/2020/04/12/Leetcode761-Special-Binary-String/"/>
+      <url>/2020/04/12/Leetcode761-Special-Binary-String/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Special binary strings are binary strings with the following two properties:</p><p>The number of 0’s is equal to the number of 1’s.<br>Every prefix of the binary string has at least as many 1’s as 0’s.<br>Given a special string S, a move consists of choosing two consecutive, non-empty, special substrings of S, and swapping them. (Two strings are consecutive if the last character of the first string is exactly one index before the first character of the second string.)</p><p>At the end of any number of moves, what is the lexicographically largest resulting string possible?</p><p>Example 1:<br>Input: S = “11011000”<br>Output: “11100100”<br>Explanation:<br>The strings “10” [occuring at S[1]] and “1100” [at S[3]] are swapped.<br>This is the lexicographically largest string possible after some number of swaps.<br>Note:</p><p>S has length at most 50.<br>S is guaranteed to be a special binary string as defined above.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode128]Longest_Consecutive_Sequence</title>
+      <link href="/2020/04/12/Leetcode128-Longest-Consecutive-Sequence/"/>
+      <url>/2020/04/12/Leetcode128-Longest-Consecutive-Sequence/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an unsorted array of integers, find the length of the longest consecutive elements sequence.</p><p>Your algorithm should run in O(n) complexity.</p><p>Example:</p><p>Input: [100, 4, 200, 1, 3, 2]<br>Output: 4<br>Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def longestConsecutive(self, nums: List[int]) -&gt; int:</span><br><span class="line">        if not nums:</span><br><span class="line">            return 0</span><br><span class="line">        res &#x3D; 1</span><br><span class="line">        numset &#x3D; set(nums)</span><br><span class="line">        for num in numset:</span><br><span class="line">            if num-1 not in numset:</span><br><span class="line">                count &#x3D; 1</span><br><span class="line">                while num+1 in numset:</span><br><span class="line">                    num +&#x3D; 1</span><br><span class="line">                    count +&#x3D; 1</span><br><span class="line">                res &#x3D; max(res, count)</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode862]Shortest_Subarray_with_Sum_at_Least_K</title>
+      <link href="/2020/04/12/Leetcode862-Shortest-Subarray-with-Sum-at-Least-K/"/>
+      <url>/2020/04/12/Leetcode862-Shortest-Subarray-with-Sum-at-Least-K/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Return the length of the shortest, non-empty, contiguous subarray of A with sum at least K.</p><p>If there is no non-empty subarray with sum at least K, return -1.</p><p>Example 1:<br>Input: A = [1], K = 1<br>Output: 1</p><p>Example 2:<br>Input: A = [1,2], K = 4<br>Output: -1</p><p>Example 3:<br>Input: A = [2,-1,2], K = 3<br>Output: 3</p><p>Note:</p><p>1 &lt;= A.length &lt;= 50000<br>-10 ^ 5 &lt;= A[i] &lt;= 10 ^ 5<br>1 &lt;= K &lt;= 10 ^ 9</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import collections</span><br><span class="line">class Solution:</span><br><span class="line">    def shortestSubarray(self, A: List[int], K: int) -&gt; int:</span><br><span class="line">        plist &#x3D; [0]</span><br><span class="line">        for a in A:            </span><br><span class="line">            plist.append(plist[-1]+a)</span><br><span class="line">        res &#x3D; len(A) + 1</span><br><span class="line">        stack &#x3D; collections.deque()</span><br><span class="line">        for index, value in enumerate(plist):</span><br><span class="line">            while stack and plist[stack[-1]] &gt;&#x3D; value:</span><br><span class="line">                stack.pop()</span><br><span class="line">            while stack and value-plist[stack[0]] &gt;&#x3D; K:</span><br><span class="line">                res &#x3D; min(res, index-stack.popleft())</span><br><span class="line">            stack.append(index)</span><br><span class="line">        return res if res &lt;&#x3D; len(A) else -1</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode543]Diameter_of_Binary_Tree</title>
+      <link href="/2020/04/11/Leetcode543-Diameter-of-Binary-Tree/"/>
+      <url>/2020/04/11/Leetcode543-Diameter-of-Binary-Tree/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><p>Given a binary tree, you need to compute the length of the diameter of the tree. The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.</p><p>Example:<br>Given a binary tree<br>          1<br>         / <br>        2   3<br>       / \<br>      4   5<br>Return 3, which is the length of the path [4,2,1,3] or [5,2,1,3].</p><p>Note: The length of path between two nodes is represented by the number of edges between them.</p><h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># Definition for a binary tree node.</span><br><span class="line"># class TreeNode:</span><br><span class="line">#     def __init__(self, x):</span><br><span class="line">#         self.val &#x3D; x</span><br><span class="line">#         self.left &#x3D; None</span><br><span class="line">#         self.right &#x3D; None</span><br><span class="line"></span><br><span class="line">class Solution:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.maxval &#x3D; 0</span><br><span class="line">        </span><br><span class="line">    def diameterOfBinaryTree(self, root: TreeNode) -&gt; int:</span><br><span class="line">        self.helper(root)</span><br><span class="line">        return self.maxval</span><br><span class="line">        </span><br><span class="line">    def helper(self, node):</span><br><span class="line">        if node:</span><br><span class="line">            left &#x3D; self.helper(node.left)</span><br><span class="line">            right &#x3D; self.helper(node.right)</span><br><span class="line">            self.maxval &#x3D; max(self.maxval, left+right)</span><br><span class="line">            return max(left, right)+1</span><br><span class="line">        else:</span><br><span class="line">            return 0</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode155]Min_Stack</title>
+      <link href="/2020/04/11/Leetcode155-Min-Stack/"/>
+      <url>/2020/04/11/Leetcode155-Min-Stack/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><p>Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.</p><p>push(x) – Push element x onto stack.<br>pop() – Removes the element on top of the stack.<br>top() – Get the top element.<br>getMin() – Retrieve the minimum element in the stack.</p><p>Example:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MinStack minStack &#x3D; new MinStack();</span><br><span class="line">minStack.push(-2);</span><br><span class="line">minStack.push(0);</span><br><span class="line">minStack.push(-3);</span><br><span class="line">minStack.getMin();   --&gt; Returns -3.</span><br><span class="line">minStack.pop();</span><br><span class="line">minStack.top();      --&gt; Returns 0.</span><br><span class="line">minStack.getMin();   --&gt; Returns -2.</span><br></pre></td></tr></table></figure><h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">class MinStack:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        initialize your data structure here.</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        self.stack &#x3D; []</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    def push(self, x: int) -&gt; None:</span><br><span class="line">        m &#x3D; x</span><br><span class="line">        if self.stack:</span><br><span class="line">            m &#x3D; self.stack[-1][1]</span><br><span class="line">            if m &gt; x:</span><br><span class="line">                m &#x3D; x</span><br><span class="line">        self.stack.append((x, m))</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">    def pop(self) -&gt; None:</span><br><span class="line">        self.stack.pop()</span><br><span class="line">            </span><br><span class="line"></span><br><span class="line">    def top(self) -&gt; int:</span><br><span class="line">        return self.stack[-1][0]</span><br><span class="line">                           </span><br><span class="line"></span><br><span class="line">    def getMin(self) -&gt; int:</span><br><span class="line">        return self.stack[-1][1]</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"># Your MinStack object will be instantiated and called as such:</span><br><span class="line"># obj &#x3D; MinStack()</span><br><span class="line"># obj.push(x)</span><br><span class="line"># obj.pop()</span><br><span class="line"># param_3 &#x3D; obj.top()</span><br><span class="line"># param_4 &#x3D; obj.getMin()</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode468]Validate_IP_Address</title>
+      <link href="/2020/03/29/Leetcode468-Validate-IP-Address/"/>
+      <url>/2020/03/29/Leetcode468-Validate-IP-Address/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Write a function to check whether an input string is a valid IPv4 address or IPv6 address or neither.</p><p>IPv4 addresses are canonically represented in dot-decimal notation, which consists of four decimal numbers, each ranging from 0 to 255, separated by dots (“.”), e.g.,172.16.254.1;</p><p>Besides, leading zeros in the IPv4 is invalid. For example, the address 172.16.254.01 is invalid.</p><p>IPv6 addresses are represented as eight groups of four hexadecimal digits, each group representing 16 bits. The groups are separated by colons (“:”). For example, the address 2001:0db8:85a3:0000:0000:8a2e:0370:7334 is a valid one. Also, we could omit some leading zeros among four hexadecimal digits and some low-case characters in the address to upper-case ones, so 2001:db8:85a3:0:0:8A2E:0370:7334 is also a valid IPv6 address(Omit leading zeros and using upper cases).</p><p>However, we don’t replace a consecutive group of zero value with a single empty group using two consecutive colons (::) to pursue simplicity. For example, 2001:0db8:85a3::8A2E:0370:7334 is an invalid IPv6 address.</p><p>Besides, extra leading zeros in the IPv6 is also invalid. For example, the address 02001:0db8:85a3:0000:0000:8a2e:0370:7334 is invalid.</p><p>Note: You may assume there is no extra space or special characters in the input string.</p><p>Example 1:<br>Input: “172.16.254.1”<br>Output: “IPv4”<br>Explanation: This is a valid IPv4 address, return “IPv4”.</p><p>Example 2:<br>Input: “2001:0db8:85a3:0:0:8A2E:0370:7334”<br>Output: “IPv6”<br>Explanation: This is a valid IPv6 address, return “IPv6”.</p><p>Example 3:<br>Input: “256.256.256.256”<br>Output: “Neither”<br>Explanation: This is neither a IPv4 address nor a IPv6 address.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def validIPAddress(self, IP: str) -&gt; str:</span><br><span class="line">        if IP.count(&#39;.&#39;) &#x3D;&#x3D; 3:</span><br><span class="line">            return self.validIPv4(IP)</span><br><span class="line">        if IP.count(&#39;:&#39;) &#x3D;&#x3D; 7:</span><br><span class="line">            return self.validIPv6(IP)</span><br><span class="line">        return &quot;Neither&quot;</span><br><span class="line">        </span><br><span class="line">    </span><br><span class="line">    def validIPv4(self, IP:str)-&gt;str:</span><br><span class="line">        nums &#x3D; IP.split(&quot;.&quot;)</span><br><span class="line">        for num in nums:</span><br><span class="line">            if len(num) &#x3D;&#x3D; 0 or len(num)&gt;3:</span><br><span class="line">                return &quot;Neither&quot;</span><br><span class="line">            if num[0] &#x3D;&#x3D; &#39;0&#39; and len(num)!&#x3D;1 or not num.isdigit() or int(num)&gt;255:</span><br><span class="line">                return &quot;Neither&quot;</span><br><span class="line">        return &quot;IPv4&quot;</span><br><span class="line">    </span><br><span class="line">    def validIPv6(self, IP:str)-&gt;str:</span><br><span class="line">        nums &#x3D; IP.split(&quot;:&quot;)</span><br><span class="line">        hexdigit &#x3D; &#39;0123456789abcdefABCDEF&#39;</span><br><span class="line">        for num in nums:</span><br><span class="line">            if len(num) &#x3D;&#x3D; 0 or len(num)&gt;4 or not all(c in hexdigit for c in num):</span><br><span class="line">                return &quot;Neither&quot;</span><br><span class="line">        return &quot;IPv6&quot;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode204]Count_Primes</title>
+      <link href="/2020/03/29/Leetcode204-Count-Primes/"/>
+      <url>/2020/03/29/Leetcode204-Count-Primes/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Count the number of prime numbers less than a non-negative number, n.</p><p>Example:</p><p>Input: 10<br>Output: 4<br>Explanation: There are 4 prime numbers less than 10, they are 2, 3, 5, 7.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>[Leetcode220]Contains_Duplicate_III</title>
       <link href="/2020/03/28/Leetcode220-Contains-Duplicate-III/"/>
       <url>/2020/03/28/Leetcode220-Contains-Duplicate-III/</url>
       
-        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of integers, find out whether there are two distinct indices i and j in the array such that the absolute difference between nums[i] and nums[j] is at most t and the absolute difference between i and j is at most k.</p><p>Example 1:</p><p>Input: nums = [1,2,3,1], k = 3, t = 0<br>Output: true<br>Example 2:</p><p>Input: nums = [1,0,1,1], k = 1, t = 2<br>Output: true<br>Example 3:</p><p>Input: nums = [1,5,9,1,5,9], k = 2, t = 3<br>Output: false</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of integers, find out whether there are two distinct indices i and j in the array such that the absolute difference between nums[i] and nums[j] is at most t and the absolute difference between i and j is at most k.</p><p>Example 1:</p><p>Input: nums = [1,2,3,1], k = 3, t = 0<br>Output: true<br>Example 2:</p><p>Input: nums = [1,0,1,1], k = 1, t = 2<br>Output: true<br>Example 3:</p><p>Input: nums = [1,5,9,1,5,9], k = 2, t = 3<br>Output: false</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
       
