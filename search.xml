@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title>Binary Indexed Tree</title>
+      <link href="/2020/04/15/Binary-Indexed-Tree/"/>
+      <url>/2020/04/15/Binary-Indexed-Tree/</url>
+      
+        <content type="html"><![CDATA[<p>Binary Indexed Tree又称 Fenwick Tree, 最早提出是为了解决prefixsum问题。用dp预先计算前i个元素的和,这样的话查询时间复杂度是O(1)。然而当某一个元素的值发生了改变，更新数组的时间复杂度会变成O(n)。而使用binary indexed tree可以使查询和更新的时间复杂度都变为O(logn)。<br>parent[i] = i + i &amp; (-i)</p><h1 id="standard-implmentation-of-a-binary-indexed-tree-BIT"><a href="#standard-implmentation-of-a-binary-indexed-tree-BIT" class="headerlink" title="standard implmentation of a binary indexed tree (BIT)"></a>standard implmentation of a binary indexed tree (BIT)</h1><p>class BIT():<br>    def <strong>init</strong>(self, nums):<br>        self.tree = [0]*(len(nums)+1)<br>    def sum_query(self, i):<br>        # remember agent… the index starts at 1<br>        output, i = 0, i+1<br>        while i &gt; 0:<br>            output += self.tree[i]<br>            i -= i &amp; (-i)<br>        return output<br>    def update(self, i, delta=0):<br>        i += 1<br>        while 0 &lt; i &lt; len(self.tree):<br>            self.tree[i] += delta<br>            i += i &amp; (-i)</p><p>class Solution:<br>    def countSmaller(self, nums: List[int]) -&gt; List[int]:<br>        # chache the position of the numbers if they were unique and sorted<br>        tmp = {e: i for i, e in enumerate(sorted(set(nums)))}<br>        bit = BIT(tmp)<br>        # translate back these indexes into the original order<br>        tmp = [tmp[e] for e in nums]<br>        # traverse right to left<br>        output = []<br>        for i in tmp[::-1]:<br>            # query the BIT for the current count in the range (0, i)<br>            output.append(bit.sum_query(i-1))<br>            # register the ocurrence in the BIT<br>            bit.update(i, 1)<br>        return output[::-1]</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Leetcode315]Count_of_Smaller_Numbers_After_Self</title>
+      <link href="/2020/04/14/Leetcode315-Count-of-Smaller-Numbers-After-Self/"/>
+      <url>/2020/04/14/Leetcode315-Count-of-Smaller-Numbers-After-Self/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>You are given an integer array nums and you have to return a new counts array. The counts array has the property where counts[i] is the number of smaller elements to the right of nums[i].</p><p>Example:</p><p>Input: [5,2,6,1]<br>Output: [2,1,1,0]<br>Explanation:<br>To the right of 5 there are 2 smaller elements (2 and 1).<br>To the right of 2 there is only 1 smaller element (1).<br>To the right of 6 there is 1 smaller element (1).<br>To the right of 1 there is 0 smaller element.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ol><li>merge sort<br>merge sort用了一个额外的数组放排序好的数</li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>[Leetcode81]Search_in_Rotated_Sorted_Array_II</title>
       <link href="/2020/04/13/Leetcode81-Search-in-Rotated-Sorted-Array-II/"/>
       <url>/2020/04/13/Leetcode81-Search-in-Rotated-Sorted-Array-II/</url>
