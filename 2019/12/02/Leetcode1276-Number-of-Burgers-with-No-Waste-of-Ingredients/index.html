@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="DescriptionGiven two integers tomatoSlices and cheeseSlices. The ingredients of different burgers are as follows: Jumbo Burger: 4 tomato slices and 1 cheese slice.Small Burger: 2 Tomato slices and 1 c">
+<meta name="keywords" content="algorithm,leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients">
+<meta property="og:url" content="http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/index.html">
+<meta property="og:site_name" content="Yu&#39; Blog">
+<meta property="og:description" content="DescriptionGiven two integers tomatoSlices and cheeseSlices. The ingredients of different burgers are as follows: Jumbo Burger: 4 tomato slices and 1 cheese slice.Small Burger: 2 Tomato slices and 1 c">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-02-27T02:10:22.838Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients">
+<meta name="twitter:description" content="DescriptionGiven two integers tomatoSlices and cheeseSlices. The ingredients of different burgers are as follows: Jumbo Burger: 4 tomato slices and 1 cheese slice.Small Burger: 2 Tomato slices and 1 c">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/12/02/Leetcode251-Flatten-2D-Vector/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/12/01/Leetcode214-Shortest-Palindrome/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&text=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&title=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&is_video=false&description=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients&body=Check out this article: http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&title=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&title=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&title=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&title=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&name=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&t=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        [Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Yu' Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-12-02T19:13:25.000Z" itemprop="datePublished">2019-12-02</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/leetcode/">leetcode</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two integers tomatoSlices and cheeseSlices. The ingredients of different burgers are as follows:</p>
+<p>Jumbo Burger: 4 tomato slices and 1 cheese slice.<br>Small Burger: 2 Tomato slices and 1 cheese slice.<br>Return [total_jumbo, total_small] so that the number of remaining tomatoSlices equal to 0 and the number of remaining cheeseSlices equal to 0. If it is not possible to make the remaining tomatoSlices and cheeseSlices equal to 0 return [].</p>
+<p>Example 1:</p>
+<p>Input: tomatoSlices = 16, cheeseSlices = 7<br>Output: [1,6]<br>Explantion: To make one jumbo burger and 6 small burgers we need 4<em>1 + 2</em>6 = 16 tomato and 1 + 6 = 7 cheese. There will be no remaining ingredients.<br>Example 2:</p>
+<p>Input: tomatoSlices = 17, cheeseSlices = 4<br>Output: []<br>Explantion: There will be no way to use all ingredients to make small and jumbo burgers.<br>Example 3:</p>
+<p>Input: tomatoSlices = 4, cheeseSlices = 17<br>Output: []<br>Explantion: Making 1 jumbo burger there will be 16 cheese remaining and making 2 small burgers there will be 15 cheese remaining.<br>Example 4:</p>
+<p>Input: tomatoSlices = 0, cheeseSlices = 0<br>Output: [0,0]<br>Example 5:</p>
+<p>Input: tomatoSlices = 2, cheeseSlices = 1<br>Output: [0,1]</p>
+<p>Constraints:</p>
+<p>0 &lt;= tomatoSlices &lt;= 10^7<br>0 &lt;= cheeseSlices &lt;= 10^7</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>二元一次方程非负解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; numOfBurgers(int tomatoSlices, int cheeseSlices) &#123;</span><br><span class="line">        /**</span><br><span class="line">        4*x+2*y = tomatoSlices;</span><br><span class="line">        x+y = cheeseSlices;</span><br><span class="line">        2*x+2*y = 2*cheeseSlices;</span><br><span class="line">        4*x+4*y = 4*cheeseSlices;</span><br><span class="line">        **/</span><br><span class="line">        List&lt;Integer&gt; result = new ArrayList&lt;&gt;();</span><br><span class="line">        if(tomatoSlices-2*cheeseSlices&lt;0 || (tomatoSlices-2*cheeseSlices)%2!=0 || 4*cheeseSlices-tomatoSlices&lt;0 || (4*cheeseSlices-tomatoSlices)%2!=0)&#123;</span><br><span class="line">            return result;</span><br><span class="line">        &#125;      </span><br><span class="line">        int x = (tomatoSlices-2*cheeseSlices)/2;</span><br><span class="line">        int y = (4*cheeseSlices-tomatoSlices)/2;</span><br><span class="line">        result.add(x);</span><br><span class="line">        result.add(y);</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&text=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&title=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&is_video=false&description=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients&body=Check out this article: http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&title=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&title=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&title=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&title=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&name=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/12/02/Leetcode1276-Number-of-Burgers-with-No-Waste-of-Ingredients/&t=[Leetcode1276]Number_of_Burgers_with_No_Waste_of_Ingredients"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Yu Yuki Liu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-159250400-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="DescriptionOn a single threaded CPU, we execute some functions.  Each function has a unique id between 0 and N-1. We store logs in timestamp order that describe when a function is entered or exited. E">
+<meta name="keywords" content="algorithm,leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Leetcode636]Exclusive_Time_of_Functions">
+<meta property="og:url" content="http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/index.html">
+<meta property="og:site_name" content="Yu&#39; Blog">
+<meta property="og:description" content="DescriptionOn a single threaded CPU, we execute some functions.  Each function has a unique id between 0 and N-1. We store logs in timestamp order that describe when a function is entered or exited. E">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2019/04/05/diag1b.png">
+<meta property="og:updated_time" content="2020-02-27T02:10:22.875Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Leetcode636]Exclusive_Time_of_Functions">
+<meta name="twitter:description" content="DescriptionOn a single threaded CPU, we execute some functions.  Each function has a unique id between 0 and N-1. We store logs in timestamp order that describe when a function is entered or exited. E">
+<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2019/04/05/diag1b.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>[Leetcode636]Exclusive_Time_of_Functions</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/12/04/Leetcode280-Wiggle-Sort/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/12/03/Leetcode777-Swap-Adjacent-in-LR-String/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&text=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&title=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&is_video=false&description=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode636]Exclusive_Time_of_Functions&body=Check out this article: http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&title=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&title=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&title=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&title=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&name=[Leetcode636]Exclusive_Time_of_Functions&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&t=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        [Leetcode636]Exclusive_Time_of_Functions
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Yu' Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-12-03T17:58:51.000Z" itemprop="datePublished">2019-12-03</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/leetcode/">leetcode</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>On a single threaded CPU, we execute some functions.  Each function has a unique id between 0 and N-1.</p>
+<p>We store logs in timestamp order that describe when a function is entered or exited.</p>
+<p>Each log is a string with this format: “{function_id}:{“start” | “end”}:{timestamp}”.  For example, “0:start:3” means the function with id 0 started at the beginning of timestamp 3.  “1:end:2” means the function with id 1 ended at the end of timestamp 2.</p>
+<p>A function’s exclusive time is the number of units of time spent in this function.  Note that this does not include any recursive calls to child functions.</p>
+<p>The CPU is single threaded which means that only one function is being executed at a given time unit.</p>
+<p>Return the exclusive time of each function, sorted by their function id.</p>
+<p>Example 1:<br><img src="https://assets.leetcode.com/uploads/2019/04/05/diag1b.png" alt><br>Input:<br>n = 2<br>logs = [“0:start:0”,”1:start:2”,”1:end:5”,”0:end:6”]<br>Output: [3, 4]<br>Explanation:<br>Function 0 starts at the beginning of time 0, then it executes 2 units of time and reaches the end of time 1.<br>Now function 1 starts at the beginning of time 2, executes 4 units of time and ends at time 5.<br>Function 0 is running again at the beginning of time 6, and also ends at the end of time 6, thus executing for 1 unit of time.<br>So function 0 spends 2 + 1 = 3 units of total time executing, and function 1 spends 4 units of total time executing.</p>
+<p>Note:</p>
+<p>1 &lt;= n &lt;= 100<br>Two functions won’t start or end at the same time.<br>Functions will always log when they exit.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>一个CPU，每次只能运行一个方法<br>We need a variable to record the previous time. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] exclusiveTime(int n, List&lt;String&gt; logs) &#123;</span><br><span class="line">        if(n&lt;=0) return new int[0];</span><br><span class="line">        int[] result = new int[n];</span><br><span class="line">        Deque&lt;Integer&gt; stack = new ArrayDeque&lt;&gt;(); </span><br><span class="line">        String[] array = logs.get(0).split(&quot;:&quot;); </span><br><span class="line">        stack.push(Integer.parseInt(array[0]));</span><br><span class="line">        int prev = Integer.parseInt(array[2]);</span><br><span class="line">        for(int i = 1; i&lt;logs.size(); i++)&#123;</span><br><span class="line">            array = logs.get(i).split(&quot;:&quot;);</span><br><span class="line">            int id = Integer.parseInt(array[0]);</span><br><span class="line">            int time = Integer.parseInt(array[2]);</span><br><span class="line"></span><br><span class="line">            if(array[1].equals(&quot;start&quot;))&#123;</span><br><span class="line">                if(!stack.isEmpty())</span><br><span class="line">                    result[stack.peek()] += time-prev;</span><br><span class="line">                prev = time;</span><br><span class="line">                stack.push(id);  </span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                result[stack.pop()] += time-prev+1;</span><br><span class="line">                prev = time+1;</span><br><span class="line">                int endtime = Integer.parseInt(logs.get(i).split(&quot;:&quot;)[2]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&text=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&title=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&is_video=false&description=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode636]Exclusive_Time_of_Functions&body=Check out this article: http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&title=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&title=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&title=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&title=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&name=[Leetcode636]Exclusive_Time_of_Functions&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/12/03/Leetcode636-Exclusive-Time-of-Functions/&t=[Leetcode636]Exclusive_Time_of_Functions"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Yu Yuki Liu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-159250400-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>

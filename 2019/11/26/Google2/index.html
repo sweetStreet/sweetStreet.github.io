@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Expression前缀表达式为- + A * B - C D * E F用一个栈S2来实现计算，扫描从右往左进行，如果扫描到操作数，则压进S2，如果扫描到操作符，则从S2弹出两个操作数进行相应的操作，并将结果压进S2(S2的个数出2个进1个),当扫描结束后，S2的栈顶就是表达式结果。 逆波兰记法中，所有操作符置于操作数的后面，因此也被称为后缀表示法。逆波兰记法不需要括号来标识操作符的优先级需要分">
+<meta name="keywords" content="algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google2">
+<meta property="og:url" content="http://yoursite.com/2019/11/26/Google2/index.html">
+<meta property="og:site_name" content="Yu&#39; Blog">
+<meta property="og:description" content="Expression前缀表达式为- + A * B - C D * E F用一个栈S2来实现计算，扫描从右往左进行，如果扫描到操作数，则压进S2，如果扫描到操作符，则从S2弹出两个操作数进行相应的操作，并将结果压进S2(S2的个数出2个进1个),当扫描结束后，S2的栈顶就是表达式结果。 逆波兰记法中，所有操作符置于操作数的后面，因此也被称为后缀表示法。逆波兰记法不需要括号来标识操作符的优先级需要分">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-02-27T02:10:22.827Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Google2">
+<meta name="twitter:description" content="Expression前缀表达式为- + A * B - C D * E F用一个栈S2来实现计算，扫描从右往左进行，如果扫描到操作数，则压进S2，如果扫描到操作符，则从S2弹出两个操作数进行相应的操作，并将结果压进S2(S2的个数出2个进1个),当扫描结束后，S2的栈顶就是表达式结果。 逆波兰记法中，所有操作符置于操作数的后面，因此也被称为后缀表示法。逆波兰记法不需要括号来标识操作符的优先级需要分">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Google2</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/11/26/Leetcode1153-String-Transforms-Into-Another-String/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/11/25/Leetcode163-Missing-Ranges/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/11/26/Google2/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/11/26/Google2/&text=Google2"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/11/26/Google2/&title=Google2"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/11/26/Google2/&is_video=false&description=Google2"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Google2&body=Check out this article: http://yoursite.com/2019/11/26/Google2/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/11/26/Google2/&title=Google2"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/11/26/Google2/&title=Google2"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/11/26/Google2/&title=Google2"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/11/26/Google2/&title=Google2"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/11/26/Google2/&name=Google2&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/11/26/Google2/&t=Google2"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Expression"><span class="toc-number">1.</span> <span class="toc-text">Expression</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rectangle"><span class="toc-number">2.</span> <span class="toc-text">Rectangle</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Minimum-Window-Subsequence"><span class="toc-number">3.</span> <span class="toc-text">Minimum Window Subsequence</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#largest-subarray-sum"><span class="toc-number">4.</span> <span class="toc-text">largest subarray sum</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Find-shortest-substring-where-all-the-alphabets-are-in-order"><span class="toc-number">5.</span> <span class="toc-text">Find shortest substring where all the alphabets are in order.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Find-the-first-bigger-right-number"><span class="toc-number">6.</span> <span class="toc-text">Find the first bigger right number</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iterator"><span class="toc-number">7.</span> <span class="toc-text">iterator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">8.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-1"><span class="toc-number">9.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Minimum-queries-to-get-the-majority-elements"><span class="toc-number">10.</span> <span class="toc-text">Minimum queries to get the majority elements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Subtract-two-integers-represented-as-array"><span class="toc-number">11.</span> <span class="toc-text">Subtract two integers represented as array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unique-Paths-II"><span class="toc-number">12.</span> <span class="toc-text">Unique Paths II</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Min-steps-to-reach-the-state"><span class="toc-number">13.</span> <span class="toc-text">Min steps to reach the state</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#remove-nodes-from-a-tree"><span class="toc-number">14.</span> <span class="toc-text">remove nodes from a tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-2"><span class="toc-number">15.</span> <span class="toc-text"></span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Google2
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Yu' Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-11-26T19:28:23.000Z" itemprop="datePublished">2019-11-26</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/algorithm/">algorithm</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Expression"><a href="#Expression" class="headerlink" title="Expression"></a>Expression</h2><p>前缀表达式为- + A * B - C D * E F<br>用一个栈S2来实现计算，扫描从右往左进行，<br>如果扫描到操作数，则压进S2，如果扫描到操作符，则从S2弹出两个操作数进行相应的操作，并将结果压进S2(S2的个数出2个进1个),<br>当扫描结束后，S2的栈顶就是表达式结果。</p>
+<p>逆波兰记法中，所有操作符置于操作数的后面，因此也被称为后缀表示法。逆波兰记法不需要括号来标识操作符的优先级<br>需要分配2个栈，栈s1用于临时存储运算符（含一个结束符号），此运算符在栈内遵循越往栈顶优先级越高的原则；栈s2用于输入逆波兰式，为方便起见，栈s1需先放入一个优先级最低的运算符，在这里假定为’#’；<br><a href="https://www.cnblogs.com/stay-foolish/archive/2012/04/25/2470590.html" target="_blank" rel="noopener">https://www.cnblogs.com/stay-foolish/archive/2012/04/25/2470590.html</a></p>
+<h2 id="Rectangle"><a href="#Rectangle" class="headerlink" title="Rectangle"></a>Rectangle</h2><p><a href="https://leetcode.com/problems/range-sum-query-2d-immutable/" target="_blank" rel="noopener">https://leetcode.com/problems/range-sum-query-2d-immutable/</a><br><a href="https://leetcode.com/problems/maximal-rectangle/" target="_blank" rel="noopener">https://leetcode.com/problems/maximal-rectangle/</a></p>
+<h2 id="Minimum-Window-Subsequence"><a href="#Minimum-Window-Subsequence" class="headerlink" title="Minimum Window Subsequence"></a>Minimum Window Subsequence</h2><p><a href="https://leetcode.com/discuss/interview-question/439046/Google-or-Phone-or-Minimum-Window-Subsequence" target="_blank" rel="noopener">https://leetcode.com/discuss/interview-question/439046/Google-or-Phone-or-Minimum-Window-Subsequence</a></p>
+<p>Q1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">private static boolean isSubsequence(String text, String order)&#123;</span><br><span class="line">	int i=0;</span><br><span class="line">	int j=0;</span><br><span class="line">	while(i &lt; text.length())&#123;</span><br><span class="line">		if(j &lt; order.length() &amp;&amp; text.charAt(i) == order.charAt(j))</span><br><span class="line">			j++;</span><br><span class="line">		i++;</span><br><span class="line">	&#125;</span><br><span class="line">	return j == order.length();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="largest-subarray-sum"><a href="#largest-subarray-sum" class="headerlink" title="largest subarray sum"></a>largest subarray sum</h2><p><a href="https://stackoverflow.com/questions/39084147/largest-sum-of-contiguous-subarray-no-larger-than-k" target="_blank" rel="noopener">https://stackoverflow.com/questions/39084147/largest-sum-of-contiguous-subarray-no-larger-than-k</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">for(int i = 0; i&lt;=row; i++)&#123;</span><br><span class="line">    for(int j = i+1; j&lt;=row; j++)&#123;</span><br><span class="line">        TreeSet&lt;Integer&gt; s = new TreeSet&lt;&gt;();</span><br><span class="line">        s.add(0);</span><br><span class="line">        for(int m = 1; m&lt;=col; m++)&#123;</span><br><span class="line">            int sum = area[j][m] - area[i][m];</span><br><span class="line">            Integer presum = s.ceiling(sum-k);</span><br><span class="line">            if(presum!=null)</span><br><span class="line">                res = Math.max(res, sum-presum);   </span><br><span class="line">            s.add(sum);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">return res;</span><br></pre></td></tr></table></figure>
+
+<p>subarray sum = 0<br>solution: HashMap 存储前缀和 （可以扩展为二维的submatrix，先计算colnum的prefixsum，再用一个三层的for循环计算，外面两个for循环限定一个row的范围，也用到hashmap）</p>
+<p>subarray sum in a given interval (elements are positive)<br>solution: 计算prefixsum，假设interval范围是[a,b]，则要求 <code>a=&lt;prefixsum[j+1]-prefixsum[i]&lt;=b</code>，可以通过二分使得时间复杂度为O(nlogn)，对于0-n范围内的j，找[prefixsum[j+1]-3, prefixsum[j+1]-1]遍历的个数</p>
+<h2 id="Find-shortest-substring-where-all-the-alphabets-are-in-order"><a href="#Find-shortest-substring-where-all-the-alphabets-are-in-order" class="headerlink" title="Find shortest substring where all the alphabets are in order."></a>Find shortest substring where all the alphabets are in order.</h2><p><a href="https://leetcode.com/discuss/interview-question/428816/Google-or-Phone-Screen-or-Find-shortest-substring-where-all-the-alphabets-are-in-order" target="_blank" rel="noopener">https://leetcode.com/discuss/interview-question/428816/Google-or-Phone-Screen-or-Find-shortest-substring-where-all-the-alphabets-are-in-order</a>.</p>
+<h2 id="Find-the-first-bigger-right-number"><a href="#Find-the-first-bigger-right-number" class="headerlink" title="Find the first bigger right number"></a>Find the first bigger right number</h2><p>给定array，针对每个数字找右边第一个比这个数字大的数，没找到填0。例如[2,4,1,5,3]，答案就是[4,5,5,0,0]，倒序单调栈解决。</p>
+<p>##<br>给定二叉树，player1与player2轮流对空白节点上色，player1涂红色，player2涂蓝色，player1只能涂红色节点的邻居节点（左右子节点，parent节点），player2同理，直到两方都无法再涂节点，游戏结束，上色节点多的人获胜。player1先涂了一个节点，要求返回player2能否有机会赢得游戏。block out左右子节点以及parent节点，返回最大值是否超过总节点数一半解决。</p>
+<h2 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h2><p>iterator的意义在于，不到打印或者其他用的时候，不遍历</p>
+<h2 id><a href="#" class="headerlink" title></a></h2><p>一个2d matrix，每行每列有数字，都不相同，然后让重新编辑，就是每个数字换成一个新的正整数，要求保持行列顺序，且用到的正整数尽可能小。记得之前地里出现过，就是拓扑排序<br>比如<br>[[6, 4, 10],<br>[3, 5, 20]]<br>变成<br>[[2, 1, 3],<br>[1, 2, 4]]<br>每一行每一列原来的大小关系不变，用的数字尽可能小<br>每行每列 从较小的数到较大的有一条有向边，然后就是常规tp sort</p>
+<h2 id="-1"><a href="#-1" class="headerlink" title></a></h2><p>问题，判断两个树是不是一致，<br>第二题，不可以递归写<br>第三题，判断一个树是不是另一个子树，<br>第四题，如何优化这个问题<br>第五题，如果子树的定义是可以不达到叶子结点 判断一个树是不是另一个子树<br>第六题，如何优化这个问题<br>第七题，除了使用结构特点以外，还可以优化一些什么地方</p>
+<p>最后一问：维护一个当前能match到的所有子树node的candidate 集合，如果当前node值和candicate里值不一样就是no match，candidatenode 为空是match. 下一个是遍历左孩子的话传递当前已经match 同时不为空的candidate 里所有node的左孩子集合. 右孩子同理.</p>
+<h2 id="Minimum-queries-to-get-the-majority-elements"><a href="#Minimum-queries-to-get-the-majority-elements" class="headerlink" title="Minimum queries to get the majority elements"></a>Minimum queries to get the majority elements</h2><p><a href="https://leetcode.com/discuss/interview-question/442877/Google-or-Onstie-or-Minimum-queries-to-get-the-majority-elements" target="_blank" rel="noopener">https://leetcode.com/discuss/interview-question/442877/Google-or-Onstie-or-Minimum-queries-to-get-the-majority-elements</a></p>
+<h2 id="Subtract-two-integers-represented-as-array"><a href="#Subtract-two-integers-represented-as-array" class="headerlink" title="Subtract two integers represented as array"></a>Subtract two integers represented as array</h2><p><a href="https://leetcode.com/discuss/interview-question/443621/Google-or-Phone-or-Subtract-two-integers-represented-as-array" target="_blank" rel="noopener">https://leetcode.com/discuss/interview-question/443621/Google-or-Phone-or-Subtract-two-integers-represented-as-array</a><br><a href="https://leetcode-cn.com/playground/AUrXzygJ/" target="_blank" rel="noopener">https://leetcode-cn.com/playground/AUrXzygJ/</a></p>
+<h2 id="Unique-Paths-II"><a href="#Unique-Paths-II" class="headerlink" title="Unique Paths II"></a>Unique Paths II</h2><p>follow up<br>what if the robot has a skill to convert a 1 to 0, max path after using this skill<br>Create two dp tables. First counts for each slot the number of ways reachable starting from top left, second similar but from bottom right.<br>Iterate over each obstacle, say at r,c.<br>Removing it, the increment will be (dpA[r-1][c] + dpA[r][c-1]) * (dpB[r+1][c] + dpB[r][c+1])</p>
+<h2 id="Min-steps-to-reach-the-state"><a href="#Min-steps-to-reach-the-state" class="headerlink" title="Min steps to reach the state"></a>Min steps to reach the state</h2><p><a href="https://leetcode.com/discuss/interview-question/331429/Google-or-Onsite-or-Min-steps-to-reach-the-state" target="_blank" rel="noopener">https://leetcode.com/discuss/interview-question/331429/Google-or-Onsite-or-Min-steps-to-reach-the-state</a></p>
+<h2 id="remove-nodes-from-a-tree"><a href="#remove-nodes-from-a-tree" class="headerlink" title="remove nodes from a tree"></a>remove nodes from a tree</h2><p>given a set of nodes</p>
+<h2 id="-2"><a href="#-2" class="headerlink" title></a></h2>
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Expression"><span class="toc-number">1.</span> <span class="toc-text">Expression</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rectangle"><span class="toc-number">2.</span> <span class="toc-text">Rectangle</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Minimum-Window-Subsequence"><span class="toc-number">3.</span> <span class="toc-text">Minimum Window Subsequence</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#largest-subarray-sum"><span class="toc-number">4.</span> <span class="toc-text">largest subarray sum</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Find-shortest-substring-where-all-the-alphabets-are-in-order"><span class="toc-number">5.</span> <span class="toc-text">Find shortest substring where all the alphabets are in order.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Find-the-first-bigger-right-number"><span class="toc-number">6.</span> <span class="toc-text">Find the first bigger right number</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iterator"><span class="toc-number">7.</span> <span class="toc-text">iterator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">8.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-1"><span class="toc-number">9.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Minimum-queries-to-get-the-majority-elements"><span class="toc-number">10.</span> <span class="toc-text">Minimum queries to get the majority elements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Subtract-two-integers-represented-as-array"><span class="toc-number">11.</span> <span class="toc-text">Subtract two integers represented as array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unique-Paths-II"><span class="toc-number">12.</span> <span class="toc-text">Unique Paths II</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Min-steps-to-reach-the-state"><span class="toc-number">13.</span> <span class="toc-text">Min steps to reach the state</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#remove-nodes-from-a-tree"><span class="toc-number">14.</span> <span class="toc-text">remove nodes from a tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-2"><span class="toc-number">15.</span> <span class="toc-text"></span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/11/26/Google2/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/11/26/Google2/&text=Google2"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/11/26/Google2/&title=Google2"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/11/26/Google2/&is_video=false&description=Google2"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Google2&body=Check out this article: http://yoursite.com/2019/11/26/Google2/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/11/26/Google2/&title=Google2"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/11/26/Google2/&title=Google2"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/11/26/Google2/&title=Google2"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/11/26/Google2/&title=Google2"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/11/26/Google2/&name=Google2&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/11/26/Google2/&t=Google2"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Yu Yuki Liu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-159250400-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>

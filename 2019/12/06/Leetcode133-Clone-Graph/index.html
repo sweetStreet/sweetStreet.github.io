@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="DescriptionGiven a reference of a node in a connected undirected graph, return a deep copy (clone) of the graph. Each node in the graph contains a val (int) and a list (List[Node]) of its neighbors. E">
+<meta name="keywords" content="algorithm,leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Leetcode133]Clone_Graph">
+<meta property="og:url" content="http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/index.html">
+<meta property="og:site_name" content="Yu&#39; Blog">
+<meta property="og:description" content="DescriptionGiven a reference of a node in a connected undirected graph, return a deep copy (clone) of the graph. Each node in the graph contains a val (int) and a list (List[Node]) of its neighbors. E">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2019/11/04/133_clone_graph_question.png">
+<meta property="og:updated_time" content="2020-02-27T02:10:22.839Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Leetcode133]Clone_Graph">
+<meta name="twitter:description" content="DescriptionGiven a reference of a node in a connected undirected graph, return a deep copy (clone) of the graph. Each node in the graph contains a val (int) and a list (List[Node]) of its neighbors. E">
+<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2019/11/04/133_clone_graph_question.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>[Leetcode133]Clone_Graph</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/12/07/Leetcode1146-Snapshot-Array/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/12/06/Leetcode739-Daily-Temperatures/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&text=[Leetcode133]Clone_Graph"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&title=[Leetcode133]Clone_Graph"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&is_video=false&description=[Leetcode133]Clone_Graph"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode133]Clone_Graph&body=Check out this article: http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&title=[Leetcode133]Clone_Graph"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&title=[Leetcode133]Clone_Graph"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&title=[Leetcode133]Clone_Graph"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&title=[Leetcode133]Clone_Graph"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&name=[Leetcode133]Clone_Graph&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&t=[Leetcode133]Clone_Graph"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution1-DFS"><span class="toc-number">2.1.</span> <span class="toc-text">Solution1 DFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BFS"><span class="toc-number">2.2.</span> <span class="toc-text">BFS</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        [Leetcode133]Clone_Graph
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Yu' Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-12-07T05:32:27.000Z" itemprop="datePublished">2019-12-06</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/leetcode/">leetcode</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a reference of a node in a connected undirected graph, return a deep copy (clone) of the graph. Each node in the graph contains a val (int) and a list (List[Node]) of its neighbors.</p>
+<p>Example:<br><img src="https://assets.leetcode.com/uploads/2019/11/04/133_clone_graph_question.png" alt><br>Input:<br>{“$id”:”1”,”neighbors”:[{“$id”:”2”,”neighbors”:[{“$ref”:”1”},{“$id”:”3”,”neighbors”:[{“$ref”:”2”},{“$id”:”4”,”neighbors”:[{“$ref”:”3”},{“$ref”:”1”}],”val”:4}],”val”:3}],”val”:2},{“$ref”:”4”}],”val”:1}</p>
+<p>Explanation:<br>Node 1’s value is 1, and it has two neighbors: Node 2 and 4.<br>Node 2’s value is 2, and it has two neighbors: Node 1 and 3.<br>Node 3’s value is 3, and it has two neighbors: Node 2 and 4.<br>Node 4’s value is 4, and it has two neighbors: Node 1 and 3.</p>
+<p>Note:</p>
+<p>The number of nodes will be between 1 and 100.<br>The undirected graph is a simple graph, which means no repeated edges and no self-loops in the graph.<br>Since the graph is undirected, if node p has node q as neighbor, then node q must have node p as neighbor too.<br>You must return the copy of the given node as a reference to the cloned graph.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="Solution1-DFS"><a href="#Solution1-DFS" class="headerlink" title="Solution1 DFS"></a>Solution1 DFS</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">// Definition for a Node.</span><br><span class="line">class Node &#123;</span><br><span class="line">    public int val;</span><br><span class="line">    public List&lt;Node&gt; neighbors;</span><br><span class="line"></span><br><span class="line">    public Node() &#123;&#125;</span><br><span class="line"></span><br><span class="line">    public Node(int _val,List&lt;Node&gt; _neighbors) &#123;</span><br><span class="line">        val = _val;</span><br><span class="line">        neighbors = _neighbors;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">*/</span><br><span class="line">class Solution &#123;</span><br><span class="line">    </span><br><span class="line">    public Node cloneGraph(Node node) &#123;</span><br><span class="line">        if (node == null) &#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        Map&lt;Integer, Node&gt; clonedMap = new HashMap&lt;&gt;();</span><br><span class="line">        return helper(node, clonedMap);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public Node helper(Node node, Map&lt;Integer, Node&gt; map)&#123;</span><br><span class="line">        if (map.containsKey(node.hashCode())) &#123;</span><br><span class="line">            return map.get(node.hashCode());</span><br><span class="line">        &#125;</span><br><span class="line">        Node cloned = new Node(node.val, null);</span><br><span class="line">        map.put(node.hashCode(), cloned);</span><br><span class="line">        if (node.neighbors != null) &#123;</span><br><span class="line">            cloned.neighbors = new ArrayList&lt;Node&gt;();</span><br><span class="line">            for(Node neighbor : node.neighbors)&#123;</span><br><span class="line">                cloned.neighbors.add(helper(neighbor, map));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return cloned;        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">// Definition for a Node.</span><br><span class="line">class Node &#123;</span><br><span class="line">    public int val;</span><br><span class="line">    public List&lt;Node&gt; neighbors;</span><br><span class="line"></span><br><span class="line">    public Node() &#123;&#125;</span><br><span class="line"></span><br><span class="line">    public Node(int _val,List&lt;Node&gt; _neighbors) &#123;</span><br><span class="line">        val = _val;</span><br><span class="line">        neighbors = _neighbors;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">*/</span><br><span class="line">class Solution &#123;</span><br><span class="line">    public Node cloneGraph(Node node) &#123;</span><br><span class="line">        if(node == null) return node;</span><br><span class="line">        HashMap&lt;Integer, Node&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">        Queue&lt;Node&gt; queue = new LinkedList&lt;&gt;();</span><br><span class="line">        queue.add(node);</span><br><span class="line">        Node start = new Node();</span><br><span class="line">        start.val = node.val;</span><br><span class="line">        map.put(start.val, start);</span><br><span class="line">        while(!queue.isEmpty())&#123;</span><br><span class="line">            Node cur = queue.poll();</span><br><span class="line">            if(cur.neighbors!=null)&#123;</span><br><span class="line">                Node clonedNode = map.get(cur.val);</span><br><span class="line">                clonedNode.neighbors = new ArrayList&lt;&gt;();</span><br><span class="line">                for(Node neighbor : cur.neighbors)&#123;</span><br><span class="line">                    if(map.containsKey(neighbor.val))&#123;</span><br><span class="line">                        Node clonedNodeNeighbor = map.get(neighbor.val);</span><br><span class="line">                        clonedNode.neighbors.add(clonedNodeNeighbor);                        </span><br><span class="line">                    &#125;else&#123;</span><br><span class="line">                        queue.add(neighbor);</span><br><span class="line">                        Node clonedNodeNeighbor = new Node();</span><br><span class="line">                        clonedNodeNeighbor.val = neighbor.val;</span><br><span class="line">                        map.put(neighbor.val, clonedNodeNeighbor);</span><br><span class="line">                        clonedNode.neighbors.add(clonedNodeNeighbor);</span><br><span class="line">                    &#125;      </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return start;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">2.</span> <span class="toc-text">Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution1-DFS"><span class="toc-number">2.1.</span> <span class="toc-text">Solution1 DFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BFS"><span class="toc-number">2.2.</span> <span class="toc-text">BFS</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&text=[Leetcode133]Clone_Graph"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&title=[Leetcode133]Clone_Graph"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&is_video=false&description=[Leetcode133]Clone_Graph"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[Leetcode133]Clone_Graph&body=Check out this article: http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&title=[Leetcode133]Clone_Graph"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&title=[Leetcode133]Clone_Graph"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&title=[Leetcode133]Clone_Graph"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&title=[Leetcode133]Clone_Graph"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&name=[Leetcode133]Clone_Graph&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/12/06/Leetcode133-Clone-Graph/&t=[Leetcode133]Clone_Graph"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Yu Yuki Liu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-159250400-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":150},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
