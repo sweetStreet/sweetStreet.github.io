@@ -4,11 +4,50 @@
   
     
     <entry>
+      <title>Guice</title>
+      <link href="/2020/07/28/Guice/"/>
+      <url>/2020/07/28/Guice/</url>
+      
+        <content type="html"><![CDATA[<p>Guice is Java-based dependency injection framework. The core principle is to separate behaviour from dependency resolution.</p><p>s</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>interview_questions</title>
       <link href="/2020/07/20/interview-questions/"/>
       <url>/2020/07/20/interview-questions/</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[LeetCode662]Maximum_Width_of_Binary_Tree</title>
+      <link href="/2020/07/10/LeetCode662-Maximum-Width-of-Binary-Tree/"/>
+      <url>/2020/07/10/LeetCode662-Maximum-Width-of-Binary-Tree/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[LeetCode886]Possible_Bipartition</title>
+      <link href="/2020/07/09/LeetCode886-Possible-Bipartition/"/>
+      <url>/2020/07/09/LeetCode886-Possible-Bipartition/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a set of N people (numbered 1, 2, …, N), we would like to split everyone into two groups of any size.</p><p>Each person may dislike some other people, and they should not go into the same group. </p><p>Formally, if dislikes[i] = [a, b], it means it is not allowed to put the people numbered a and b into the same group.</p><p>Return true if and only if it is possible to split everyone into two groups in this way.</p><p>Example 1:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: N &#x3D; 4, dislikes &#x3D; [[1,2],[1,3],[2,4]]</span><br><span class="line">Output: true</span><br><span class="line">Explanation: group1 [1,4], group2 [2,3]</span><br></pre></td></tr></table></figure><p>Example 2:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: N &#x3D; 3, dislikes &#x3D; [[1,2],[1,3],[2,3]]</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure><p>Example 3:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: N &#x3D; 5, dislikes &#x3D; [[1,2],[2,3],[3,4],[4,5],[1,5]]</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure><p>Constraints:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1 &lt;&#x3D; N &lt;&#x3D; 2000</span><br><span class="line">0 &lt;&#x3D; dislikes.length &lt;&#x3D; 10000</span><br><span class="line">dislikes[i].length &#x3D;&#x3D; 2</span><br><span class="line">1 &lt;&#x3D; dislikes[i][j] &lt;&#x3D; N</span><br><span class="line">dislikes[i][0] &lt; dislikes[i][1]</span><br><span class="line">There does not exist i !&#x3D; j for which dislikes[i] &#x3D;&#x3D; dislikes[j].</span><br></pre></td></tr></table></figure><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2>]]></content>
       
       
       
