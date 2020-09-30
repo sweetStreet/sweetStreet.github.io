@@ -30,6 +30,19 @@
     
     
     <entry>
+      <title>about</title>
+      <link href="/2020/07/18/index/"/>
+      <url>/2020/07/18/index/</url>
+      
+        <content type="html"><![CDATA[<p>Hi! My name is Yu Liu and my nickname is Yuki.</p><p>I am now a master student majoring software engineering and systems at the University of Texas at Austin, advised by <a href="http://users.ece.utexas.edu/~gligoric/">Milos Gligoric</a>. I am interested in software testing. Currently, I am focused on improving efficiency of regression test selection and make a FineRTS tool based on <a href="http://www.ekstazi.org/">Ekstazi</a>. Previouly, I completed my undergraduate study at Nanjing University in 2019.</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>[LeetCode662]Maximum_Width_of_Binary_Tree</title>
       <link href="/2020/07/10/LeetCode662-Maximum-Width-of-Binary-Tree/"/>
       <url>/2020/07/10/LeetCode662-Maximum-Width-of-Binary-Tree/</url>
