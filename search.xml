@@ -361,4 +361,61 @@
     
   
   
+    
+    
+    <entry>
+      <title>about</title>
+      <link href="about/index.html"/>
+      <url>about/index.html</url>
+      
+        <content type="html"><![CDATA[<p>Hi! My name is Yu Liu and my nickname is Yuki.</p><p>I am now a master student majoring software engineering and systems at the University of Texas at Austin. My supervisor is <a href="http://users.ece.utexas.edu/~gligoric/">Milos Gligoric</a>. I am currently focused on improving efficiency of regression test selection and make a FineRTS tool based on <a href="http://www.ekstazi.org/">Ekstazi</a>.</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>projects</title>
+      <link href="projects/index.html"/>
+      <url>projects/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="search/index.html"/>
+      <url>search/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Emacs</title>
+      <link href="blog/Emacs.html"/>
+      <url>blog/Emacs.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h2 id="cursor"><a href="#cursor" class="headerlink" title="cursor"></a>cursor</h2><p>C-v    Move forward one screenful<br>M-v    Move backward one screenful<br>C-l    Clear screen and redisplay all the text,<br>    moving the text around the cursor<br>    to the center of the screen.</p><p>(That’s CONTROL-L, not CONTROL-1.)<br>          Previous line, C-p<br>              :<br>              :<br>Backward, C-b …. Current cursor position …. Forward, C-f<br>              :<br>              :<br>            Next line, C-n</p><p>C-f    Move forward a character<br>C-b    Move backward a character</p><p>M-f    Move forward a word<br>M-b    Move backward a word</p><p>C-n    Move to next line<br>C-p    Move to previous line</p><p>C-a    Move to beginning of line<br>C-e    Move to end of line</p><p>M-a    Move back to beginning of sentence<br>M-e    Move forward to end of sentence</p><p>Try M-&lt; now, to move to the beginning of the tutorial.<br>Then use C-v repeatedly to move back here.</p><p>Try M-&gt; now, to move to the end of the tutorial.<br>Then use M-v repeatedly to move back here.</p><p>C-u 8 C-v: scrolls by 8 line</p><p>use C-g to stop a command</p><h2 id="window"><a href="#window" class="headerlink" title="window"></a>window</h2><p>C-x 0   Close current window<br>C-x 1    One window Close other windows<br>C-x 2   split-window-vertically<br>C-x 3   split-window-horizontally</p><p>M-x shell   show terminal<br>C-x o    change to another window</p><h2 id="inserting-and-deleting"><a href="#inserting-and-deleting" class="headerlink" title="inserting and deleting"></a>inserting and deleting</h2>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>blog</title>
+      <link href="blog/index.html"/>
+      <url>blog/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+  
 </search>
