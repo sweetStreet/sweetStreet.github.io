@@ -1,10 +1,3 @@
-// // A local search script with the help of [hexo-generator-search](https://github.com/PaicHyperionDev/hexo-generator-search)
-// MIT License
-// Copyright (C) 2015
-// Joseph Pan <https://github.com/wzpan>
-// Shuhao Mao <https://github.com/maoshuhao>
-// MOxFIVE <https://github.com/MOxFIVE>
-// Jing Ling <https://github.com/sunnyelf>
 var searchFunc = function (path, search_id, content_id) {
     'use strict';
     $.ajax({
@@ -57,17 +50,17 @@ var searchFunc = function (path, search_id, content_id) {
                     }
                     // show search results
                     if (isMatch) {
-                        str += "<li><a href='" + data_url + "' class='search-result-title' target='_blank'>" + "> " + data_title + "</a>";
+                        str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
                         var content = data.content.trim().replace(/<[^>]+>/g, "");
                         if (first_occur >= 0) {
-                            // cut out characters
-                            var start = first_occur - 6;
-                            var end = first_occur + 6;
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
                             if (start < 0) {
                                 start = 0;
                             }
                             if (start == 0) {
-                                end = 10;
+                                end = 100;
                             }
                             if (end > content.length) {
                                 end = content.length;
@@ -77,35 +70,16 @@ var searchFunc = function (path, search_id, content_id) {
                             keywords.forEach(function (keyword) {
                                 var regS = new RegExp(keyword, "gi");
                                 match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                            })
+                            });
+
                             str += "<p class=\"search-result\">" + match_content + "...</p>"
                         }
+                        str += "</li>";
                     }
-                })
+                });
+                str += "</ul>";
                 $resultContent.innerHTML = str;
-            })
+            });
         }
-    })
+    });
 }
-var inputArea = document.querySelector("#search-input");
-var $resultArea = $("#search-result");
-inputArea.onfocus = function () {
-    var path = "/search.xml";
-    searchFunc(path, 'search-input', 'search-result');
-}
-inputArea.onkeydown = function () {
-    if (event.keyCode == 13) {
-        return false
-    }
-}
-resetSearch = function () {
-    $resultArea.html("");
-    $(".no-result").hide();
-}
-$resultArea.bind("DOMNodeRemoved DOMNodeInserted", function (e) {
-    if (!$(e.target).text()) {
-        $(".no-result").show(200);
-    } else {
-        $(".no-result").hide();
-    }
-})
