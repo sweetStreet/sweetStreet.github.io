@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[LeetCode647]Palindromic_Substrings | Yu&#39;s Blog</title>
+    <title>[LeetCode647]Palindromic_Substrings | Yu&#39;s Blog</title><meta name="robots" content="noindex">
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -347,7 +347,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    282
+                    256
                 </div>
                 
 
@@ -366,16 +366,21 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a string, your task is to count how many palindromic substrings in this string.</p>
 <p>The substrings with different start indexes or end indexes are counted as different substrings even they consist of same characters.</p>
 <p>Example 1:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;abc&quot;</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: Three palindromic strings: &quot;a&quot;, &quot;b&quot;, &quot;c&quot;.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: "abc"</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: Three palindromic strings: "a", "b", "c".</span><br></pre></td></tr></tbody></table></figure>
 
 <p>Example 2:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;aaa&quot;</span><br><span class="line">Output: 6</span><br><span class="line">Explanation: Six palindromic strings: &quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;aa&quot;, &quot;aa&quot;, &quot;aaa&quot;.</span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line"></span><br><span class="line">Note:</span><br><span class="line"></span><br><span class="line">The input string length won&#39;t exceed 1000.</span><br><span class="line"></span><br><span class="line">## Solution</span><br><span class="line">palindrome 问题非常容易想到要以某个位置为中心，向两边扩展。注意有奇偶性。</span><br><span class="line">另外就是一个非常经典的马拉车算法。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Input: "aaa"</span><br><span class="line">Output: 6</span><br><span class="line">Explanation: Six palindromic strings: "a", "a", "a", "aa", "aa", "aaa".</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">Note:</span><br><span class="line"></span><br><span class="line">The input string length won't exceed 1000.</span><br><span class="line"></span><br><span class="line">## Solution</span><br><span class="line">palindrome 问题非常容易想到要以某个位置为中心，向两边扩展。注意有奇偶性。</span><br><span class="line">另外就是一个非常经典的马拉车算法。</span><br></pre></td></tr></tbody></table></figure>
 <p>class Solution:<br>    def <strong>init</strong>(self):<br>        self.res = 0</p>
 <pre><code>def countSubstrings(self, s: str) -&gt; int:
     for i in range(len(s)):
@@ -387,10 +392,10 @@ def helper(self, s, i, j):
     while i &gt;= 0 and j &lt; len(s) and s[i] == s[j]:
         i -= 1;
         j += 1;
-        self.res += 1</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        self.res += 1</code></pre><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <p>class Solution:<br>    def countSubstrings(self, S):<br>        def manachers(S):<br>            A = ‘@#’ + ‘#’.join(S) + ‘#$’<br>            Z = [0] * len(A)<br>            center = right = 0<br>            for i in range(1, len(A) - 1):<br>                if i &lt; right:<br>                    Z[i] = min(right - i, Z[2 * center - i])<br>                while A[i + Z[i] + 1] == A[i - Z[i] - 1]:<br>                    Z[i] += 1<br>                if i + Z[i] &gt; right:<br>                    center, right = i, i + Z[i]<br>            return Z</p>
 <pre><code>return sum((v+1)//2 for v in manachers(S))</code></pre><p>```</p>
-
+<!-- flag of hidden posts -->
                 
             </div>
             <hr/>
@@ -623,54 +628,18 @@ def helper(self, s, i, j):
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/07/04/LeetCode895-Maximum-Frequency-Stack/">
+                <a href="/2020/07/03/LeetCode647-Palindromic-Substrings/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="[LeetCode895]Maximum_Frequency_Stack">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="[LeetCode647]Palindromic_Substrings">
                         
-                        <span class="card-title">[LeetCode895]Maximum_Frequency_Stack</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Yu Liu
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/07/02/LeetCode1500-Design-a-File-Sharing-System/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="[LeetCode1500]Design_a_File_Sharing_System">
-                        
-                        <span class="card-title">[LeetCode1500]Design_a_File_Sharing_System</span>
+                        <span class="card-title">[LeetCode647]Palindromic_Substrings</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -681,7 +650,7 @@ def helper(self, s, i, j):
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-03
                             </span>
                         <span class="publish-author">
                             
@@ -691,6 +660,45 @@ def helper(self, s, i, j):
                         </span>
                     </div>
                 </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Current&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/07/03/LeetCode647-Palindromic-Substrings/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="[LeetCode647]Palindromic_Substrings">
+                        
+                        <span class="card-title">[LeetCode647]Palindromic_Substrings</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Yu Liu
+                            
+                        </span>
+                    </div>
+                </div>
+
                 
             </div>
         </div>

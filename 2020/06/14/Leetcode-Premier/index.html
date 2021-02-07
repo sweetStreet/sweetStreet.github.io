@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[Leetcode]Premier | Yu&#39;s Blog</title>
+    <title>[Leetcode]Premier | Yu&#39;s Blog</title><meta name="robots" content="noindex">
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -347,7 +347,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.3k
+                    1.2k
                 </div>
                 
 
@@ -366,6 +366,11 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
@@ -375,63 +380,63 @@
 <p>The tree is represented in the same input/output way as normal binary trees where each node is represented as a pair of [val, random_index] where:</p>
 <p>val: an integer representing Node.val<br>random_index: the index of the node (in the input) where the random pointer points to, or null if it does not point to any node.<br>You will be given the tree in class Node and you should return the cloned tree in class NodeCopy.</p>
 <p>Example 1:<br><img src="https://assets.leetcode.com/uploads/2020/06/13/e1.png" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: root &#x3D; [[1,null],null,[4,3],[7,0]]</span><br><span class="line">Output: [[1,null],null,[4,3],[7,0]]</span><br><span class="line">Explanation: The original binary tree is [1,null,4,7].</span><br><span class="line">The random pointer of node one is null, so it is represented as [1, null].</span><br><span class="line">The random pointer of node 4 is node 7, so it is represented as [4, 3] where 3 is the index of node 7 in the tree array.</span><br><span class="line">The random pointer of node 7 is node 1, so it is represented as [7, 0] where 0 is the index of node 1 in the tree array</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: root = [[1,null],null,[4,3],[7,0]]</span><br><span class="line">Output: [[1,null],null,[4,3],[7,0]]</span><br><span class="line">Explanation: The original binary tree is [1,null,4,7].</span><br><span class="line">The random pointer of node one is null, so it is represented as [1, null].</span><br><span class="line">The random pointer of node 4 is node 7, so it is represented as [4, 3] where 3 is the index of node 7 in the tree array.</span><br><span class="line">The random pointer of node 7 is node 1, so it is represented as [7, 0] where 0 is the index of node 1 in the tree array</span><br></pre></td></tr></tbody></table></figure>
 
 <p>Example 2:<br><img src="https://assets.leetcode.com/uploads/2020/06/13/e3.png" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: root &#x3D; [[1,4],null,[1,0],null,[1,5],[1,5]]</span><br><span class="line">Output: [[1,4],null,[1,0],null,[1,5],[1,5]]</span><br><span class="line">Explanation: The random pointer of a node can be the node itself.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: root = [[1,4],null,[1,0],null,[1,5],[1,5]]</span><br><span class="line">Output: [[1,4],null,[1,0],null,[1,5],[1,5]]</span><br><span class="line">Explanation: The random pointer of a node can be the node itself.</span><br></pre></td></tr></tbody></table></figure>
 
 <p>Example 3:<br><img src="https://assets.leetcode.com/uploads/2020/06/13/e2.png" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: root &#x3D; [[1,6],[2,5],[3,4],[4,3],[5,2],[6,1],[7,0]]</span><br><span class="line">Output: [[1,6],[2,5],[3,4],[4,3],[5,2],[6,1],[7,0]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: root = [[1,6],[2,5],[3,4],[4,3],[5,2],[6,1],[7,0]]</span><br><span class="line">Output: [[1,6],[2,5],[3,4],[4,3],[5,2],[6,1],[7,0]]</span><br></pre></td></tr></tbody></table></figure>
 
 <p>Example 4:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: root &#x3D; []</span><br><span class="line">Output: []</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: root = []</span><br><span class="line">Output: []</span><br></pre></td></tr></tbody></table></figure>
 
 <p>Example 5:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: root &#x3D; [[1,null],null,[2,null],null,[1,null]]</span><br><span class="line">Output: [[1,null],null,[2,null],null,[1,null]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: root = [[1,null],null,[2,null],null,[1,null]]</span><br><span class="line">Output: [[1,null],null,[2,null],null,[1,null]]</span><br></pre></td></tr></tbody></table></figure>
 
 <p>Constraints:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">The number of nodes in the tree is in the range [0, 1000].</span><br><span class="line">Each node&#39;s value is between [1, 10^6].</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">The number of nodes in the&nbsp;tree&nbsp;is in the range&nbsp;[0, 1000].</span><br><span class="line">Each node's value is between&nbsp;[1, 10^6].</span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>先把原树构造出来，再构造random指针<br>这种deep copy的题还可以参考<br>138. 复制带随机指针的链表<br>剑指 Offer 35. 复杂链表的复制 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># Definition for a binary tree node.</span><br><span class="line"># class Node:</span><br><span class="line">#     def __init__(self, val&#x3D;0, left&#x3D;None, right&#x3D;None, random&#x3D;None):</span><br><span class="line">#         self.val &#x3D; val</span><br><span class="line">#         self.left &#x3D; left</span><br><span class="line">#         self.right &#x3D; right</span><br><span class="line">#         self.random &#x3D; random</span><br><span class="line">class Solution:</span><br><span class="line">    def copyRandomBinaryTree(self, root: &#39;Node&#39;) -&gt; &#39;NodeCopy&#39;:</span><br><span class="line">        nodesmap &#x3D; &#123;&#125;</span><br><span class="line"></span><br><span class="line">        def copyLeftRight(node):</span><br><span class="line">            if not node:</span><br><span class="line">                return node</span><br><span class="line">            nodecopy &#x3D; NodeCopy(node.val)</span><br><span class="line">            nodesmap[node] &#x3D; nodecopy</span><br><span class="line">            nodecopy.left &#x3D; copyLeftRight(node.left)</span><br><span class="line">            nodecopy.right &#x3D; copyLeftRight(node.right)</span><br><span class="line">            return nodecopy</span><br><span class="line">        </span><br><span class="line">        def copyRandom(node):</span><br><span class="line">            if not node:</span><br><span class="line">                return node</span><br><span class="line">            nodecopy &#x3D; nodesmap[node]</span><br><span class="line">            nodecopy.random &#x3D; nodesmap.get(node.random, None)</span><br><span class="line">            copyRandom(node.left)</span><br><span class="line">            copyRandom(node.right)</span><br><span class="line">            return nodecopy</span><br><span class="line"></span><br><span class="line">        copyLeftRight(root)</span><br><span class="line">        nodecopyroot &#x3D; copyRandom(root)</span><br><span class="line">        return nodecopyroot</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># Definition for a binary tree node.</span><br><span class="line"># class Node:</span><br><span class="line">#     def __init__(self, val=0, left=None, right=None, random=None):</span><br><span class="line">#         self.val = val</span><br><span class="line">#         self.left = left</span><br><span class="line">#         self.right = right</span><br><span class="line">#         self.random = random</span><br><span class="line">class Solution:</span><br><span class="line">    def copyRandomBinaryTree(self, root: 'Node') -&gt; 'NodeCopy':</span><br><span class="line">        nodesmap = {}</span><br><span class="line"></span><br><span class="line">        def copyLeftRight(node):</span><br><span class="line">            if not node:</span><br><span class="line">                return node</span><br><span class="line">            nodecopy = NodeCopy(node.val)</span><br><span class="line">            nodesmap[node] = nodecopy</span><br><span class="line">            nodecopy.left = copyLeftRight(node.left)</span><br><span class="line">            nodecopy.right = copyLeftRight(node.right)</span><br><span class="line">            return nodecopy</span><br><span class="line">        </span><br><span class="line">        def copyRandom(node):</span><br><span class="line">            if not node:</span><br><span class="line">                return node</span><br><span class="line">            nodecopy = nodesmap[node]</span><br><span class="line">            nodecopy.random = nodesmap.get(node.random, None)</span><br><span class="line">            copyRandom(node.left)</span><br><span class="line">            copyRandom(node.right)</span><br><span class="line">            return nodecopy</span><br><span class="line"></span><br><span class="line">        copyLeftRight(root)</span><br><span class="line">        nodecopyroot = copyRandom(root)</span><br><span class="line">        return nodecopyroot</span><br></pre></td></tr></tbody></table></figure>
 
 <h1 id="1474-Delete-N-Nodes-After-M-Nodes-of-a-Linked-List"><a href="#1474-Delete-N-Nodes-After-M-Nodes-of-a-Linked-List" class="headerlink" title="1474. Delete N Nodes After M Nodes of a Linked List"></a>1474. Delete N Nodes After M Nodes of a Linked List</h1><p>Given the head of a linked list and two integers m and n. Traverse the linked list and remove some nodes in the following way:</p>
 <p>Start with the head as the current node.<br>Keep the first m nodes starting with the current node.<br>Remove the next n nodes<br>Keep repeating steps 2 and 3 until you reach the end of the list.<br>Return the head of the modified list after removing the mentioned nodes.</p>
 <p>Follow up question: How can you solve this problem by modifying the list in-place?</p>
 <p>Example 1:<br><img src="https://assets.leetcode.com/uploads/2020/06/06/sample_1_1848.png" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: head &#x3D; [1,2,3,4,5,6,7,8,9,10,11,12,13], m &#x3D; 2, n &#x3D; 3</span><br><span class="line">Output: [1,2,6,7,11,12]</span><br><span class="line">Explanation: Keep the first (m &#x3D; 2) nodes starting from the head of the linked List  (1 -&gt;2) show in black nodes.</span><br><span class="line">Delete the next (n &#x3D; 3) nodes (3 -&gt; 4 -&gt; 5) show in read nodes.</span><br><span class="line">Continue with the same procedure until reaching the tail of the Linked List.</span><br><span class="line">Head of linked list after removing nodes is returned.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: head = [1,2,3,4,5,6,7,8,9,10,11,12,13], m = 2, n = 3</span><br><span class="line">Output: [1,2,6,7,11,12]</span><br><span class="line">Explanation: Keep the first (m = 2) nodes starting from the head of the linked List  (1 -&gt;2) show in black nodes.</span><br><span class="line">Delete the next (n = 3) nodes (3 -&gt; 4 -&gt; 5) show in read nodes.</span><br><span class="line">Continue with the same procedure until reaching the tail of the Linked List.</span><br><span class="line">Head of linked list after removing nodes is returned.</span><br></pre></td></tr></tbody></table></figure>
 
 <p>Example 2:<br><img src="https://assets.leetcode.com/uploads/2020/06/06/sample_2_1848.png" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: head &#x3D; [1,2,3,4,5,6,7,8,9,10,11], m &#x3D; 1, n &#x3D; 3</span><br><span class="line">Output: [1,5,9]</span><br><span class="line">Explanation: Head of linked list after removing nodes is returned.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: head = [1,2,3,4,5,6,7,8,9,10,11], m = 1, n = 3</span><br><span class="line">Output: [1,5,9]</span><br><span class="line">Explanation: Head of linked list after removing nodes is returned.</span><br></pre></td></tr></tbody></table></figure>
 
 <p>Example 3:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: head &#x3D; [1,2,3,4,5,6,7,8,9,10,11], m &#x3D; 3, n &#x3D; 1</span><br><span class="line">Output: [1,2,3,5,6,7,9,10,11]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: head = [1,2,3,4,5,6,7,8,9,10,11], m = 3, n = 1</span><br><span class="line">Output: [1,2,3,5,6,7,9,10,11]</span><br></pre></td></tr></tbody></table></figure>
 
 <p>Example 4:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: head &#x3D; [9,3,7,7,9,10,8,2], m &#x3D; 1, n &#x3D; 2</span><br><span class="line">Output: [9,7,8]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: head = [9,3,7,7,9,10,8,2], m = 1, n = 2</span><br><span class="line">Output: [9,7,8]</span><br></pre></td></tr></tbody></table></figure>
 
 <p>Constraints:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The given linked list will contain between 1 and 10^4 nodes.</span><br><span class="line">The value of each node in the linked list will be in the range [1, 10^6].</span><br><span class="line">1 &lt;&#x3D; m,n &lt;&#x3D; 1000</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The given linked list will contain between&nbsp;1&nbsp;and&nbsp;10^4&nbsp;nodes.</span><br><span class="line">The value of each node in the linked list will be in the range&nbsp;[1, 10^6].</span><br><span class="line">1 &lt;= m,n &lt;=&nbsp;1000</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># Definition for singly-linked list.</span><br><span class="line"># class ListNode:</span><br><span class="line">#     def __init__(self, val&#x3D;0, next&#x3D;None):</span><br><span class="line">#         self.val &#x3D; val</span><br><span class="line">#         self.next &#x3D; next</span><br><span class="line">class Solution:</span><br><span class="line">    def deleteNodes(self, head: ListNode, m: int, n: int) -&gt; ListNode:</span><br><span class="line">        if not head:</span><br><span class="line">            return head</span><br><span class="line">        grey &#x3D; m</span><br><span class="line">        red &#x3D; n</span><br><span class="line">        greynode &#x3D; head</span><br><span class="line">        rednode &#x3D; head</span><br><span class="line">        cur &#x3D; head</span><br><span class="line">        while grey&gt;1 and greynode.next:</span><br><span class="line">            greynode, rednode &#x3D; greynode.next, rednode.next</span><br><span class="line">            grey &#x3D; grey-1</span><br><span class="line">        while red&gt;0 and rednode.next:</span><br><span class="line">            rednode &#x3D; rednode.next</span><br><span class="line">            red &#x3D; red-1</span><br><span class="line">        greynode.next &#x3D; self.deleteNodes(rednode.next, m, n)</span><br><span class="line">        return head</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># Definition for singly-linked list.</span><br><span class="line"># class ListNode:</span><br><span class="line">#     def __init__(self, val=0, next=None):</span><br><span class="line">#         self.val = val</span><br><span class="line">#         self.next = next</span><br><span class="line">class Solution:</span><br><span class="line">    def deleteNodes(self, head: ListNode, m: int, n: int) -&gt; ListNode:</span><br><span class="line">        if not head:</span><br><span class="line">            return head</span><br><span class="line">        grey = m</span><br><span class="line">        red = n</span><br><span class="line">        greynode = head</span><br><span class="line">        rednode = head</span><br><span class="line">        cur = head</span><br><span class="line">        while grey&gt;1 and greynode.next:</span><br><span class="line">            greynode, rednode = greynode.next, rednode.next</span><br><span class="line">            grey = grey-1</span><br><span class="line">        while red&gt;0 and rednode.next:</span><br><span class="line">            rednode = rednode.next</span><br><span class="line">            red = red-1</span><br><span class="line">        greynode.next = self.deleteNodes(rednode.next, m, n)</span><br><span class="line">        return head</span><br></pre></td></tr></tbody></table></figure>
 
 <h1 id="1469-Find-All-The-Lonely-Nodes"><a href="#1469-Find-All-The-Lonely-Nodes" class="headerlink" title="1469. Find All The Lonely Nodes"></a>1469. Find All The Lonely Nodes</h1><p>In a binary tree, a lonely node is a node that is the only child of its parent node. The root of the tree is not lonely because it does not have a parent node.</p>
 <p>Given the root of a binary tree, return an array containing the values of all lonely nodes in the tree. Return the list in any order.</p>
 <p>Example 1:<br><img src="https://assets.leetcode.com/uploads/2020/06/03/e1.png" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: root &#x3D; [1,2,3,null,4]</span><br><span class="line">Output: [4]</span><br><span class="line">Explanation: Light blue node is the only lonely node.</span><br><span class="line">Node 1 is the root and is not lonely.</span><br><span class="line">Nodes 2 and 3 have the same parent and are not lonely.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: root = [1,2,3,null,4]</span><br><span class="line">Output: [4]</span><br><span class="line">Explanation: Light blue node is the only lonely node.</span><br><span class="line">Node 1 is the root and is not lonely.</span><br><span class="line">Nodes 2 and 3 have the same parent and are not lonely.</span><br></pre></td></tr></tbody></table></figure>
 <p>Example 2:<br><img src="https://assets.leetcode.com/uploads/2020/06/03/e2.png" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: root &#x3D; [7,1,4,6,null,5,3,null,null,null,null,null,2]</span><br><span class="line">Output: [6,2]</span><br><span class="line">Explanation: Light blue nodes are lonely nodes.</span><br><span class="line">Please remember that order doesn&#39;t matter, [2,6] is also an acceptable answer.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: root = [7,1,4,6,null,5,3,null,null,null,null,null,2]</span><br><span class="line">Output: [6,2]</span><br><span class="line">Explanation: Light blue nodes are lonely nodes.</span><br><span class="line">Please remember that order doesn't matter, [2,6] is also an acceptable answer.</span><br></pre></td></tr></tbody></table></figure>
 <p>Example 3:<br><img src="https://assets.leetcode.com/uploads/2020/06/03/tree.png" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: root &#x3D; [11,99,88,77,null,null,66,55,null,null,44,33,null,null,22]</span><br><span class="line">Output: [77,55,33,66,44,22]</span><br><span class="line">Explanation: Nodes 99 and 88 share the same parent. Node 11 is the root.</span><br><span class="line">All other nodes are lonely.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: root = [11,99,88,77,null,null,66,55,null,null,44,33,null,null,22]</span><br><span class="line">Output: [77,55,33,66,44,22]</span><br><span class="line">Explanation: Nodes 99 and 88 share the same parent. Node 11 is the root.</span><br><span class="line">All other nodes are lonely.</span><br></pre></td></tr></tbody></table></figure>
 <p>Example 4:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: root &#x3D; [197]  </span><br><span class="line">Output: []</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: root = [197]  </span><br><span class="line">Output: []  </span><br></pre></td></tr></tbody></table></figure>
 <p>Example 5:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: root &#x3D; [31,null,78,null,28]</span><br><span class="line">Output: [78,28]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: root = [31,null,78,null,28]</span><br><span class="line">Output: [78,28]</span><br></pre></td></tr></tbody></table></figure>
 
 <p>Constraints:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">The number of nodes in the tree is in the range [1, 1000].</span><br><span class="line">Each node&#39;s value is between [1, 10^6].</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">The number of nodes in the&nbsp;tree&nbsp;is in the range&nbsp;[1, 1000].</span><br><span class="line">Each node's value is between&nbsp;[1, 10^6].</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># Definition for a binary tree node.</span><br><span class="line"># class TreeNode:</span><br><span class="line">#     def __init__(self, val&#x3D;0, left&#x3D;None, right&#x3D;None):</span><br><span class="line">#         self.val &#x3D; val</span><br><span class="line">#         self.left &#x3D; left</span><br><span class="line">#         self.right &#x3D; right</span><br><span class="line">class Solution:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.res &#x3D; []</span><br><span class="line"></span><br><span class="line">    def getLonelyNodes(self, root: TreeNode) -&gt; List[int]:</span><br><span class="line"></span><br><span class="line">        def dfs(node):</span><br><span class="line">            if not node:</span><br><span class="line">                return</span><br><span class="line">            if node.left and node.right:</span><br><span class="line">                dfs(node.left)</span><br><span class="line">                dfs(node.right)</span><br><span class="line">            if not node.left and node.right:</span><br><span class="line">                self.res.append(node.right.val)</span><br><span class="line">                dfs(node.right)</span><br><span class="line">            elif node.left and not node.right:</span><br><span class="line">                self.res.append(node.left.val)</span><br><span class="line">                dfs(node.left)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># Definition for a binary tree node.</span><br><span class="line"># class TreeNode:</span><br><span class="line">#     def __init__(self, val=0, left=None, right=None):</span><br><span class="line">#         self.val = val</span><br><span class="line">#         self.left = left</span><br><span class="line">#         self.right = right</span><br><span class="line">class Solution:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.res = []</span><br><span class="line"></span><br><span class="line">    def getLonelyNodes(self, root: TreeNode) -&gt; List[int]:</span><br><span class="line"></span><br><span class="line">        def dfs(node):</span><br><span class="line">            if not node:</span><br><span class="line">                return</span><br><span class="line">            if node.left and node.right:</span><br><span class="line">                dfs(node.left)</span><br><span class="line">                dfs(node.right)</span><br><span class="line">            if not node.left and node.right:</span><br><span class="line">                self.res.append(node.right.val)</span><br><span class="line">                dfs(node.right)</span><br><span class="line">            elif node.left and not node.right:</span><br><span class="line">                self.res.append(node.left.val)</span><br><span class="line">                dfs(node.left)</span><br></pre></td></tr></tbody></table></figure><!-- flag of hidden posts -->
                 
             </div>
             <hr/>
@@ -664,54 +669,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/06/15/Leetcode-Sort/">
+                <a href="/2020/06/14/Leetcode-Premier/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="[Leetcode]Sort">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="[Leetcode]Premier">
                         
-                        <span class="card-title">[Leetcode]Sort</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-15
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Yu Liu
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/06/14/Leetcode-Tree/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="[Leetcode]Tree">
-                        
-                        <span class="card-title">[Leetcode]Tree</span>
+                        <span class="card-title">[Leetcode]Premier</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -732,6 +701,45 @@
                         </span>
                     </div>
                 </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Current&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/06/14/Leetcode-Premier/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="[Leetcode]Premier">
+                        
+                        <span class="card-title">[Leetcode]Premier</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Yu Liu
+                            
+                        </span>
+                    </div>
+                </div>
+
                 
             </div>
         </div>

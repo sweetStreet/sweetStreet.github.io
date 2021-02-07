@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[LeetCode441]Arranging_Coins | Yu&#39;s Blog</title>
+    <title>[LeetCode441]Arranging_Coins | Yu&#39;s Blog</title><meta name="robots" content="noindex">
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -347,7 +347,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    160
+                    146
                 </div>
                 
 
@@ -366,6 +366,11 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
@@ -373,12 +378,12 @@
 <p>Given n, find the total number of full staircase rows that can be formed.</p>
 <p>n is a non-negative integer and fits within the range of a 32-bit signed integer.</p>
 <p>Example 1:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; 5</span><br><span class="line"></span><br><span class="line">The coins can form the following rows:</span><br><span class="line">¤</span><br><span class="line">¤ ¤</span><br><span class="line">¤ ¤</span><br><span class="line"></span><br><span class="line">Because the 3rd row is incomplete, we return 2.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">n = 5</span><br><span class="line"></span><br><span class="line">The coins can form the following rows:</span><br><span class="line">¤</span><br><span class="line">¤ ¤</span><br><span class="line">¤ ¤</span><br><span class="line"></span><br><span class="line">Because the 3rd row is incomplete, we return 2.</span><br></pre></td></tr></tbody></table></figure>
 <p>Example 2:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; 8</span><br><span class="line"></span><br><span class="line">The coins can form the following rows:</span><br><span class="line">¤</span><br><span class="line">¤ ¤</span><br><span class="line">¤ ¤ ¤</span><br><span class="line">¤ ¤</span><br><span class="line"></span><br><span class="line">Because the 4th row is incomplete, we return 3.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">n = 8</span><br><span class="line"></span><br><span class="line">The coins can form the following rows:</span><br><span class="line">¤</span><br><span class="line">¤ ¤</span><br><span class="line">¤ ¤ ¤</span><br><span class="line">¤ ¤</span><br><span class="line"></span><br><span class="line">Because the 4th row is incomplete, we return 3.</span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Binary Search and Fomular both work here.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def arrangeCoins(self, n: int) -&gt; int:</span><br><span class="line">        left, right &#x3D; 0, n</span><br><span class="line">        while left &lt;&#x3D; right:</span><br><span class="line">            k &#x3D; (right + left) &#x2F;&#x2F; 2</span><br><span class="line">            curr &#x3D; k * (k + 1) &#x2F;&#x2F; 2</span><br><span class="line">            if curr &#x3D;&#x3D; n:</span><br><span class="line">                return k</span><br><span class="line">            if n &lt; curr:</span><br><span class="line">                right &#x3D; k - 1</span><br><span class="line">            else:</span><br><span class="line">                left &#x3D; k + 1</span><br><span class="line">        return right</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def arrangeCoins(self, n: int) -&gt; int:</span><br><span class="line">        left, right = 0, n</span><br><span class="line">        while left &lt;= right:</span><br><span class="line">            k = (right + left) // 2</span><br><span class="line">            curr = k * (k + 1) // 2</span><br><span class="line">            if curr == n:</span><br><span class="line">                return k</span><br><span class="line">            if n &lt; curr:</span><br><span class="line">                right = k - 1</span><br><span class="line">            else:</span><br><span class="line">                left = k + 1</span><br><span class="line">        return right</span><br></pre></td></tr></tbody></table></figure><!-- flag of hidden posts -->
                 
             </div>
             <hr/>
@@ -611,54 +616,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/07/02/LeetCode1274-Number-of-Ships-in-a-Rectangle/">
+                <a href="/2020/07/01/LeetCode441-Arranging-Coins/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="[LeetCode1274]Number_of_Ships_in_a_Rectangle">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="[LeetCode441]Arranging_Coins">
                         
-                        <span class="card-title">[LeetCode1274]Number_of_Ships_in_a_Rectangle</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-02
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Yu Liu
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/06/24/Leetcode-Union-Find/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="[Leetcode]Union_Find">
-                        
-                        <span class="card-title">[Leetcode]Union_Find</span>
+                        <span class="card-title">[LeetCode441]Arranging_Coins</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -669,7 +638,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-01
                             </span>
                         <span class="publish-author">
                             
@@ -679,6 +648,45 @@
                         </span>
                     </div>
                 </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Current&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/07/01/LeetCode441-Arranging-Coins/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="[LeetCode441]Arranging_Coins">
+                        
+                        <span class="card-title">[LeetCode441]Arranging_Coins</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Yu Liu
+                            
+                        </span>
+                    </div>
+                </div>
+
                 
             </div>
         </div>

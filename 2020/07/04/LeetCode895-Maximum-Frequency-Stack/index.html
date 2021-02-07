@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[LeetCode895]Maximum_Frequency_Stack | Yu&#39;s Blog</title>
+    <title>[LeetCode895]Maximum_Frequency_Stack | Yu&#39;s Blog</title><meta name="robots" content="noindex">
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -347,7 +347,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    391
+                    355
                 </div>
                 
 
@@ -366,18 +366,23 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="Implement-FreqStack-a-class-which-simulates-the-operation-of-a-stack-like-data-structure"><a href="#Implement-FreqStack-a-class-which-simulates-the-operation-of-a-stack-like-data-structure" class="headerlink" title="Implement FreqStack, a class which simulates the operation of a stack-like data structure."></a>Implement FreqStack, a class which simulates the operation of a stack-like data structure.</h2><p>FreqStack has two functions:</p>
 <p>push(int x), which pushes an integer x onto the stack.<br>pop(), which removes and returns the most frequent element in the stack.<br>If there is a tie for most frequent element, the element closest to the top of the stack is removed and returned.</p>
 <p>Example 1:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Input: </span><br><span class="line">[&quot;FreqStack&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;pop&quot;,&quot;pop&quot;,&quot;pop&quot;,&quot;pop&quot;],</span><br><span class="line">[[],[5],[7],[5],[7],[4],[5],[],[],[],[]]</span><br><span class="line">Output: [null,null,null,null,null,null,null,5,7,5,4]</span><br><span class="line">Explanation:</span><br><span class="line">After making six .push operations, the stack is [5,7,5,7,4,5] from bottom to top.  Then:</span><br><span class="line"></span><br><span class="line">pop() -&gt; returns 5, as 5 is the most frequent.</span><br><span class="line">The stack becomes [5,7,5,7,4].</span><br><span class="line"></span><br><span class="line">pop() -&gt; returns 7, as 5 and 7 is the most frequent, but 7 is closest to the top.</span><br><span class="line">The stack becomes [5,7,5,4].</span><br><span class="line"></span><br><span class="line">pop() -&gt; returns 5.</span><br><span class="line">The stack becomes [5,7,4].</span><br><span class="line"></span><br><span class="line">pop() -&gt; returns 4.</span><br><span class="line">The stack becomes [5,7].</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Input: </span><br><span class="line">["FreqStack","push","push","push","push","push","push","pop","pop","pop","pop"],</span><br><span class="line">[[],[5],[7],[5],[7],[4],[5],[],[],[],[]]</span><br><span class="line">Output: [null,null,null,null,null,null,null,5,7,5,4]</span><br><span class="line">Explanation:</span><br><span class="line">After making six .push operations, the stack is [5,7,5,7,4,5] from bottom to top.  Then:</span><br><span class="line"></span><br><span class="line">pop() -&gt; returns 5, as 5 is the most frequent.</span><br><span class="line">The stack becomes [5,7,5,7,4].</span><br><span class="line"></span><br><span class="line">pop() -&gt; returns 7, as 5 and 7 is the most frequent, but 7 is closest to the top.</span><br><span class="line">The stack becomes [5,7,5,4].</span><br><span class="line"></span><br><span class="line">pop() -&gt; returns 5.</span><br><span class="line">The stack becomes [5,7,4].</span><br><span class="line"></span><br><span class="line">pop() -&gt; returns 4.</span><br><span class="line">The stack becomes [5,7].</span><br></pre></td></tr></tbody></table></figure>
 
 <p>Note:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Calls to FreqStack.push(int x) will be such that 0 &lt;&#x3D; x &lt;&#x3D; 10^9.</span><br><span class="line">It is guaranteed that FreqStack.pop() won&#39;t be called if the stack has zero elements.</span><br><span class="line">The total number of FreqStack.push calls will not exceed 10000 in a single test case.</span><br><span class="line">The total number of FreqStack.pop calls will not exceed 10000 in a single test case.</span><br><span class="line">The total number of FreqStack.push and FreqStack.pop calls will not exceed 150000 across all test cases.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Calls to FreqStack.push(int x) will be such that 0 &lt;= x &lt;= 10^9.</span><br><span class="line">It is guaranteed that FreqStack.pop() won't be called if the stack has zero elements.</span><br><span class="line">The total number of FreqStack.push calls will not exceed 10000 in a single test case.</span><br><span class="line">The total number of FreqStack.pop calls will not exceed 10000 in a single test case.</span><br><span class="line">The total number of FreqStack.push and FreqStack.pop calls will not exceed 150000 across all test cases.</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class FreqStack:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.freq &#x3D; collections.Counter()</span><br><span class="line">        self.freqToEle &#x3D; collections.defaultdict(list)</span><br><span class="line">        self.maxfreq &#x3D; 0</span><br><span class="line"></span><br><span class="line">    def push(self, x: int) -&gt; None:</span><br><span class="line">        curfreq &#x3D; self.freq.get(x, 0) + 1</span><br><span class="line">        self.freq[x] &#x3D; curfreq</span><br><span class="line">        self.freqToEle[curfreq].append(x)</span><br><span class="line">        if curfreq &gt; self.maxfreq:</span><br><span class="line">            self.maxfreq &#x3D; curfreq</span><br><span class="line"></span><br><span class="line">    def pop(self) -&gt; int:</span><br><span class="line">        e &#x3D; self.freqToEle[self.maxfreq].pop()</span><br><span class="line">        self.freq[e] -&#x3D; 1</span><br><span class="line">        if not self.freqToEle[self.maxfreq]:</span><br><span class="line">            self.maxfreq &#x3D; self.maxfreq-1</span><br><span class="line">        return e</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Your FreqStack object will be instantiated and called as such:</span><br><span class="line"># obj &#x3D; FreqStack()</span><br><span class="line"># obj.push(x)</span><br><span class="line"># param_2 &#x3D; obj.pop()</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class FreqStack:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.freq = collections.Counter()</span><br><span class="line">        self.freqToEle = collections.defaultdict(list)</span><br><span class="line">        self.maxfreq = 0</span><br><span class="line"></span><br><span class="line">    def push(self, x: int) -&gt; None:</span><br><span class="line">        curfreq = self.freq.get(x, 0) + 1</span><br><span class="line">        self.freq[x] = curfreq</span><br><span class="line">        self.freqToEle[curfreq].append(x)</span><br><span class="line">        if curfreq &gt; self.maxfreq:</span><br><span class="line">            self.maxfreq = curfreq</span><br><span class="line"></span><br><span class="line">    def pop(self) -&gt; int:</span><br><span class="line">        e = self.freqToEle[self.maxfreq].pop()</span><br><span class="line">        self.freq[e] -= 1</span><br><span class="line">        if not self.freqToEle[self.maxfreq]:</span><br><span class="line">            self.maxfreq = self.maxfreq-1</span><br><span class="line">        return e</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Your FreqStack object will be instantiated and called as such:</span><br><span class="line"># obj = FreqStack()</span><br><span class="line"># obj.push(x)</span><br><span class="line"># param_2 = obj.pop()</span><br></pre></td></tr></tbody></table></figure><!-- flag of hidden posts -->
                 
             </div>
             <hr/>
@@ -610,54 +615,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/07/04/Mac%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                <a href="/2020/07/04/LeetCode895-Maximum-Frequency-Stack/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Mac快捷键">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="[LeetCode895]Maximum_Frequency_Stack">
                         
-                        <span class="card-title">Mac快捷键</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Yu Liu
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/07/03/LeetCode647-Palindromic-Substrings/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="[LeetCode647]Palindromic_Substrings">
-                        
-                        <span class="card-title">[LeetCode647]Palindromic_Substrings</span>
+                        <span class="card-title">[LeetCode895]Maximum_Frequency_Stack</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -668,7 +637,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
                             </span>
                         <span class="publish-author">
                             
@@ -678,6 +647,45 @@
                         </span>
                     </div>
                 </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Current&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/07/04/LeetCode895-Maximum-Frequency-Stack/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="[LeetCode895]Maximum_Frequency_Stack">
+                        
+                        <span class="card-title">[LeetCode895]Maximum_Frequency_Stack</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Yu Liu
+                            
+                        </span>
+                    </div>
+                </div>
+
                 
             </div>
         </div>
