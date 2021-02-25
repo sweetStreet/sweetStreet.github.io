@@ -205,7 +205,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/EmacsIcon.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -330,6 +330,10 @@
                                 <span class="chip bg-color">emacs</span>
                             </a>
                         
+                            <a href="/tags/tool/">
+                                <span class="chip bg-color">tool</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -351,14 +355,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    214
+                    544
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -378,7 +382,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h2 id="cursor"><a href="#cursor" class="headerlink" title="cursor"></a>cursor</h2><p>C-v    Move forward one screenful<br>M-v    Move backward one screenful<br>C-l    Clear screen and redisplay all the text,<br>    moving the text around the cursor<br>    to the center of the screen.</p>
+                <p>接触Emacs是因为米老师安利，一开始我是拒绝的QAQ，因为觉得Emacs只是一个editor，而且打开文件时如果一行特别长，Emacs还会卡住。但是后来鹏宇告诉我，其实可以把Emacs当作是IDE而不是文件编辑器，可以同时打开多个窗口，有很多快捷键，对于不喜欢用触摸板的同学来说用起来会很方便。</p>
+<p>作为初学者的我，觉得最好用的命令是<code>C-g</code>，Quit，因为大概率自己手残按错键要取消操作。</p>
+<p>我第一个卡住的地方在于理解什么是window，什么是buffer。一个Buffer相当于一个进程（包括打开的一个文件啦，或者一个命令行啦），buffer本身不一定要可见，一个Emacs可以开无数个buffer，每个buffer都有一个名字。对于可见的buffer来说，显示buffer的载体就是window。window可以不断的拆分，竖着拆，横着拆。一个window只能显示一个buffer, 但多个window可以显示同样的buffer。<code>C-x 0</code>关闭当前窗口的时候，buffer所相关的进程并不会受影响，如果再想看见它，<code>C-x b</code>就可以去找，并且可以用tab键补全。</p>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h2 id="cursor"><a href="#cursor" class="headerlink" title="cursor"></a>cursor</h2><p>C-v    Move forward one screenful<br>M-v    Move backward one screenful<br>C-l    Clear screen and redisplay all the text,<br>    moving the text around the cursor<br>    to the center of the screen.</p>
 <p>(That’s CONTROL-L, not CONTROL-1.)<br>          Previous line, C-p<br>              :<br>              :<br>Backward, C-b …. Current cursor position …. Forward, C-f<br>              :<br>              :<br>            Next line, C-n</p>
 <p>C-f    Move forward a character<br>C-b    Move backward a character</p>
 <p>M-f    Move forward a word<br>M-b    Move backward a word</p>
@@ -389,8 +396,8 @@
 <p>Try M-&gt; now, to move to the end of the tutorial.<br>Then use M-v repeatedly to move back here.</p>
 <p>C-u 8 C-v: scrolls by 8 line</p>
 <p>use C-g to stop a command</p>
-<h2 id="window"><a href="#window" class="headerlink" title="window"></a>window</h2><p>C-x 0   Close current window<br>C-x 1    One window Close other windows<br>C-x 2   split-window-vertically<br>C-x 3   split-window-horizontally</p>
-<p>M-x shell   show terminal<br>C-x o    change to another window</p>
+<h2 id="window"><a href="#window" class="headerlink" title="window"></a>window</h2><p>C-x 0   Close current window<br>C-x 1   One window Close other windows<br>C-x 2   split-window-vertically<br>C-x 3   split-window-horizontally</p>
+<p>M-x shell   show terminal<br>C-u M-x shell  create a new terminal<br>C-x o    change to another window</p>
 <h2 id="inserting-and-deleting"><a href="#inserting-and-deleting" class="headerlink" title="inserting and deleting"></a>inserting and deleting</h2>
                 
             </div>
@@ -457,6 +464,10 @@
                             
                                 <a href="/tags/emacs/">
                                     <span class="chip bg-color">emacs</span>
+                                </a>
+                            
+                                <a href="/tags/tool/">
+                                    <span class="chip bg-color">tool</span>
                                 </a>
                             
                         </div>
@@ -635,8 +646,7 @@
                 <a href="/2020/06/14/Leetcode-Binary-Search/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="[Leetcode]Binary_Search">
+                        <img src="/medias/featureimages/leetcode.jpg" class="responsive-img" alt="[Leetcode]Binary_Search">
                         
                         <span class="card-title">[Leetcode]Binary_Search</span>
                     </div>
@@ -672,8 +682,7 @@
                 <a href="/2020/03/22/Emacs/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Emacs">
+                        <img src="/medias/featureimages/EmacsIcon.png" class="responsive-img" alt="Emacs">
                         
                         <span class="card-title">Emacs</span>
                     </div>
@@ -702,6 +711,10 @@
                     
                     <a href="/tags/emacs/">
                         <span class="chip bg-color">emacs</span>
+                    </a>
+                    
+                    <a href="/tags/tool/">
+                        <span class="chip bg-color">tool</span>
                     </a>
                     
                 </div>
