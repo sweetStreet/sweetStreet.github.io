@@ -240,7 +240,9 @@
 
 
 <script>
-    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
 
@@ -260,19 +262,10 @@
             <div class="tag-chips">
                 
                 
-                <a href="/tags/leetcode/" title="leetcode: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="leetcode" style="background-color: #F9EBEA;">leetcode
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/emacs/" title="emacs: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="emacs" style="background-color: #F5EEF8;">emacs
+                            data-tagname="emacs" style="background-color: #F9EBEA;">emacs
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -301,7 +294,7 @@
 <script type="text/javascript">
     
 
-    $('#tag-wordcloud').jQCloud([{"text":"leetcode","weight":1,"link":"/tags/leetcode/"},{"text":"emacs","weight":1,"link":"/tags/emacs/"}], {
+    $('#tag-wordcloud').jQCloud([{"text":"emacs","weight":1,"link":"/tags/emacs/"}], {
         autoResize: true
     });
 </script>
