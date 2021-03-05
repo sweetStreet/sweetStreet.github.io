@@ -324,9 +324,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/binary-find/">
+                                <span class="chip bg-color">binary find</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -402,6 +406,7 @@
 <p>这题如果用dp，时间复杂度是O(NK^2), N 是 stations的长度<br>但是如果用二分查找，时间复杂度就是O(NlogW)，其中 N 是 stations 的长度，W = 10^14 （10^8/10^6）</p>
 <p>有 k 个加油站，有没有可能让最小的最大距离小于等于 D<br>假设答案为 D<em>， 对于 d &lt; D</em>，possibe(d) = False，对于d &gt; D*，possible(d) = True。针对单调问题的二分搜索是一个很典型的做法，重点是 possible(D) 的实现。</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def minmaxGasDist(self, stations: List[int], K: int) -&gt; float:</span><br><span class="line"></span><br><span class="line">        def count(d):</span><br><span class="line">            res = 0</span><br><span class="line">            for i in range(1, len(stations)):</span><br><span class="line">                res += int((stations[i] - stations[i-1]) / d)</span><br><span class="line">            return res</span><br><span class="line"></span><br><span class="line">        left = 0</span><br><span class="line">        right = 10**8</span><br><span class="line"></span><br><span class="line">        while right-left &gt; 0.000001:</span><br><span class="line">            mid = left + (right-left)/2</span><br><span class="line">            if count(mid) &gt; K:</span><br><span class="line">                left = mid</span><br><span class="line">            else:</span><br><span class="line">                right = mid</span><br><span class="line">        return right</span><br></pre></td></tr></tbody></table></figure>
+
                 
             </div>
             <hr/>
@@ -464,7 +469,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/binary-find/">
+                                    <span class="chip bg-color">binary find</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -663,6 +672,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/sliding-window/">
+                        <span class="chip bg-color">sliding window</span>
+                    </a>
+                    
                 </div>
                 
             </div>

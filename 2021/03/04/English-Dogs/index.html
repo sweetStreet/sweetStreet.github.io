@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="[Leetcode]Sliding_Window, Yu&#39;s Blog">
+    <meta name="keywords" content="Dog Breeds, Yu&#39;s Blog">
     <meta name="description" content="Grow up little by little">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[Leetcode]Sliding_Window | Yu&#39;s Blog</title>
+    <title>Dog Breeds | Yu&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -205,12 +205,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/leetcode.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[Leetcode]Sliding_Window</h1>
+                    <h1 class="description center-align post-title">Dog Breeds</h1>
                 </div>
             </div>
         </div>
@@ -326,8 +326,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/sliding-window/">
-                                <span class="chip bg-color">sliding window</span>
+                            <a href="/tags/english/">
+                                <span class="chip bg-color">english</span>
                             </a>
                         
                     </div>
@@ -342,7 +342,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-06-17
+                    2021-03-04
                 </div>
                 
 
@@ -351,14 +351,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.1k
+                    394
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    4 Min
+                    1 Min
                 </div>
                 
 
@@ -378,30 +378,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>lc1004. Max Consecutive Ones III<br>Given an array A of 0s and 1s, we may change up to K values from 0 to 1.</p>
-<p>Return the length of the longest (contiguous) subarray that contains only 1s. </p>
-<p>Example 1:</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: A = [1,1,1,0,0,0,1,1,1,1,0], K = 2</span><br><span class="line">Output: 6</span><br><span class="line">Explanation: </span><br><span class="line">[1,1,1,0,0,1,1,1,1,1,1]</span><br><span class="line">Bolded numbers were flipped from 0 to 1.  The longest subarray is underlined.</span><br></pre></td></tr></tbody></table></figure>
-<p>Example 2:</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: A = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1], K = 3</span><br><span class="line">Output: 10</span><br><span class="line">Explanation: </span><br><span class="line">[0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1]</span><br><span class="line">Bolded numbers were flipped from 0 to 1.  The longest subarray is underlined.</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Note:</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 &lt;= A.length &lt;= 20000</span><br><span class="line">0 &lt;= K &lt;= A.length</span><br><span class="line">A[i] is 0 or 1 </span><br></pre></td></tr></tbody></table></figure>
-
-<p>双指针解法的重点在于维护两个指针：<br>设置两个指针(表现为数组下标值)，左指针指向当前子串左边界，右指针指向当前子串右边界，我们通过某种方法使得左右指针之间的当前子串符合要求：即 ‘0’ 的数目小于等于 K<br>又：我们很容易知道，最长串一定出现在串内 ‘0’ 的数目饱和(如果’0’比较多)或者最大(如果 K 比较大)的情况下，因此我们需要尽可能地把右指针右移</p>
-<p>那么固定左指针时，什么情况下可以使右指针右移呢？</p>
-<blockquote>
-<p>转化次数K有剩余 或<br>右指针的下一位是’1’  </p>
-</blockquote>
-<p>如此移动右指针，即可找到每一个左指针所对应的最长有效串，而且右指针指向的元素的下一位一定是’0’<br>那么我们可以把每一个数组元素作为左指针，以上述方式枚举出最长有效串，然后返回结果</p>
-<p>但是还是不够快</p>
-<p>不够快的原因还是做了重复计算，在左指针变化时，右指针从左指针处开始右移，没有有效利用上一次操作的结果，造成了大量没有必要的操作<br>那么如何避免重复计算呢？</p>
-<p>我们的关键在于刚刚提到的“0数饱和”<br>即：可能成为最长串的串，它内部’0’的数量一定是饱和或者最大的<br>那么我们可以通过某种操作来使得在左指针右移之后，我们立即就能获得新左指针对应的’0’数饱和串/‘0’数最大串  </p>
-<p>首先我们考察左指针右移一位时的情况：<br>首先我们需要清楚一个事实：当右指针到达串尾部时，左指针没有任何必要继续右移，因为左指针右移的话子串的长度一定会减小，并且饱和性质无法保证<br>也就是说，左指针右移的条件是：右指针没有触碰串的右边界<br>那么我们会得到一个推论：当左指针需要右移时，串中的’0’一定是饱和的而不是最大的（“饱和”指子串中0的数目与K相等，不可以再转化0为1；“最大”指整个串中所有的0均已被转化为1）既饱和又最大的情况也不需要右移</p>
-<p>得到这个推论，我们就可以来考虑左指针右移时的情况：  </p>
-<p>当前左指针指向的元素是’0’时：当左指针右移时子串内的’0’数减一，为了维护其饱和性质，我们刚刚提到“右指针指向的元素的下一位一定是’0’”，所以右指针一定可以右移至少一位(如果右移之后的下一位是’1’则可以继续右移)<br>当前左指针指向的元素是’1’时：当左指针右移时子串内的’0’数不变，由于我们维护了每一个子串的饱和性质，右指针不可以右移<br>每一次左指针移动及之后右指针移动的一系列操作结束之后，更新最大值<br>通过以上的操作，遍历直到右指针触碰数组右边界，即可得到全局的最大符合条件串的长度</p>
-<p>作者：amachi-inori<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/max-consecutive-ones-iii/solution/c-1004-hua-dong-chuang-kou-chao-xiang-xi-jie-shuo-/">https://leetcode-cn.com/problems/max-consecutive-ones-iii/solution/c-1004-hua-dong-chuang-kou-chao-xiang-xi-jie-shuo-/</a></p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def longestOnes(self, A: List[int], K: int) -&gt; int:</span><br><span class="line">        if not A:</span><br><span class="line">            return 0</span><br><span class="line">        </span><br><span class="line">        i, j, res = 0, 0, 0</span><br><span class="line">        while i &lt;= j and j &lt; len(A):</span><br><span class="line">            while j &lt; len(A) and (A[j] == 1 or K &gt; 0):    </span><br><span class="line">                if A[j] == 0:</span><br><span class="line">                    K -= 1</span><br><span class="line">                j += 1</span><br><span class="line">            res = max(res, j-i)</span><br><span class="line">            if i &lt;= j and A[i] == 1:</span><br><span class="line">                i += 1</span><br><span class="line">            else:</span><br><span class="line">                i += 1</span><br><span class="line">                j += 1</span><br><span class="line">        return res</span><br></pre></td></tr></tbody></table></figure>
+                <p>好想养狗狗啊，然而没有时间，不能很好地照顾。先学习一下狗狗种类的英文，有机会一定会养的！</p>
+<h1 id="Working-Dogs"><a href="#Working-Dogs" class="headerlink" title="Working Dogs"></a>Working Dogs</h1><h2 id="Corgi-柯基"><a href="#Corgi-柯基" class="headerlink" title="Corgi 柯基"></a>Corgi 柯基</h2><p>kor·gee</p>
+<p>身高：25-30cm<br>体重：9-12kg<br>寿命：12-15年<br>需要活动量：中<br>美容频率：低</p>
+<p><img src="https://github.com/sweetStreet/pipiyu/blob/master/blog_post_dog_breeds/corgi.jpeg?raw=true" alt="German Shepherd" title="German Shepherd" width="300" height="200"></p>
+<p>突然跑来一只小可爱</p>
+<h2 id="German-Shepherd-德牧"><a href="#German-Shepherd-德牧" class="headerlink" title="German Shepherd 德牧"></a>German Shepherd 德牧</h2><p>/ˈʃɛpəd/<br>身高：58-63cm<br>体重：22-49kg<br>寿命：10-12年<br>需要活动量：高<br>美容频率：中</p>
+<p><img src="https://github.com/sweetStreet/pipiyu/blob/master/blog_post_dog_breeds/German-Shepherd.jpeg?raw=true" alt="German Shepherd" title="German Shepherd" width="300" height="200"></p>
+<p>这条街最酷的仔</p>
+<h2 id="Border-Collie-边牧"><a href="#Border-Collie-边牧" class="headerlink" title="Border Collie 边牧"></a>Border Collie 边牧</h2><p>bor·dr kaa·lee<br>身高：50-53cm<br>体重：12-20kg<br>寿命：10-12年<br>需要活动量：高<br>美容频率：中</p>
+<p><img src="https://github.com/sweetStreet/pipiyu/blob/master/blog_post_dog_breeds/Border-collie.jpeg?raw=true" alt="German Shepherd" title="German Shepherd" width="300" height="200"></p>
+<p>最聪明！</p>
+<h1 id="Spitz-Type-Dogs-尖嘴型"><a href="#Spitz-Type-Dogs-尖嘴型" class="headerlink" title="Spitz-Type Dogs 尖嘴型"></a>Spitz-Type Dogs 尖嘴型</h1><h2 id="Siberian-Husky-哈士奇"><a href="#Siberian-Husky-哈士奇" class="headerlink" title="Siberian Husky 哈士奇"></a>Siberian Husky 哈士奇</h2><p>sai·<strong>bee</strong>·ree·uhn <strong>huh</strong>·skee<br>身高：51-60cm<br>体重：16-27kg<br>寿命：10-12年<br>需要活动量：高<br>美容频率：中</p>
+<p><img src="https://github.com/sweetStreet/pipiyu/blob/master/blog_post_dog_breeds/siberian-husky.jpeg?raw=true" alt="German Shepherd" title="German Shepherd" width="290" height="220"></p>
+<p>二哈</p>
+<h2 id="Alaskan-Malamute-阿拉斯加"><a href="#Alaskan-Malamute-阿拉斯加" class="headerlink" title="Alaskan Malamute 阿拉斯加"></a>Alaskan Malamute 阿拉斯加</h2><p>uh·<strong>la</strong>·skuhn <strong>ma</strong>·luh·myoot<br>身高：58-71cm<br>体重：38-56kg<br>寿命：12-15年<br>需要活动量：高<br>美容频率：高<br><img src="https://github.com/sweetStreet/pipiyu/blob/master/blog_post_dog_breeds/alaskan-malamute.jpeg?raw=true" alt="German Shepherd" title="German Shepherd" width="300" height="200"></p>
+<p>阿拉斯猪大可爱</p>
+<h1 id="Gun-Dogs"><a href="#Gun-Dogs" class="headerlink" title="Gun Dogs"></a>Gun Dogs</h1><h2 id="Labrador-Retriever-拉布拉多"><a href="#Labrador-Retriever-拉布拉多" class="headerlink" title="Labrador Retriever 拉布拉多"></a>Labrador Retriever 拉布拉多</h2><p>la·bruh·dor</p>
+<p>身高：55-57cm<br>体重：25-37kg<br>需要运动量：高<br>美容频率：低 </p>
+<p><img src="https://github.com/sweetStreet/pipiyu/blob/master/blog_post_dog_breeds/labrador-retriever.jpeg?raw=true" alt="German Shepherd" title="German Shepherd" width="300" height="200"></p>
+<p>你的货拉拉拉不拉拉布拉多?</p>
+<h2 id="Golden-Retriever-金毛"><a href="#Golden-Retriever-金毛" class="headerlink" title="Golden Retriever 金毛"></a>Golden Retriever 金毛</h2><p>身高：51-61<br>体重：25-34kg<br>寿命：12-14年<br>需要运动量：高<br>美容频率：中</p>
+<p><img src="https://github.com/sweetStreet/pipiyu/blob/master/blog_post_dog_breeds/golden-retriever.jpeg?raw=true" alt="German Shepherd" title="German Shepherd" width="300" height="200"></p>
+<p>你的大暖男正在向你微笑</p>
+<h1 id="Terrier-梗犬，小猎犬"><a href="#Terrier-梗犬，小猎犬" class="headerlink" title="Terrier 梗犬，小猎犬"></a>Terrier 梗犬，小猎犬</h1><h2 id="Bull-Terrier-牛头梗"><a href="#Bull-Terrier-牛头梗" class="headerlink" title="Bull Terrier 牛头梗"></a>Bull Terrier 牛头梗</h2><p>身高：53-56cm<br>体重：23-32kg<br>寿命：10-12年<br>需要活动量：中<br>美容频率：低</p>
+<p><img src="https://github.com/sweetStreet/pipiyu/blob/master/blog_post_dog_breeds/bull-terrier.jpeg?raw=true" alt="German Shepherd" title="German Shepherd" width="300" height="200"></p>
+<p>无意冒犯，但是极限挑战里孙红雷像牛头梗这个梗实在是太好笑了</p>
+<p>ref:</p>
+<p><a target="_blank" rel="noopener" href="https://www.dealmoon.com/guide/931572">在美国如何领养狗狗?</a><br><a target="_blank" rel="noopener" href="https://www.dealmoon.com/guide/2578">宠物犬科普</a></p>
 
                 
             </div>
@@ -428,7 +432,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sweetstreet.github.io/2020/06/17/Leetcode-Sliding-Window/">https://sweetstreet.github.io/2020/06/17/Leetcode-Sliding-Window/</a>
+                    <a href="https://sweetstreet.github.io/2021/03/04/English-Dogs/">https://sweetstreet.github.io/2021/03/04/English-Dogs/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -466,8 +470,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/sliding-window/">
-                                    <span class="chip bg-color">sliding window</span>
+                                <a href="/tags/english/">
+                                    <span class="chip bg-color">english</span>
                                 </a>
                             
                         </div>
@@ -639,16 +643,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/06/24/Leetcode-Union-Find/">
+                <a href="/2021/03/04/English-Dogs/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/leetcode.jpg" class="responsive-img" alt="[Leetcode]Union_Find">
                         
-                        <span class="card-title">[Leetcode]Union_Find</span>
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Dog Breeds">
+                        
+                        <span class="card-title">Dog Breeds</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -658,9 +664,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -668,6 +674,15 @@
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/english/">
+                        <span class="chip bg-color">english</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -679,12 +694,12 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/14/Leetcode-Binary-Search/">
+                <a href="/2021/02/26/Programming_Languages/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/leetcode.jpg" class="responsive-img" alt="[Leetcode]Binary_Search">
+                        <img src="/medias/featureimages/agda.png" class="responsive-img" alt="Programming Languages">
                         
-                        <span class="card-title">[Leetcode]Binary_Search</span>
+                        <span class="card-title">Programming Languages</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -695,7 +710,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-26
                             </span>
                         <span class="publish-author">
                             
@@ -708,8 +723,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/binary-find/">
-                        <span class="chip bg-color">binary find</span>
+                    <a href="/tags/agda/">
+                        <span class="chip bg-color">agda</span>
+                    </a>
+                    
+                    <a href="/tags/pl/">
+                        <span class="chip bg-color">pl</span>
                     </a>
                     
                 </div>
