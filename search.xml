@@ -71,6 +71,12 @@
       
       
       
+        <tags>
+            
+            <tag> union find </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -105,7 +111,7 @@
       
         <tags>
             
-            <tag> binary find </tag>
+            <tag> binary search </tag>
             
         </tags>
       
