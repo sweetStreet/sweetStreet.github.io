@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>anaconda</title>
+      <link href="2021/03/11/anaconda/"/>
+      <url>2021/03/11/anaconda/</url>
+      
+        <content type="html"><![CDATA[<p>use anaconda to install pytorch. It is possible to get a pytorch with a random version by typing “pip install torch”, it is better to use anaconda to install pytorch.<br><a href="https://pytorch.org/">https://pytorch.org/</a></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio -c pytorch</span><br></pre></td></tr></tbody></table></figure><p>create environment with name “my_env”</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create my_env</span><br></pre></td></tr></tbody></table></figure><p>activate the environment</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate my_env</span><br></pre></td></tr></tbody></table></figure><p>install dependencies from .yaml files</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env update -n my_env --file environments.yaml</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> anaconda </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Symbols</title>
       <link href="2021/03/05/English-Symbols/"/>
       <url>2021/03/05/English-Symbols/</url>
