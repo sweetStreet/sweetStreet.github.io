@@ -94,10 +94,10 @@ hr {
 }
 
 blockquote {
-    border-left: 5px solid #42b983;
+    border-left: 5px solid #42b98;
     padding: 1rem 0.8rem 0.2rem 0.8rem;
     color: #666;
-    background-color: rgba(66, 185, 131, .1);
+    background-color: rgba(66, 152, 131, .1);
 }
 
 pre {
@@ -876,7 +876,7 @@ article a {
 
 article a:hover {
     font-weight: bold;
-    color: #42b983;
+    color: #b2bec3;
     text-decoration: underline;
 }
 
@@ -961,7 +961,7 @@ article .article-tags .chip {
     position: absolute;
     box-sizing: border-box;
     z-index: 200;
-    background-color: #fff;
+    background-color: #636e72;
     font-weight: 500;
 }
 
@@ -1059,7 +1059,7 @@ article .article-tags .chip {
     border-radius: 15px;
     margin-right: 5px;
     margin-bottom: 2px;
-    color: #42b983;
+    color: #636e72;
     background: #fff;
     border: 1px solid;
     transition: all 0.6s ease-in-out;
@@ -1067,7 +1067,7 @@ article .article-tags .chip {
 
 #artDetail .tag_share .article-tag .chip:hover {
     color: #fff;
-    background: #42b983;
+    background: #636e72;
 }
 
 #artDetail .post-cate {
@@ -1159,7 +1159,7 @@ article .article-tags .chip {
 
 #artDetail .reprint a {
     font-size: 1.05rem;
-    color: #42b983;
+    color: #636e72;
     font-weight: 500;
 }
 
@@ -1175,7 +1175,7 @@ article .article-tags .chip {
 
 #articleContent a {
     padding: 0 2px;
-    color: #42b983;
+    color: #ff7675;
     font-weight: 500;
     text-decoration: underline;
     word-wrap: break-word;
@@ -1609,7 +1609,7 @@ thead {
 }
 
 .post-statis .statis .count a {
-    color: #42b983;
+    color: #fdcb6e;
 }
 
 .post-statis .statis .name {
@@ -1630,11 +1630,11 @@ thead {
     margin: 0 0.5rem;
     padding: 0;
     color: #fff;
-    border: 1px solid #0f9d58;
-    background: radial-gradient(#4cbf30, #0f9d58);
+    border: 1px solid #fdcb6e;
+    background: radial-gradient(#fdcb6e, #fdcb6e);
     font-size: 0.9rem;
     border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .21), 0 2px 3px rgba(0, 0, 0, .1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .21), 0 2px 3px rgba(0, 0, 0, .1);
 }
 
 .profile .avatar-img {
@@ -1874,7 +1874,7 @@ footer .copy-right {
 
 .search-result-list .search-result-title {
     font-size: 1.4rem;
-    color: #42b983;
+    color: #a29bfe;
 }
 
 .search-result-list li {
