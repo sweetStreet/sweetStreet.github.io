@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Performance of a classification model</title>
+      <link href="2021/03/29/Performance_of_a_classification_model/"/>
+      <url>2021/03/29/Performance_of_a_classification_model/</url>
+      
+        <content type="html"><![CDATA[<h1 id="ROC-Curve-AUC-Precision-Recall-Curve-Confusion-Matrix"><a href="#ROC-Curve-AUC-Precision-Recall-Curve-Confusion-Matrix" class="headerlink" title="ROC Curve, AUC, Precision-Recall Curve, Confusion Matrix"></a>ROC Curve, AUC, Precision-Recall Curve, Confusion Matrix</h1><h2 id="ROC-Curve"><a href="#ROC-Curve" class="headerlink" title="ROC Curve"></a>ROC Curve</h2><p>An ROC curve (receiver operating characteristic curve) is a graph showing the performance of a classification model at all classification thresholds. This curve plots two parameters:</p><p>True Positive Rate : TP / (TP + FN)<br>For all the positive cases, the percent that model correctly selected</p><p>False Positive Rate : FP / (FP + TN)<br>For all the negative cases, the percent that model incorrectly selected</p><p><img src="https://developers.google.com/machine-learning/crash-course/images/ROCCurve.svg" alt=""></p><p>Classifiers that give curves closer to the top-left corner indicate a better performance.</p><p><img src="https://46gyn61z4i0t1u1pnq2bbk2e-wpengine.netdna-ssl.com/wp-content/uploads/2018/07/ROC-curve-1-768x631.jpg" alt=""></p><h2 id="AUC"><a href="#AUC" class="headerlink" title="AUC"></a>AUC</h2><p>AUC stands for “Area under the ROC Curve.” That is, AUC measures the entire two-dimensional area underneath the entire ROC curve (think integral calculus) from (0,0) to (1,1)</p><h2 id="Precision-Recall-Curve"><a href="#Precision-Recall-Curve" class="headerlink" title="Precision-Recall Curve"></a>Precision-Recall Curve</h2><p>Precision-recall curves plot the positive predictive value (PPV, y-axis) against the true positive rate (TPR, x-axis).</p><p>precision = TP / (TP + FP)<br>It describes how good a model is at predicting the positive class</p><p>recall = TP / (TP + FN)</p><p><img src="https://machinelearningmastery.com/wp-content/uploads/2018/08/Precision-Recall-Plot-for-a-No-Skill-Classifier-and-a-Logistic-Regression-Model-for-am-Imbalanced-Dataset-1.png" alt=""></p><p>Classifiers that give curves closer to the top-right corner indicate a better performance. The figure above performs bad because the precision is high only when recall is low.</p><p>Since precision-recall curves do not consider true negatives, they should only be used when specificity is of no concern for the classifier.</p><p>For example, when doing email spam detection, you likely want to prioritize minimizing false positives (even if that results in a significant increase of false negatives). Recall=Sensitivity, 敏感度高=漏诊率低，特异度高=误诊率低</p><h2 id="Confusion-Matrix"><a href="#Confusion-Matrix" class="headerlink" title="Confusion Matrix"></a>Confusion Matrix</h2><p>A confusion matrix is a table that is often used to describe the performance of a classification model (or “classifier”) on a set of test data for which the true values are known.</p><table><thead><tr><th></th><th>Predicted Yes</th><th>Predicted No</th></tr></thead><tbody><tr><td>Actual Yes</td><td>TP</td><td>FP</td></tr><tr><td>Actual No</td><td>FN</td><td>TN</td></tr></tbody></table><p>Type I error (FP)<br>The first kind of error is the rejection of a true null hypothesis as the result of a test procedure. This kind of error is called a type I error (false positive) and is sometimes called an error of the first kind. In terms of the courtroom example, a type I error corresponds to convicting an innocent defendant.</p><p>Type II error (FN)<br>The second kind of error is the failure to reject a false null hypothesis as the result of a test procedure. This sort of error is called a type II error (false negative) and is also referred to as an error of the second kind. In terms of the courtroom example, a type II error corresponds to acquitting a criminal.</p><h1 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h1><p><a href="https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc">Classification: ROC Curve and AUC</a></p><p><a href="https://www.datascienceblog.net/post/machine-learning/interpreting-roc-curves-auc/">Interpreting ROC Curves, Precision-Recall Curves, and AUCs</a></p><p><a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_I_error">Confusion matrix</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> ml </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>anaconda</title>
       <link href="2021/03/11/anaconda/"/>
       <url>2021/03/11/anaconda/</url>
