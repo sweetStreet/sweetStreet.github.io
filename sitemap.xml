@@ -12,25 +12,13 @@
   <url>
     <loc></loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://sweetstreet.github.io/tag/academic/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://sweetstreet.github.io/categories/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://sweetstreet.github.io/category/demo/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
     <loc></loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://sweetstreet.github.io/post/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://sweetstreet.github.io/tags/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
     <loc>https://sweetstreet.github.io/post/getting-started/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
   <url>
     <loc></loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://sweetstreet.github.io/tag/%E5%BC%80%E6%BA%90/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://sweetstreet.github.io/category/%E6%95%99%E7%A8%8B/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://sweetstreet.github.io/slides/</loc><lastmod>2019-02-05T00:00:00+00:00</lastmod></url>
   <url>
@@ -42,6 +30,8 @@
   <url>
     <loc>https://sweetstreet.github.io/project/</loc><lastmod>2016-04-27T00:00:00+00:00</lastmod></url>
   <url>
+    <loc>https://sweetstreet.github.io/tags/</loc><lastmod>2016-04-27T00:00:00+00:00</lastmod></url>
+  <url>
     <loc>https://sweetstreet.github.io/publication-type/1/</loc><lastmod>2013-07-01T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://sweetstreet.github.io/publication/example/</loc><lastmod>2013-07-01T00:00:00+00:00</lastmod></url>
@@ -52,4 +42,6 @@
   <url>
     <loc></loc><lastmod>2013-07-01T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://sweetstreet.github.io/admin/</loc></url></urlset>
+    <loc>https://sweetstreet.github.io/admin/</loc></url>
+  <url>
+    <loc>https://sweetstreet.github.io/categories/</loc></url></urlset>
