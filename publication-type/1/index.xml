@@ -5,12 +5,20 @@
     <link>https://sweetstreet.github.io/publication-type/1/</link>
       <atom:link href="https://sweetstreet.github.io/publication-type/1/index.xml" rel="self" type="application/rss+xml" />
     <description>1</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 25 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://sweetstreet.github.io/media/icon_hufe50a308f11744d789f7c9688f9f22fd_3170_512x512_fill_lanczos_center_3.png</url>
       <title>1</title>
       <link>https://sweetstreet.github.io/publication-type/1/</link>
     </image>
+    
+    <item>
+      <title>Inline tests</title>
+      <link>https://sweetstreet.github.io/publication/inlinetests/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/inlinetests/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Comparing and Combining Analysis-Based and Learning-Based Regression Test Selection</title>
