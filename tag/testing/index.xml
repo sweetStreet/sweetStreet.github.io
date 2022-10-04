@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>testing | Yu Liu</title>
+    <link>https://sweetstreet.github.io/tag/testing/</link>
+      <atom:link href="https://sweetstreet.github.io/tag/testing/index.xml" rel="self" type="application/rss+xml" />
+    <description>testing</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://sweetstreet.github.io/media/icon_hufe50a308f11744d789f7c9688f9f22fd_3170_512x512_fill_lanczos_center_3.png</url>
+      <title>testing</title>
+      <link>https://sweetstreet.github.io/tag/testing/</link>
+    </image>
+    
+    <item>
+      <title>Inline tests</title>
+      <link>https://sweetstreet.github.io/publication/inlinetests/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/inlinetests/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
