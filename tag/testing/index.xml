@@ -13,18 +13,18 @@
     </image>
     
     <item>
-      <title>Inline tests</title>
-      <link>https://sweetstreet.github.io/publication/pytest-inline/</link>
-      <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://sweetstreet.github.io/publication/pytest-inline/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Leveraging code-change information for faster regression test selection in projects with limited histories</title>
       <link>https://sweetstreet.github.io/publication/ctaxonomy/</link>
       <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
       <guid>https://sweetstreet.github.io/publication/ctaxonomy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pytest-inline: An inline testing tool for Python</title>
+      <link>https://sweetstreet.github.io/publication/pytest-inline/</link>
+      <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/pytest-inline/</guid>
       <description></description>
     </item>
     

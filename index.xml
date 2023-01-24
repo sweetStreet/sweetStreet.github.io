@@ -33,18 +33,18 @@
     </item>
     
     <item>
-      <title>Inline tests</title>
-      <link>https://sweetstreet.github.io/publication/pytest-inline/</link>
-      <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://sweetstreet.github.io/publication/pytest-inline/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Leveraging code-change information for faster regression test selection in projects with limited histories</title>
       <link>https://sweetstreet.github.io/publication/ctaxonomy/</link>
       <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
       <guid>https://sweetstreet.github.io/publication/ctaxonomy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pytest-inline: An inline testing tool for Python</title>
+      <link>https://sweetstreet.github.io/publication/pytest-inline/</link>
+      <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/pytest-inline/</guid>
       <description></description>
     </item>
     
@@ -256,7 +256,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-378164529&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-512764893&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -266,7 +266,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-378164529&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-512764893&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
