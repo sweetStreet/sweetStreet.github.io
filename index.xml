@@ -33,7 +33,15 @@
     </item>
     
     <item>
-      <title>Leveraging code-change information for faster regression test selection in projects with limited histories</title>
+      <title>Extracting inline tests from unit tests</title>
+      <link>https://sweetstreet.github.io/publication/inlinegen/</link>
+      <pubDate>Wed, 10 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/inlinegen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>More Precise Regression Test Selection via Reasoning about Semantics-Modifying Changes</title>
       <link>https://sweetstreet.github.io/publication/ctaxonomy/</link>
       <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
       <guid>https://sweetstreet.github.io/publication/ctaxonomy/</guid>
@@ -256,7 +264,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-641953287&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-289713564&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -266,7 +274,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-641953287&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-289713564&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

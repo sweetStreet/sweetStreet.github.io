@@ -5,7 +5,7 @@
     <link>https://sweetstreet.github.io/publication/</link>
       <atom:link href="https://sweetstreet.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 24 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 10 May 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://sweetstreet.github.io/media/icon_hufe50a308f11744d789f7c9688f9f22fd_3170_512x512_fill_lanczos_center_3.png</url>
       <title>Publications</title>
@@ -13,7 +13,15 @@
     </image>
     
     <item>
-      <title>Leveraging code-change information for faster regression test selection in projects with limited histories</title>
+      <title>Extracting inline tests from unit tests</title>
+      <link>https://sweetstreet.github.io/publication/inlinegen/</link>
+      <pubDate>Wed, 10 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/inlinegen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>More Precise Regression Test Selection via Reasoning about Semantics-Modifying Changes</title>
       <link>https://sweetstreet.github.io/publication/ctaxonomy/</link>
       <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
       <guid>https://sweetstreet.github.io/publication/ctaxonomy/</guid>
