@@ -18,7 +18,11 @@
     <lastmod>2023-05-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://sweetstreet.github.io/publication/inlinegen/</loc>
+    <loc>https://sweetstreet.github.io/publication/exli/</loc>
+    <lastmod>2023-05-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sweetstreet.github.io/tag/inline-testing/</loc>
     <lastmod>2023-05-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -34,15 +38,15 @@
     <lastmod>2023-05-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://sweetstreet.github.io/tag/testing/</loc>
-    <lastmod>2023-05-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://sweetstreet.github.io/publication/ctaxonomy/</loc>
     <lastmod>2023-01-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://sweetstreet.github.io/publication/pytest-inline/</loc>
+    <lastmod>2023-01-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sweetstreet.github.io/tag/regression-test-selection/</loc>
     <lastmod>2023-01-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -58,15 +62,11 @@
     <lastmod>2022-02-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://sweetstreet.github.io/tag/regression-test-selection/</loc>
-    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://sweetstreet.github.io/tag/test-summarization/</loc>
     <lastmod>2022-02-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://sweetstreet.github.io/tag/ui-test/</loc>
+    <loc>https://sweetstreet.github.io/tag/ui-testing/</loc>
     <lastmod>2022-02-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
