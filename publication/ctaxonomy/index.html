@@ -852,6 +852,9 @@
   <div class="article-container">
 
     
+    <h3>Abstract</h3>
+    <p class="pub-abstract">Regression test selection (RTS) speeds up regression testing by onlyre-running tests that might be affected by code changes. Ideal RTSsafelyselects all affected tests andpreciselyselects only affectedtests. But, aiming for this ideal is often slower than re-runningall tests. So, recent RTS techniques use program analysis to tradeprecision for speed, i.e., lower regression testing time, or even usemachine learning to trade safety for speed. We seek to make recentanalysis-based RTS techniques more precise, to further speed up re-gression testing. Independent studies suggest that these techniquesreached a “performance wall” in the speed-ups that they provide.We manually inspect code changes to discover those that do notrequire re-running tests that are only affected by such changes.We categorize 29 kinds of changes that we find from five projectsinto 13 findings, 11 of which are semantics-modifying. We enhancetwo RTS techniques—EkstaziandSTARTS—to reason about our findings. Using 1,150 versions of 23 projects, we evaluate the impacton safety and precision of leveraging such changes. We also evaluateif our findings from a few projects can speed up regression testing inother projects. The results show that our enhancements are effectiveand they can generalize. On average, they result in selecting 41.7%and 31.8% fewer tests, and take 33.7% and 28.7% less time thanEkstaziandSTARTS, respectively, with no loss in safety.</p>
+    
 
     
     

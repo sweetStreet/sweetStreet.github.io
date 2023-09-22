@@ -272,7 +272,7 @@
 
   
 
-<meta name="description" content="" />
+<meta name="description" content="Extracting inline tests from running unit tests." />
 
 
 
@@ -312,7 +312,7 @@
 <meta property="og:site_name" content="Yu Liu" />
 <meta property="og:url" content="https://sweetstreet.github.io/publication/exli/" />
 <meta property="og:title" content="Extracting inline tests from unit tests | Yu Liu" />
-<meta property="og:description" content="" /><meta property="og:image" content="https://sweetstreet.github.io/media/icon_hufe50a308f11744d789f7c9688f9f22fd_3170_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:description" content="Extracting inline tests from running unit tests." /><meta property="og:image" content="https://sweetstreet.github.io/media/icon_hufe50a308f11744d789f7c9688f9f22fd_3170_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta
@@ -365,7 +365,7 @@
       "url": "https://sweetstreet.github.io/media/icon_hufe50a308f11744d789f7c9688f9f22fd_3170_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": ""
+  "description": "Extracting inline tests from running unit tests."
 }
 </script>
 
@@ -851,6 +851,9 @@
 
   <div class="article-container">
 
+    
+    <h3>Abstract</h3>
+    <p class="pub-abstract">We recently proposed inline tests for validating individual programstatements; they allow developers to provide test inputs, expectedoutputs, and test oracles immediately after a target statement. But,existing code can have many target statements. So, automatic gen-eration of inline tests is an important next step towards increasingtheir adoption. We proposeExLi, the first technique for automat-ically generating inline tests.ExLiextracts inline tests from unittests; it first records all variable values at a target statement whileexecuting unit tests. Then,ExLiuses those values as test inputsand test oracles in an initial set of generated inline tests. Targetstatements that are executed many times could have redundant ini-tial inline tests. So,ExLiuses a novel coverage-then-mutants basedreduction process to remove redundant inline tests. We implementExLifor Java and use it to generate inline tests for 718 target state-ments in 31 open-source programs.ExLireduces 17,273 initiallygenerated inline tests to 905 inline tests. The final set of generatedinline tests kills up to 25.1% more mutants on target statementsthan developer written and automatically generated unit tests. Thatis,ExLigenerates inline tests that can improve the fault-detectioncapability of the test suites from which they are extracted.</p>
     
 
     
