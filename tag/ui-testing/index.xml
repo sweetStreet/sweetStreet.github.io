@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UI Testing | Yu Liu</title>
+    <link>https://sweetstreet.github.io/tag/ui-testing/</link>
+      <atom:link href="https://sweetstreet.github.io/tag/ui-testing/index.xml" rel="self" type="application/rss+xml" />
+    <description>UI Testing</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 25 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://sweetstreet.github.io/media/icon_hufe50a308f11744d789f7c9688f9f22fd_3170_512x512_fill_lanczos_center_3.png</url>
+      <title>UI Testing</title>
+      <link>https://sweetstreet.github.io/tag/ui-testing/</link>
+    </image>
+    
+    <item>
+      <title>CrawLabel: Computing Natural-Language Labels for UI Test Cases</title>
+      <link>https://sweetstreet.github.io/publication/ui-test-summarization/</link>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/ui-test-summarization/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

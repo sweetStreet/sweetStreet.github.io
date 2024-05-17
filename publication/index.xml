@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications | Yu Liu</title>
+    <link>https://sweetstreet.github.io/publication/</link>
+      <atom:link href="https://sweetstreet.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publications</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 15 May 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://sweetstreet.github.io/media/icon_hufe50a308f11744d789f7c9688f9f22fd_3170_512x512_fill_lanczos_center_3.png</url>
+      <title>Publications</title>
+      <link>https://sweetstreet.github.io/publication/</link>
+    </image>
+    
+    <item>
+      <title>ExLi: An Inline-Test Generation Tool for Java</title>
+      <link>https://sweetstreet.github.io/publication/exli-tool/</link>
+      <pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/exli-tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Extracting inline tests from unit tests</title>
+      <link>https://sweetstreet.github.io/publication/exli/</link>
+      <pubDate>Wed, 10 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/exli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>More Precise Regression Test Selection via Reasoning about Semantics-Modifying Changes</title>
+      <link>https://sweetstreet.github.io/publication/ctaxonomy/</link>
+      <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/ctaxonomy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pytest-inline: An inline testing tool for Python</title>
+      <link>https://sweetstreet.github.io/publication/pytest-inline/</link>
+      <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/pytest-inline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Inline tests</title>
+      <link>https://sweetstreet.github.io/publication/inlinetests/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/inlinetests/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Comparing and Combining Analysis-Based and Learning-Based Regression Test Selection</title>
+      <link>https://sweetstreet.github.io/publication/predictiverts/</link>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/predictiverts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CrawLabel: Computing Natural-Language Labels for UI Test Cases</title>
+      <link>https://sweetstreet.github.io/publication/ui-test-summarization/</link>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/ui-test-summarization/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
