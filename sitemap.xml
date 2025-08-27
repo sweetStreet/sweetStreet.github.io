@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://sweetstreet.github.io/publication/exlong-tool/</loc>
+    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sweetstreet.github.io/tag/automated-test-generation/</loc>
+    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sweetstreet.github.io/publication-type/paper-conference/</loc>
+    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sweetstreet.github.io/publication_types/</loc>
+    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sweetstreet.github.io/publication/</loc>
+    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://sweetstreet.github.io/tags/</loc>
+    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://sweetstreet.github.io/publication/exli-tool/</loc>
     <lastmod>2024-05-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -10,20 +34,8 @@
     <lastmod>2024-05-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://sweetstreet.github.io/publication-type/paper-conference/</loc>
-    <lastmod>2024-05-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://sweetstreet.github.io/publication_types/</loc>
-    <lastmod>2024-05-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://sweetstreet.github.io/publication/</loc>
-    <lastmod>2024-05-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://sweetstreet.github.io/tags/</loc>
-    <lastmod>2024-05-15T00:00:00+00:00</lastmod>
+    <loc>https://sweetstreet.github.io/publication/exlong/</loc>
+    <lastmod>2024-04-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://sweetstreet.github.io/publication/exli/</loc>

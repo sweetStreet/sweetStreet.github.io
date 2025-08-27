@@ -13,10 +13,26 @@
     </image>
     
     <item>
+      <title>A Tool for Generating Exceptional Behavior Tests with Large Language Models</title>
+      <link>https://sweetstreet.github.io/publication/exlong-tool/</link>
+      <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/exlong-tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ExLi: An Inline-Test Generation Tool for Java</title>
       <link>https://sweetstreet.github.io/publication/exli-tool/</link>
       <pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
       <guid>https://sweetstreet.github.io/publication/exli-tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Generating Exceptional Behavior Tests with Reasoning Augmented Large Language Models</title>
+      <link>https://sweetstreet.github.io/publication/exlong/</link>
+      <pubDate>Fri, 12 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://sweetstreet.github.io/publication/exlong/</guid>
       <description></description>
     </item>
     
